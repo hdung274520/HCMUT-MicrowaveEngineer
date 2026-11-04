@@ -27,7 +27,9 @@
       const j = await r.json();
       if (!r.ok) throw new Error(j.error?.message || r.status);
       const a = (j.candidates?.[0]?.content?.parts ?? []).filter(c => !c.thought).map(c => c.text ?? '').join('');
-      out.textContent = a; msgs.push({ role: 'assistant', content: a });
+      // Model writes $…$ / $$…$$; MathJax here only knows \( \) and \[ \].
+      out.textContent = a.replace(/\$\$([\s\S]+?)\$\$/g, '\\[$1\\]').replace(/\$([^$\n]+?)\$/g, '\\($1\\)');
+      window.MathJax?.typesetPromise?.([out]); msgs.push({ role: 'assistant', content: a });
     } catch (err) { out.textContent = 'Lỗi: ' + err.message; out.classList.add('err'); msgs.pop(); }
     log.scrollTop = log.scrollHeight;
   };
