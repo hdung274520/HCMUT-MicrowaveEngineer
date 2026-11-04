@@ -2,7 +2,7 @@
 
 Web app giải và vẽ từng bước các bài tập giản đồ Smith (chương 2: Smith Chart and Impedance Matching), theo đúng cách làm trên lớp: giản đồ Z, quay 180° qua tâm để sang dẫn nạp.
 
-**Mở app:** https://hdung274520.github.io/HCMUT-MicrowaveEngineer/
+**Mở app:** https://hdung274520.github.io/HCMUT-MicrowaveEngineer/tool/
 
 ## Các dạng bài
 
@@ -26,6 +26,6 @@ Thao tác với giản đồ:
 
 ## Chạy và kiểm tra
 
-- Không cần cài đặt: mở `index.html` trong trình duyệt. Công thức hiển thị bằng MathJax nên cần mạng.
+- Không cần cài đặt: mở `tool/index.html` trong trình duyệt. Công thức hiển thị bằng MathJax nên cần mạng.
 - Kiểm tra bộ giải bằng các ví dụ trong slide: `node test/rf.test.js`.
 - Mỗi lần `git push` lên nhánh `Tool`, GitHub Pages tự cập nhật link sau khoảng 1 phút.
