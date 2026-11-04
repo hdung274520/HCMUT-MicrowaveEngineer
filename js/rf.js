@@ -351,39 +351,46 @@ function solveDouble(p) {
     { t: 'circle', c: Complex.polar(0.5, 4 * Math.PI * p.dsp), r: 0.5, color: 'target', dash: true },
     pt(L.G, 'A', 'z<sub>L</sub>', L.zL),
     ...flipTo(L.G, 'B', 'y<sub>L</sub>', L.yL),
-    ...(has0 ? [{ t: 'path', pts: RF.arcPath(Gy, p.d0), color: 'ink', to: 'C' }, pt(G1, 'C', 'y<sub>1</sub><sup>−</sup>', y1)] : []),
+    ...(has0 ? [{ t: 'path', pts: RF.arcPath(Gy, p.d0), color: 'ink', to: 'C' }, pt(G1, 'C', 'y<sub>d1</sub>', y1)] : []),
   ];
-  // Steps follow the course's worked solution: y_{1^-} before stub 1, y_{1^+} after it, y_{2^-} before stub 2.
+  // Notation follows the course: y_t = y_d + y_s at each stub node (d = line before the stub, s = stub, t = total).
   const stubName = open => (open ? 'hở mạch: y = j tan βl' : 'ngắn mạch: y = −j cot βl');
+  const intro = '<h3>Quy ước ký hiệu</h3><ul>' +
+    '<li>y<sub>L</sub>: dẫn nạp tải chuẩn hoá.</li>' +
+    '<li>y<sub>d1</sub>: dẫn nạp sau đoạn đường truyền d<sub>1</sub> (ngay trước dây chêm 1).</li>' +
+    '<li>y<sub>s1</sub> = jb<sub>s1</sub>: dẫn nạp do dây chêm 1 đóng góp.</li>' +
+    '<li>y<sub>t1</sub>: dẫn nạp tổng sau khi ghép song song dây chêm 1.</li>' +
+    '<li>y<sub>d2</sub>: dẫn nạp sau đoạn d<sub>2</sub> từ y<sub>t1</sub> (ngay trước dây chêm 2); y<sub>s2</sub> = jb<sub>s2</sub> của dây chêm 2; y<sub>t2</sub> tổng, đạt phối hợp khi bằng 1 + j0.</li></ul>' +
+    '\\[y_{t1} = y_{d1} + y_{s1},\\qquad y_{t2} = y_{d2} + y_{s2} = 1 + j0\\]';
   const steps = [{
     title: 'Chuẩn hoá tải và xác định y<sub>L</sub> trên giản đồ',
     tex: T`\[z_L = \frac{Z_L}{Z_0} = \frac{${tex(L.ZL)}}{${p.Z0}} = ${tex(L.zL)}\]` +
       T`\[y_L = \frac{1}{z_L} = \frac{${tex(L.zL.conj())}}{${f4(L.zL.abs() ** 2)}} = ${tex(L.yL)}\]` +
       T`\[\text{WTG}_{y_L} = ${f4(RF.wtg(Gy))}\lambda\]`,
     why: 'Dây chêm mắc song song nên làm việc trên miền dẫn nạp. Chấm z<sub>L</sub> (A), quay 180° qua tâm được y<sub>L</sub> (B); kẻ từ tâm qua B cắt vành WTG.' +
-      (has0 ? '' : ' Dây chêm 1 đặt ngay tại tải nên y<sub>1</sub><sup>−</sup> = y<sub>L</sub>.'),
+      (has0 ? '' : ' Dây chêm 1 đặt ngay tại tải nên y<sub>d1</sub> = y<sub>L</sub>.'),
     at: ['A', 'B'],
   }];
   if (has0) steps.push({
     title: 'Di chuyển từ y<sub>L</sub> tới vị trí dây chêm 1',
     tex: T`\[\text{WTG}_1 = \text{WTG}_{y_L} + d_1 = ${f4(RF.wtg(Gy))} + ${p.d0} \equiv ${f4(RF.wtg(G1))}\lambda\]` +
-      T`\[y_{1^-} = ${tex(y1)}\quad (g_1 = ${f4(g)},\ b_{1^-} = ${f4(y1.im)})\]`,
+      T`\[y_{d1} = ${tex(y1)}\quad (g_1 = ${f4(g)},\ b_{d1} = ${f4(y1.im)})\]`,
     why: 'Vẽ vòng S qua y<sub>L</sub> (nét đứt xám, tâm O), quay theo chiều kim đồng hồ (về phía nguồn) một đoạn d<sub>1</sub> tới C, rồi đọc toạ độ tại đó.',
     at: ['C'],
   });
   const bps = [1, -1].map(k => (c + k * Math.sqrt(Math.max(0, g * (1 - g * s * s)))) / s);
   steps.push({
-    title: 'Tìm y<sub>1</sub><sup>+</sup> và điện nạp của dây chêm 1',
+    title: 'Tìm y<sub>t1</sub> = y<sub>d1</sub> + y<sub>s1</sub> và điện nạp của dây chêm 1',
     tex: T`\[g_1 = ${f4(g)}\ ${forbidden ? '>' : T`\le`}\ g_{max} = \frac{1}{\sin^2\beta d_2} = \frac{1}{\sin^2(${f3(deg(bd))}^\circ)} = ${f4(gmax)}\]` +
-      (forbidden ? '' : T`\[y_{1^+} = g_1 + jb_{1^+},\qquad b_{1^+} = \frac{\cos\beta d_2 \pm\sqrt{g_1(1 - g_1\sin^2\beta d_2)}}{\sin\beta d_2}\]` +
-        T`\[b_{1^+} = ${f4(bps[0])}\ \text{hoặc}\ ${f4(bps[1])}\]` +
-        T`\[b_{s1} = b_{1^+} - b_{1^-} = ${f4(bps[0] - y1.im)}\ \text{hoặc}\ ${f4(bps[1] - y1.im)}\]`),
+      (forbidden ? '' : T`\[y_{t1} = y_{d1} + y_{s1} = g_1 + jb_{t1},\qquad b_{t1} = \frac{\cos\beta d_2 \pm\sqrt{g_1(1 - g_1\sin^2\beta d_2)}}{\sin\beta d_2}\]` +
+        T`\[b_{t1} = ${f4(bps[0])}\ \text{hoặc}\ ${f4(bps[1])}\]` +
+        T`\[y_{s1} = jb_{s1},\quad b_{s1} = b_{t1} - b_{d1} = ${f4(bps[0] - y1.im)}\ \text{hoặc}\ ${f4(bps[1] - y1.im)}\]`),
     why: `Dây chêm 1 mắc song song giữ nguyên g<sub>1</sub>, chỉ đổi phần ảo: điểm đi dọc vòng g = g<sub>1</sub> (nét đứt xám qua ${Y1}). Vẽ vòng g = 1 xoay NGƯỢC chiều kim đồng hồ (về phía tải) một đoạn d<sub>2</sub> (vòng đỏ nét đứt); hai vòng cắt nhau tại 2 điểm, cho 2 bộ nghiệm.` +
       (forbidden ? ' Ở đây g<sub>1</sub> > g<sub>max</sub>: điểm nằm trong vùng cấm (tô đỏ), hai vòng không cắt nhau.' : ''),
     at: [Y1],
   });
   if (forbidden) {
-    steps.push({ title: 'Kết luận: không phối hợp được', tex: '', why: 'y<sub>1</sub><sup>−</sup> nằm trong vùng cấm. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
+    steps.push({ title: 'Kết luận: không phối hợp được', tex: '', why: 'y<sub>d1</sub> nằm trong vùng cấm. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
     return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Nằm trong vùng cấm', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
   }
   const solutions = bps.map(bp => {
@@ -398,23 +405,23 @@ function solveDouble(p) {
       steps: [
         {
           title: 'Tính chiều dài dây chêm 1',
-          tex: T`\[y_{1^+} = ${tex(y1p)},\qquad b_{s1} = ${f4(b1)}\]\[${stubTex(b1, open1, l1, 'l_1', 'b_{s1}')}\]`,
+          tex: T`\[y_{t1} = ${tex(y1p)},\qquad y_{s1} = y_{t1} - y_{d1} = ${tex(new Complex(0, b1))}\]\[${stubTex(b1, open1, l1, 'l_1', 'b_{s1}')}\]`,
           why: `Nghiệm này dùng giao điểm ${P}. Dây chêm 1 ${stubName(open1)}.`,
           at: [P],
         },
         {
           title: 'Chuyển đến dây chêm 2 và tính l<sub>2</sub>',
-          tex: T`\[y_{2^-} = ${tex(y2)}\qquad (\text{trên vòng } g = 1)\]\[b_{s2} = -\text{Im}\{y_{2^-}\} = ${f4(b2)}\]\[${stubTex(b2, open2, l2, 'l_2', 'b_{s2}')}\]`,
-          why: `Vẽ vòng S qua ${P} (nét đứt xám), quay theo chiều kim đồng hồ một đoạn d<sub>2</sub> (${f3(720 * p.dsp)}°) được ${Q}, nằm đúng trên vòng g = 1. Dây chêm 2 (${stubName(open2)}) triệt tiêu phần ảo, đưa về tâm ${R}: y<sub>in</sub> = 1.`,
+          tex: T`\[y_{d2} = ${tex(y2)}\qquad (\text{trên vòng } g = 1)\]\[y_{s2} = 1 - y_{d2} = jb_{s2} \Rightarrow b_{s2} = ${f4(b2)}\]\[y_{t2} = y_{d2} + y_{s2} = 1 + j0\]\[${stubTex(b2, open2, l2, 'l_2', 'b_{s2}')}\]`,
+          why: `Vẽ vòng S qua ${P} (nét đứt xám), quay theo chiều kim đồng hồ một đoạn d<sub>2</sub> (${f3(720 * p.dsp)}°) được ${Q}, nằm đúng trên vòng g = 1. Dây chêm 2 (${stubName(open2)}) triệt tiêu phần ảo, đưa về tâm ${R}: y<sub>t2</sub> = 1 + j0.`,
           at: [Q, R],
         },
       ],
       draw: [
         sCircle(G1p),
         { t: 'path', pts: RF.imagPath(y1, b1), color: 'sol', to: P },
-        { ...pt(G1p, P, 'y<sub>1</sub><sup>+</sup>', y1p), color: 'sol' },
+        { ...pt(G1p, P, 'y<sub>t1</sub>', y1p), color: 'sol' },
         { t: 'path', pts: RF.arcPath(G1p, p.dsp), color: 'sol', to: Q },
-        { ...pt(G2, Q, 'y<sub>2</sub><sup>−</sup>', y2), color: 'sol' },
+        { ...pt(G2, Q, 'y<sub>d2</sub>', y2), color: 'sol' },
         { t: 'path', pts: RF.imagPath(y2, b2), color: 'sol', to: R },
         { ...pt(ZERO, R, 'y<sub>in</sub>', new Complex(1)), color: 'sol' },
       ],
@@ -425,9 +432,11 @@ function solveDouble(p) {
   const after = [{
     title: 'Bảng tổng hợp kết quả',
     tex: `<table class="summary"><thead><tr><th>Thông số</th><th>Nghiệm 1 (l<sub>1</sub> ngắn nhất)</th><th>Nghiệm 2</th></tr></thead><tbody>` +
-      row('b<sub>s1</sub>', x => f4(x.b1)) + row('l<sub>1</sub>', x => `<strong>${f4(x.l1)}λ</strong>`) +
-      row('b<sub>s2</sub>', x => f4(x.b2)) + row('l<sub>2</sub>', x => `<strong>${f4(x.l2)}λ</strong>`) + '</tbody></table>',
+      row('y<sub>d1</sub>', () => `\\(${tex(y1)}\\)`) + row('y<sub>s1</sub>', x => `\\(${tex(new Complex(0, x.b1))}\\)`) + row('y<sub>t1</sub>', x => `\\(${tex(x.y1p)}\\)`) +
+      row('l<sub>1</sub>', x => `<strong>${f4(x.l1)}λ</strong>`) +
+      row('y<sub>d2</sub>', x => `\\(${tex(x.y2)}\\)`) + row('y<sub>s2</sub>', x => `\\(${tex(new Complex(0, x.b2))}\\)`) + row('y<sub>t2</sub>', () => '\\(1 + j0\\)') +
+      row('l<sub>2</sub>', x => `<strong>${f4(x.l2)}λ</strong>`) + '</tbody></table>',
     why: 'Thường chọn nghiệm có dây chêm ngắn hơn.',
   }];
-  return { forbidden, sols: solutions, answers: [], steps, after, draw, solutions };
+  return { forbidden, sols: solutions, answers: [], intro, steps, after, draw, solutions };
 }

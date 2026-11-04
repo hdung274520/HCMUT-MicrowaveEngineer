@@ -352,3 +352,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .chat-form { display: flex; gap: 6px; }
 .chat-form input { flex: 1; min-width: 0; padding: 8px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--card); color: var(--text); font: inherit; }
 @media print { .chat, .chat-fab { display: none !important; } }
+
+.intro:empty { display: none; }
+.intro { margin: 0 0 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--accent-weak); font-size: 14px; }
+.intro h3 { font-size: 14px; margin-bottom: 4px; }
+.intro ul { margin: 0; padding-left: 18px; }

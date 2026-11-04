@@ -112,6 +112,7 @@ function render(animate) {
   // and break before ⇒ so long chains wrap instead of clipping.
   const steps = [...(r?.steps ?? []), ...(s?.steps ?? []), ...(r?.after ?? [])];
   state.steps = steps; // read by chat.js as context
+  $('intro').innerHTML = r?.intro ?? '';
   const kc = Object.fromEntries(ops.filter(o => o.t === 'point').map(o => [o.label, o.color]));
   stepsEl.innerHTML = steps.length ? steps.map((st, i) => {
     const at = st.at ?? [], tex = st.tex.replace(/,?\\qquad\s*/g, '\\]\\[').replace(/\s*\\Rightarrow\s*/g, '\\]\\[\\Rightarrow ');
@@ -124,9 +125,9 @@ function render(animate) {
 
 function typeset() {
   if (!window.MathJax?.typesetPromise) return; // MathJax typesets the page itself once it finishes loading
-  MathJax.typesetClear([stepsEl]);
+  MathJax.typesetClear([stepsEl, $('intro')]);
   stepsEl.classList.add('typesetting');
-  MathJax.typesetPromise([stepsEl]).finally(() => stepsEl.classList.remove('typesetting'));
+  MathJax.typesetPromise([stepsEl, $('intro')]).finally(() => stepsEl.classList.remove('typesetting'));
 }
 
 // Step ↔ point link: hovering or focusing a step lights its points; clicking pins it.
