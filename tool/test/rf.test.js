@@ -1,6 +1,6 @@
 // Run: node test/rf.test.js — checks every solver against independent formulas and the course slides.
 const fs = require('fs'), vm = require('vm'), path = require('path'), assert = require('assert');
-const src = ['complex.js', 'rf.js'].map(f => fs.readFileSync(path.join(__dirname, '../tool/js', f), 'utf8')).join('\n');
+const src = ['complex.js', 'rf.js'].map(f => fs.readFileSync(path.join(__dirname, '../js', f), 'utf8')).join('\n');
 const { Complex, RF, solveLine, solveQW, solveLumped, solveSingle, solveDouble } =
   vm.runInNewContext(src + '\n;({ Complex, RF, solveLine, solveQW, solveLumped, solveSingle, solveDouble })', {});
 
