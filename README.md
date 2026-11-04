@@ -6,4 +6,4 @@ Tài liệu môn Kỹ thuật Siêu cao tần (HCMUT).
 
 Code nằm ở branch [`Tool`](https://github.com/hdung274520/HCMUT-MicrowaveEngineer/tree/Tool).
 
-**Mở app:** https://hdung274520.github.io/HCMUT-MicrowaveEngineer/
+**Mở app:** https://hdung274520.github.io/HCMUT-MicrowaveEngineer/tool/
