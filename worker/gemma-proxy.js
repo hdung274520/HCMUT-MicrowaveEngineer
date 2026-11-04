@@ -1,5 +1,5 @@
 // Cloudflare Worker: keeps the Google AI Studio key server-side. Deploy: see worker/README.md
-const ALLOWED = 'https://hdung274520.github.io', MODEL = 'gemini-2.5-flash';
+const ALLOWED = 'https://hdung274520.github.io', MODEL = 'gemini-3.8-flash';
 export default {
   async fetch(req, env) {
     const o = req.headers.get('origin') || '';
