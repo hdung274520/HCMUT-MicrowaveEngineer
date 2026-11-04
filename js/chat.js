@@ -1,11 +1,11 @@
-// Chatbot: calls the Anthropic API straight from the browser with the user's own key (kept in localStorage only).
+// Chatbot: calls the Gemma API (Google AI Studio) straight from the browser with the user's own key (kept in localStorage only).
 // shortcut: key is exposed to this browser; fine for personal use, put a server proxy in front before sharing the site publicly.
 (() => {
-  const MODEL = 'claude-sonnet-5-5', KEY = 'anthropic_key';
+  const MODEL = 'gemma-3-27b-it', KEY = 'gemma_key';
   const $ = id => document.getElementById(id), log = $('chat-log'), msgs = [];
   const getKey = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
   const askKey = () => {
-    const k = prompt('Dán Anthropic API key (chỉ lưu trong trình duyệt này):', getKey() || '');
+    const k = prompt('Dán Google AI Studio API key (dùng cho Gemma) (chỉ lưu trong trình duyệt này):', getKey() || '');
     if (k?.trim()) try { localStorage.setItem(KEY, k.trim()); } catch {}
     return getKey();
   };
@@ -24,14 +24,16 @@
     $('chat-in').value = ''; add('user', q); msgs.push({ role: 'user', content: q });
     const out = add('bot', '…');
     try {
-      const r = await fetch('https://api.anthropic.com/v1/messages', {
+      // Gemma has no system role: prepend the solution context to the first user turn.
+      const contents = msgs.map((m, n) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: n ? m.content : context() + '\n\nCâu hỏi: ' + m.content }] }));
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
         method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
-        body: JSON.stringify({ model: MODEL, max_tokens: 1024, system: context(), messages: msgs }),
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+        body: JSON.stringify({ contents, generationConfig: { maxOutputTokens: 1024 } }),
       });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error?.message || r.status);
-      const a = j.content.map(c => c.text ?? '').join('');
+      const a = (j.candidates?.[0]?.content?.parts ?? []).map(c => c.text ?? '').join('');
       out.textContent = a; msgs.push({ role: 'assistant', content: a });
     } catch (err) { out.textContent = 'Lỗi: ' + err.message; out.classList.add('err'); msgs.pop(); }
     log.scrollTop = log.scrollHeight;
