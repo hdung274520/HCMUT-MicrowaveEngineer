@@ -111,7 +111,6 @@ function render(animate) {
   // Solvers join relations with \qquad; the narrow step column shows one relation per line instead.
   // and break before ⇒ so long chains wrap instead of clipping.
   const steps = [...(r?.steps ?? []), ...(s?.steps ?? []), ...(r?.after ?? [])];
-  state.steps = steps; // read by chat.js as context
   $('intro').innerHTML = r?.intro ?? '';
   const kc = Object.fromEntries(ops.filter(o => o.t === 'point').map(o => [o.label, o.color]));
   stepsEl.innerHTML = steps.length ? steps.map((st, i) => {
