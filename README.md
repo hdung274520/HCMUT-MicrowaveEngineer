@@ -2,8 +2,8 @@
 
 Tài liệu môn Kỹ thuật Siêu cao tần (HCMUT).
 
-## Tool giải bài tập giản đồ Smith
+## Cấu trúc
 
-Code nằm ở branch [`Tool`](https://github.com/hdung274520/HCMUT-MicrowaveEngineer/tree/Tool).
-
-**Mở app:** https://hdung274520.github.io/HCMUT-MicrowaveEngineer/tool/
+| Thư mục | Nội dung |
+|---|---|
+| [`tool/`](tool/) | Web giải bài tập giản đồ Smith: [mở app](https://hdung274520.github.io/HCMUT-MicrowaveEngineer/tool/) |

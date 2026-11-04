@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T10:01:13.562022+00:00",
+  "title": "Design System: Smith Chart Solver",
+  "extensions": {
+    "colorMeta": {
+      "accent-blue": {
+        "role": "primary",
+        "displayName": "Working Blue",
+        "canonical": "#2563eb",
+        "tonalRamp": [
+          "#00062c",
+          "#001a64",
+          "#0031a4",
+          "#1451d8",
+          "#3978fe",
+          "#74a3fe",
+          "#adcaff",
+          "#e6efff"
+        ],
+        "cssVar": "--accent",
+        "dark": "#6ea2ff"
+      },
+      "accent-blue-ink": {
+        "role": "primary",
+        "displayName": "Deep Working Blue",
+        "canonical": "#1d4ed8",
+        "tonalRamp": [
+          "#000035",
+          "#01017b",
+          "#0326b2",
+          "#1e50da",
+          "#3f76fe",
+          "#77a2ff",
+          "#afc9ff",
+          "#e7efff"
+        ],
+        "cssVar": "--accent-ink",
+        "dark": "#8db6ff"
+      },
+      "accent-blue-wash": {
+        "role": "primary",
+        "displayName": "Blue Wash",
+        "canonical": "#edf3ff",
+        "tonalRamp": [
+          "#080b13",
+          "#21252e",
+          "#3d424c",
+          "#5c616b",
+          "#7d828d",
+          "#a0a5b0",
+          "#c3c9d5",
+          "#e9effb"
+        ],
+        "cssVar": "--accent-weak",
+        "dark": "#18284a"
+      },
+      "solution-orange": {
+        "role": "secondary",
+        "displayName": "Stub Orange",
+        "canonical": "#e3550c",
+        "tonalRamp": [
+          "#1b0300",
+          "#431301",
+          "#722500",
+          "#a33a03",
+          "#d94f02",
+          "#fe7742",
+          "#ffb59a",
+          "#ffe9e1"
+        ],
+        "cssVar": "--sol-2",
+        "dark": "#ff9459"
+      },
+      "target-red": {
+        "role": "tertiary",
+        "displayName": "Target Red",
+        "canonical": "#d92d20",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0100",
+          "#800401",
+          "#b80400",
+          "#e43a2b",
+          "#ff7462",
+          "#ffb3a7",
+          "#ffe9e5"
+        ],
+        "cssVar": "--target",
+        "dark": "#f2675c"
+      },
+      "danger-red": {
+        "role": "tertiary",
+        "displayName": "Danger Red",
+        "canonical": "#b42318",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0000",
+          "#800200",
+          "#b12015",
+          "#da4a3b",
+          "#fe7462",
+          "#feb3a7",
+          "#fee9e5"
+        ],
+        "cssVar": "--danger",
+        "dark": "#ff9b91"
+      },
+      "danger-wash": {
+        "role": "tertiary",
+        "displayName": "Danger Wash",
+        "canonical": "#fef3f2",
+        "tonalRamp": [
+          "#100909",
+          "#2b2322",
+          "#48403f",
+          "#685f5e",
+          "#89807f",
+          "#aca2a1",
+          "#d1c6c5",
+          "#f6eceb"
+        ],
+        "cssVar": "--danger-weak",
+        "dark": "#3a1a19"
+      },
+      "cool-ground": {
+        "role": "neutral",
+        "displayName": "Cool Ground",
+        "canonical": "#f5f6f8",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a7",
+          "#c8c9cb",
+          "#edeef0"
+        ],
+        "cssVar": "--bg",
+        "dark": "#0f141b"
+      },
+      "card-white": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ],
+        "cssVar": "--card",
+        "dark": "#171d26"
+      },
+      "slate-ink": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#0f172a",
+        "tonalRamp": [
+          "#040a1c",
+          "#1c2539",
+          "#384258",
+          "#566178",
+          "#77829b",
+          "#99a5bf",
+          "#bdc9e4",
+          "#e7effe"
+        ],
+        "cssVar": "--ink",
+        "dark": "#e8edf3"
+      },
+      "slate-text": {
+        "role": "neutral",
+        "displayName": "Slate Text",
+        "canonical": "#1e293b",
+        "tonalRamp": [
+          "#030b1a",
+          "#1a2537",
+          "#374256",
+          "#556277",
+          "#768399",
+          "#98a6bd",
+          "#bbcae2",
+          "#e6effe"
+        ],
+        "cssVar": "--text",
+        "dark": "#cdd5df"
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#5b6577",
+        "tonalRamp": [
+          "#050b18",
+          "#1d2534",
+          "#394253",
+          "#586273",
+          "#788396",
+          "#9ba6b9",
+          "#becade",
+          "#e6efff"
+        ],
+        "cssVar": "--muted",
+        "dark": "#8f9aa8"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e3e7ed",
+        "tonalRamp": [
+          "#090b0f",
+          "#22252a",
+          "#3f4247",
+          "#5e6167",
+          "#7f8388",
+          "#a1a5ab",
+          "#c5c9cf",
+          "#ebeff5"
+        ],
+        "cssVar": "--line",
+        "dark": "#273040"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#c9d0da",
+        "tonalRamp": [
+          "#070b12",
+          "#20252d",
+          "#3d424b",
+          "#5c626a",
+          "#7c838c",
+          "#9fa6af",
+          "#c3cad4",
+          "#e8eff9"
+        ],
+        "cssVar": "--line-strong",
+        "dark": "#364152"
+      },
+      "hover-wash": {
+        "role": "neutral",
+        "displayName": "Hover Wash",
+        "canonical": "#f3f5f8",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242527",
+          "#404244",
+          "#606164",
+          "#818285",
+          "#a3a5a8",
+          "#c7c9cc",
+          "#edeff1"
+        ],
+        "cssVar": "--hover",
+        "dark": "#1f2733"
+      },
+      "grid-minor": {
+        "role": "neutral",
+        "displayName": "Grid Minor",
+        "canonical": "#cfd6df",
+        "tonalRamp": [
+          "#070b11",
+          "#20262c",
+          "#3d434a",
+          "#5c626a",
+          "#7d838b",
+          "#9fa6ae",
+          "#c3cad3",
+          "#e8eff8"
+        ],
+        "cssVar": "--grid",
+        "dark": "#2b3442"
+      },
+      "grid-major": {
+        "role": "neutral",
+        "displayName": "Grid Major",
+        "canonical": "#93a1b3",
+        "tonalRamp": [
+          "#030b18",
+          "#1b2634",
+          "#374352",
+          "#566273",
+          "#768495",
+          "#98a6b9",
+          "#bccbdd",
+          "#e4f0fe"
+        ],
+        "cssVar": "--grid-major",
+        "dark": "#4d5a6d"
+      },
+      "chart-rim": {
+        "role": "neutral",
+        "displayName": "Chart Rim",
+        "canonical": "#334155",
+        "tonalRamp": [
+          "#020b1b",
+          "#192638",
+          "#354357",
+          "#536278",
+          "#74849a",
+          "#96a6be",
+          "#b9cbe3",
+          "#e5effe"
+        ],
+        "cssVar": "--chart-ink",
+        "dark": "#c4ccd6"
+      },
+      "chart-label": {
+        "role": "neutral",
+        "displayName": "Chart Label",
+        "canonical": "#52627a",
+        "tonalRamp": [
+          "#020b1d",
+          "#18253a",
+          "#344359",
+          "#52627a",
+          "#73839d",
+          "#95a6c1",
+          "#b8cbe6",
+          "#e5efff"
+        ],
+        "cssVar": "--chart-label",
+        "dark": "#8f9aa8"
+      },
+      "wtl-umber": {
+        "role": "neutral",
+        "displayName": "WTL Umber",
+        "canonical": "#a14a14",
+        "tonalRamp": [
+          "#190500",
+          "#401700",
+          "#6c2c02",
+          "#9a440a",
+          "#c06636",
+          "#e78959",
+          "#feb692",
+          "#ffeadf"
+        ],
+        "cssVar": "--wtl",
+        "dark": "#e59a62"
+      }
+    },
+    "typographyMeta": {
+      "answer-figure": {
+        "displayName": "Answer Figure",
+        "purpose": "Big result figures in the answer card."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles; brand at 700."
+      },
+      "step-title": {
+        "displayName": "Step Title",
+        "purpose": "\"Bước n — …\" step headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text; 14px for secondary answer rows and units."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Why-explanations, legend, summary table."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels and big-answer terms."
+      },
+      "hint": {
+        "displayName": "Hint",
+        "purpose": "Hints, solution tag, readout, table headers."
+      },
+      "chart-caption": {
+        "displayName": "Chart Caption",
+        "purpose": "Curved uppercase ring captions on the chart only; scaled by --k."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-ambient",
+        "value": "0 1px 2px rgba(15,23,42,0.05), 0 4px 16px -8px rgba(15,23,42,0.08)",
+        "purpose": "Every card."
+      },
+      {
+        "name": "segment-lift",
+        "value": "0 1px 2px rgba(15,23,42,0.12)",
+        "purpose": "Selected segmented option."
+      },
+      {
+        "name": "primary-contact",
+        "value": "0 1px 2px rgba(29,78,216,0.3)",
+        "purpose": "Primary button."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgba(37,99,235,0.15) (light); dark rgba(110, 162, 255, 0.25)",
+        "purpose": "Input focus-within."
+      },
+      {
+        "name": "card-ambient-dark",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px -10px rgba(0, 0, 0, 0.6)",
+        "purpose": "Every card, dark scheme."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": "0.15s",
+        "purpose": "Colour/background/border transitions on controls and rows."
+      },
+      {
+        "name": "path-draw",
+        "value": "0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Solution trace draws in once per solve; skipped under reduced motion."
+      },
+      {
+        "name": "ref-fade",
+        "value": "0.4s ease-out",
+        "purpose": "Reference/target/construction circles fade in."
+      },
+      {
+        "name": "point-fade",
+        "value": "0.25s ease-out",
+        "purpose": "Points and badges fade in, staggered by animation-delay."
+      },
+      {
+        "name": "dim",
+        "value": "filter 0.2s",
+        "purpose": "Non-selected chart items dim to opacity 0.2 on step focus."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "single-column",
+        "value": "max-width: 899px"
+      },
+      {
+        "name": "two-column",
+        "value": "max-width: 1279px"
+      },
+      {
+        "name": "three-column",
+        "value": "min-width: 1280px"
+      },
+      {
+        "name": "print",
+        "value": "A4, 14mm margins"
+      }
+    ],
+    "colorScheme": {
+      "strategy": "Follows prefers-color-scheme on screen; no in-app toggle. Print always uses the light values (the dark block is @media screen only).",
+      "tokens": {
+        "--bg": {
+          "light": "#f5f6f8",
+          "dark": "#0f141b"
+        },
+        "--card": {
+          "light": "#ffffff",
+          "dark": "#171d26"
+        },
+        "--ink": {
+          "light": "#0f172a",
+          "dark": "#e8edf3"
+        },
+        "--text": {
+          "light": "#1e293b",
+          "dark": "#cdd5df"
+        },
+        "--muted": {
+          "light": "#5b6577",
+          "dark": "#8f9aa8"
+        },
+        "--line": {
+          "light": "#e3e7ed",
+          "dark": "#273040"
+        },
+        "--line-strong": {
+          "light": "#c9d0da",
+          "dark": "#364152"
+        },
+        "--hover": {
+          "light": "#f3f5f8",
+          "dark": "#1f2733"
+        },
+        "--accent": {
+          "light": "#2563eb",
+          "dark": "#6ea2ff"
+        },
+        "--accent-ink": {
+          "light": "#1d4ed8",
+          "dark": "#8db6ff"
+        },
+        "--accent-weak": {
+          "light": "#edf3ff",
+          "dark": "#18284a"
+        },
+        "--sol-1": {
+          "light": "#2563eb",
+          "dark": "#6ea2ff"
+        },
+        "--sol-2": {
+          "light": "#e3550c",
+          "dark": "#ff9459"
+        },
+        "--target": {
+          "light": "#d92d20",
+          "dark": "#f2675c"
+        },
+        "--danger": {
+          "light": "#b42318",
+          "dark": "#ff9b91"
+        },
+        "--danger-weak": {
+          "light": "#fef3f2",
+          "dark": "#3a1a19"
+        },
+        "--grid": {
+          "light": "#cfd6df",
+          "dark": "#2b3442"
+        },
+        "--grid-major": {
+          "light": "#93a1b3",
+          "dark": "#4d5a6d"
+        },
+        "--shadow": {
+          "light": "0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 16px -8px rgba(15, 23, 42, 0.08)",
+          "dark": "0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px -10px rgba(0, 0, 0, 0.6)"
+        },
+        "--btn": {
+          "light": "#2563eb",
+          "dark": "#2563eb"
+        },
+        "--btn-hover": {
+          "light": "#1d4ed8",
+          "dark": "#3b74f0"
+        },
+        "--field": {
+          "light": "#ffffff",
+          "dark": "#11161e"
+        },
+        "--label": {
+          "light": "#3d4757",
+          "dark": "#b3bcc8"
+        },
+        "--placeholder": {
+          "light": "#98a2b3",
+          "dark": "#66717f"
+        },
+        "--topbar": {
+          "light": "rgba(255, 255, 255, 0.92)",
+          "dark": "rgba(23, 29, 38, 0.9)"
+        },
+        "--seg-on": {
+          "light": "#ffffff",
+          "dark": "#2a3443"
+        },
+        "--pinned-line": {
+          "light": "#c7d7fe",
+          "dark": "#2f4c80"
+        },
+        "--selection": {
+          "light": "#cfe0ff",
+          "dark": "#2a4a80"
+        },
+        "--focus-ring": {
+          "light": "rgba(37, 99, 235, 0.15)",
+          "dark": "rgba(110, 162, 255, 0.25)"
+        },
+        "--chart-ink": {
+          "light": "#334155",
+          "dark": "#c4ccd6"
+        },
+        "--chart-muted": {
+          "light": "#64748b",
+          "dark": "#8f9aa8"
+        },
+        "--chart-label": {
+          "light": "#52627a",
+          "dark": "#8f9aa8"
+        },
+        "--rim-label": {
+          "light": "#7b8799",
+          "dark": "#6c7786"
+        },
+        "--grid-fine": {
+          "light": "#e3e8ee",
+          "dark": "#212935"
+        },
+        "--ring": {
+          "light": "#94a3b8",
+          "dark": "#4d5a6d"
+        },
+        "--tick": {
+          "light": "#475569",
+          "dark": "#8f9aa8"
+        },
+        "--wtl": {
+          "light": "#a14a14",
+          "dark": "#e59a62"
+        }
+      },
+      "note": "--sol is var(--sol-1), swapped to var(--sol-2) by .app[data-sol=\"1\"] in both schemes. --btn stays #2563eb in dark so white button text keeps contrast; the dark accent #6ea2ff is for text, strokes and traces."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single solve action at the foot of the input card.",
+      "html": "<button class=\"ds-btn-primary\">Giải bài</button>",
+      "css": ".ds-btn-primary{width:100%;height:42px;border:0;border-radius:8px;cursor:pointer;background:#2563eb;color:#fff;font:600 15px/1.5 Inter,system-ui,sans-serif;box-shadow:0 1px 2px rgba(29,78,216,.3);transition:background .15s,transform .1s}.ds-btn-primary:hover{background:#1d4ed8}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:focus-visible{outline:2px solid #2563eb;outline-offset:2px}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Chart tools: zoom out, zoom in, fit, print.",
+      "html": "<button class=\"ds-icon-btn\" aria-label=\"Phóng to\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 5v14M5 12h14\"/></svg></button>",
+      "css": ".ds-icon-btn{display:grid;place-items:center;width:34px;height:34px;border:1px solid #e3e7ed;border-radius:8px;background:#fff;cursor:pointer;color:#5b6577;transition:color .15s,background .15s}.ds-icon-btn:hover{color:#0f172a;background:#f3f5f8}.ds-icon-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}.ds-icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round}"
+    },
+    {
+      "name": "Field with Unit",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Numeric input with inline unit select.",
+      "html": "<label class=\"ds-field\"><span>Khoảng cách d</span><span class=\"ds-input\"><input value=\"0.18\"><select><option>λ</option><option>m</option></select></span></label>",
+      "css": ".ds-field{display:grid;gap:6px;font:15px/1.5 Inter,system-ui,sans-serif;font-feature-settings:'tnum'}.ds-field>span:first-child{font-size:13px;font-weight:500;color:#3d4757}.ds-input{display:flex;align-items:center;height:40px;border:1px solid #c9d0da;border-radius:8px;background:#fff;transition:border-color .15s,box-shadow .15s}.ds-input:focus-within{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.15)}.ds-input input{flex:1;min-width:0;height:100%;border:0;background:none;padding:0 12px;outline:none;font:inherit}.ds-input select{height:100%;border:0;border-left:1px solid #e3e7ed;background:#f3f5f8;padding:0 8px;border-radius:0 7px 7px 0;font:inherit}"
+    },
+    {
+      "name": "Underline Tabs",
+      "kind": "nav",
+      "refersTo": "tab-underline",
+      "description": "Problem-type tabs in the top bar.",
+      "html": "<nav class=\"ds-tabs\"><button aria-selected=\"true\">Đường truyền</button><button>Biến đổi λ/4</button><button>Dây chêm đơn</button></nav>",
+      "css": ".ds-tabs{display:flex;gap:4px;height:60px;border-bottom:1px solid #e3e7ed;background:#fff;font:500 15px Inter,system-ui,sans-serif}.ds-tabs button{position:relative;border:0;background:none;padding:0 12px;cursor:pointer;color:#5b6577;font:inherit;transition:color .15s}.ds-tabs button:hover,.ds-tabs button[aria-selected=true]{color:#0f172a}.ds-tabs button[aria-selected=true]::after{content:'';position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:#2563eb;border-radius:2px}.ds-tabs button:focus-visible{outline:2px solid #2563eb;outline-offset:-2px}"
+    },
+    {
+      "name": "Solution Segmented",
+      "kind": "chip",
+      "refersTo": "segmented-option",
+      "description": "Nghiệm 1 / Nghiệm 2 switch; selected text takes the solution colour.",
+      "html": "<div class=\"ds-seg\"><button aria-selected=\"true\" data-i=\"0\">Nghiệm 1</button><button data-i=\"1\">Nghiệm 2</button></div>",
+      "css": ".ds-seg{display:inline-flex;padding:3px;gap:2px;background:#f3f5f8;border-radius:9px;font:500 14px Inter,system-ui,sans-serif}.ds-seg button{border:0;background:none;padding:5px 14px;border-radius:7px;cursor:pointer;color:#5b6577;font:inherit}.ds-seg button:hover{color:#0f172a}.ds-seg button[aria-selected=true]{background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.12)}.ds-seg button[data-i='0'][aria-selected=true]{color:#2563eb}.ds-seg button[data-i='1'][aria-selected=true]{color:#e3550c}.ds-seg button:focus-visible{outline:2px solid #2563eb;outline-offset:2px}"
+    },
+    {
+      "name": "Answer Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Big tabular answer figures with solution tag, top of the output column.",
+      "html": "<section class=\"ds-card\"><div class=\"ds-head\"><h2>Đáp số</h2><span class=\"ds-tag\">Nghiệm 1</span></div><dl class=\"ds-ans\"><div><dt>d</dt><dd>0.0369λ</dd></div><div><dt>l</dt><dd>0.1250λ</dd></div></dl></section>",
+      "css": ".ds-card{background:#fff;border:1px solid #e3e7ed;border-radius:10px;padding:20px;box-shadow:0 1px 2px rgba(15,23,42,.05),0 4px 16px -8px rgba(15,23,42,.08);font:15px/1.5 Inter,system-ui,sans-serif;font-feature-settings:'cv11','tnum';color:#1e293b}.ds-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.ds-head h2{margin:0;font-size:15px;font-weight:600;color:#0f172a}.ds-tag{font-size:12.5px;font-weight:500;color:#2563eb;background:#e9f0fd;padding:3px 10px;border-radius:99px}.ds-ans{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 12px}.ds-ans dt{font-size:13px;color:#5b6577}.ds-ans dd{margin:2px 0 0;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2;color:#0f172a}"
+    },
+    {
+      "name": "Step Row",
+      "kind": "custom",
+      "refersTo": "step-item",
+      "description": "'Bước n — …' row with point badges; pinned state lights the chart.",
+      "html": "<ol class=\"ds-steps\"><li class=\"pinned\"><div class=\"ds-sh\"><span class=\"ds-num\">1</span><h3>Bước 1 — Chuẩn hoá tải và chấm lên giản đồ</h3><span class=\"ds-badge\">A</span></div><p class=\"ds-why\">Chia cho Z₀ để đặt tải lên giản đồ.</p></li><li><div class=\"ds-sh\"><span class=\"ds-num\">2</span><h3>Bước 2 — Hệ số phản xạ và vòng S</h3><span class=\"ds-badge\">B</span></div></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:0;display:grid;gap:2px;font:15px/1.5 Inter,system-ui,sans-serif;color:#1e293b}.ds-steps li{padding:12px;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:background .15s}.ds-steps li:hover{background:#f3f5f8}.ds-steps li.pinned{background:#edf3ff;border-color:#c7d7fe}.ds-sh{display:flex;align-items:flex-start;gap:10px}.ds-sh h3{flex:1;margin:0;font-size:14.5px;font-weight:600;line-height:1.45;color:#0f172a}.ds-num{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:#f3f5f8;color:#5b6577;font-size:12px;font-weight:600}.pinned .ds-num{background:#2563eb;color:#fff}.ds-badge{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid #2563eb;color:#2563eb;font-size:12px;font-weight:700;background:#fff}.ds-why{margin:4px 0 0 32px;font-size:13.5px;color:#5b6577}"
+    },
+    {
+      "name": "Point Badge",
+      "kind": "custom",
+      "refersTo": "point-badge",
+      "description": "Lettered A–E marker, identical on chart, legend, steps and print; ring colour by role.",
+      "html": "<span class=\"ds-pb\" style=\"--c:#334155\">A</span> <span class=\"ds-pb\" style=\"--c:#2563eb\">B</span> <span class=\"ds-pb\" style=\"--c:#e3550c\">C</span> <span class=\"ds-pb\" style=\"--c:#d92d20\">D</span>",
+      "css": ".ds-pb{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--c);color:var(--c);background:#fff;font:700 12px Inter,system-ui,sans-serif;transition:background .15s,color .15s}.ds-pb:hover{background:var(--c);color:#fff}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Annotated Printed Chart",
+    "overview": "**Creative North Star: \"The Annotated Printed Chart\"**\n\nThe system is the category standard played straight: white cards on a cool grey ground, slate ink, one blue accent, Inter with tabular figures, a 1px hairline border and a 10px radius. Nothing about the shell is themed. All the character is in the Smith chart itself, which reproduces the printed paper chart students use in class: three tiers of grid that fill in as you zoom, four labelled outer rings, and curved captions in capitals. The interface's job is to put the answer, the chart and the textbook steps side by side as equals and connect them.\n\nDensity is calm-technical. It aims at the craft of Desmos/GeoGebra (a chart that feels like a precise instrument), Smith V4.1/ADS (the notation and scales of the real chart) and Notion/Linear (quiet chrome, exact spacing, restrained states). Colour carries meaning, never decoration: blue is solution 1 and the primary action, orange is solution 2, red is the target, and dashed grey is construction. The lettered point badges A–E are the thread that ties the chart, the legend and the steps together, and they look the same in all three places and on paper.\n\nThe same page is also a printed A4 handout. Print is a first-class output, not an afterthought, so every rule has to hold up in black and white with no interaction.",
+    "keyCharacteristics": [
+      "Three columns: inputs, then the chart as hero, then answers above steps. Answers stay above the fold on ~700px-tall laptops.",
+      "A single blue accent, plus solution, target and construction colours that only appear in their roles.",
+      "Inter throughout with tabular figures (`tnum`) and the `cv11` alternate.",
+      "Hairline borders, a 10px card radius, one soft ambient shadow.",
+      "A chart that copies the printed Smith chart, scaled so strokes and labels keep their screen size at any zoom.",
+      "Step ↔ point linking through identical lettered badges."
+    ],
+    "rules": [
+      {
+        "name": "The Colour-Is-Role Rule",
+        "body": "Each chromatic colour has exactly one meaning: blue means solution 1 or the primary action, orange means solution 2, red means a target or forbidden zone, and dashed grey means construction. Never use them as decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Swap Rule",
+        "body": "Solution colour comes only from `--sol`, which is switched by `.app[data-sol]`. A component that shows \"the current solution\" reads `var(--sol)` and never hard-codes blue or orange.",
+        "section": "colors"
+      },
+      {
+        "name": "The Follow-the-Device Rule",
+        "body": "Light or dark follows the device's `prefers-color-scheme` (requested by the user on 2026-10-21); there is no in-app toggle.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number is set in tabular figures. Subscripts (`<sub>` at 0.7–0.72em) follow the course notation: z<sub>L</sub>, d<sub>max</sub>, Γ<sub>L</sub>.",
+        "section": "typography"
+      },
+      {
+        "name": "The Course Notation Rule",
+        "body": "Steps read \"Bước n — <title>\", in Vietnamese, using the terms from the course slides (vòng S, quay 180° qua tâm, WTG/WTL, mạch Γ / mạch ┐). Equations are typeset in MathJax SVG and shrink to fit instead of clipping.",
+        "section": "typography"
+      },
+      {
+        "name": "The Answer-Above-the-Fold Rule",
+        "body": "The answer card always sits at the top of the output column. It never goes below the steps or under the inputs.",
+        "section": "layout"
+      },
+      {
+        "name": "The Dim-Not-Lift Rule",
+        "body": "Selection on the chart is shown by thickening the selected item (trace 3px → 4.5px, badge filled solid) and dimming the rest to 20%. Never add shadows or glows to chart elements.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** take every solution-dependent colour from `var(--sol)` and switch solutions with `.app[data-sol]`.",
+      "**Do** use identical letter badges A–E for a point on the chart, in the legend, in the steps and in print.",
+      "**Do** scale every new chart stroke, label or mark by `--k` so it keeps its screen size when zoomed.",
+      "**Do** mark targets in red and construction circles in grey dashes (6/5), the way the course slides do.",
+      "**Do** write steps as \"Bước n — …\" with the \"why\" under the equation, following the slides' notation.",
+      "**Do** keep the answer card at the top of the output column, and keep the phone order inputs → answers → sticky chart → steps.",
+      "**Do** check every new element in print: A4, black and white, problem → answers → chart on page one, steps from page two.",
+      "**Do** set every number in Inter with tabular figures."
+    ],
+    "donts": [
+      "**Don't** add a ZY or admittance overlay grid. The chart is Z-only; admittance is read by rotating 180° through the centre.",
+      "**Don't** use blue, orange or red for anything other than their roles (solution 1 or the primary action, solution 2, target).",
+      "**Don't** add a second accent colour, gradients, or shadows on chart elements.",
+      "**Don't** let the uppercase, letter-spaced chart captions spread into the interface chrome. They exist only because the printed Smith chart has them.",
+      "**Don't** use the HCMUT name or logo."
+    ]
+  }
+}
