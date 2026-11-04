@@ -339,11 +339,11 @@ function solveDouble(p) {
   const bd = 2 * Math.PI * p.dsp, s = Math.sin(bd), c = Math.cos(bd);
   if (!(p.dsp > 0) || Math.abs(s) < 1e-6) throw new Error('Khoảng cách giữa 2 dây chêm phải > 0 và không là bội số của λ/2.');
   // Everything happens on admittance: flip z_L to y_L, then rotate to stub 1.
-  const Gy = L.G.neg(), G1 = RF.rotate(Gy, p.d0), y1 = RF.zOf(G1), g = y1.re, gmax = 1 / (s * s);
-  const forbidden = g > gmax + 1e-12, has0 = p.d0 > 0;
+  const Gy = L.G.neg(), G1 = RF.rotate(Gy, p.d0), y1 = RF.zOf(G1), g = y1.re;
+  const forbidden = g * s * s > 1 + 1e-12, // vòng g = g₁ không cắt vòng g = 1 xoay
+    has0 = p.d0 > 0;
   const Y1 = has0 ? 'C' : 'B', [P0, Q0] = has0 ? ['D', 'E'] : ['C', 'D'];
   const draw = [
-    { t: 'circle', c: new Complex(gmax / (1 + gmax)), r: 1 / (1 + gmax), color: 'zone', fill: true },
     reCircle(g),
     ...(has0 ? [sCircle(L.G)] : []),
     { t: 'circle', c: new Complex(0.5), r: 0.5, color: 'target' },
@@ -378,10 +378,10 @@ function solveDouble(p) {
     at: ['C'],
   });
   const bps = [1, -1].map(k => (c + k * Math.sqrt(Math.max(0, g * (1 - g * s * s)))) / s);
-  const gTex = T`\[g_1 = ${f4(g)}\ ${forbidden ? '>' : T`\le`}\ g_{max} = \frac{1}{\sin^2\beta d_2} = \frac{1}{\sin^2(${f3(deg(bd))}^\circ)} = ${f4(gmax)}\]`;
+  const gTex = T`\[g_1 = ${f4(g)}\]`;
   if (forbidden) {
-    steps.push({ title: 'Kết luận: không phối hợp được', tex: gTex, why: 'g<sub>1</sub> > g<sub>max</sub>: y<sub>d1</sub> nằm trong vùng cấm (tô đỏ), vòng g = g<sub>1</sub> không cắt vòng g = 1 xoay. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
-    return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Nằm trong vùng cấm', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
+    steps.push({ title: 'Kết luận: không phối hợp được', tex: gTex, why: 'Vòng g = g<sub>1</sub> không cắt vòng g = 1 xoay lùi d<sub>2</sub> nên không có giao điểm D<sub>1</sub>, D<sub>2</sub>. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để vòng g = g<sub>1</sub> cắt được, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
+    return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Vòng g = g₁ không cắt g = 1 xoay', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
   }
   const l1Of = bp => RF.stubLength(bp - y1.im, open1);
   const solutions = bps.sort((a, b) => l1Of(a) - l1Of(b)).map((bp, i) => {
