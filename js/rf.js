@@ -379,18 +379,9 @@ function solveDouble(p) {
     at: ['C'],
   });
   const bps = [1, -1].map(k => (c + k * Math.sqrt(Math.max(0, g * (1 - g * s * s)))) / s);
-  steps.push({
-    title: 'Tìm y<sub>t1</sub> = y<sub>d1</sub> + y<sub>s1</sub> và điện nạp của dây chêm 1',
-    tex: T`\[g_1 = ${f4(g)}\ ${forbidden ? '>' : T`\le`}\ g_{max} = \frac{1}{\sin^2\beta d_2} = \frac{1}{\sin^2(${f3(deg(bd))}^\circ)} = ${f4(gmax)}\]` +
-      (forbidden ? '' : T`\[y_{t1} = y_{d1} + y_{s1} = g_1 + jb_{t1},\qquad b_{t1} = \frac{\cos\beta d_2 \pm\sqrt{g_1(1 - g_1\sin^2\beta d_2)}}{\sin\beta d_2}\]` +
-        T`\[b_{t1} = ${f4(bps[0])}\ \text{hoặc}\ ${f4(bps[1])}\]` +
-        T`\[y_{s1} = jb_{s1},\quad b_{s1} = b_{t1} - b_{d1} = ${f4(bps[0] - y1.im)}\ \text{hoặc}\ ${f4(bps[1] - y1.im)}\]`),
-    why: `Dây chêm 1 mắc song song giữ nguyên g<sub>1</sub>, chỉ đổi phần ảo: điểm đi dọc vòng g = g<sub>1</sub> (nét đứt xám qua ${Y1}). Vẽ vòng g = 1 xoay NGƯỢC chiều kim đồng hồ (về phía tải) một đoạn d<sub>2</sub> (vòng đỏ nét đứt); hai vòng cắt nhau tại 2 điểm, cho 2 bộ nghiệm.` +
-      (forbidden ? ' Ở đây g<sub>1</sub> > g<sub>max</sub>: điểm nằm trong vùng cấm (tô đỏ), hai vòng không cắt nhau.' : ''),
-    at: [Y1],
-  });
+  const gTex = T`\[g_1 = ${f4(g)}\ ${forbidden ? '>' : T`\le`}\ g_{max} = \frac{1}{\sin^2\beta d_2} = \frac{1}{\sin^2(${f3(deg(bd))}^\circ)} = ${f4(gmax)}\]`;
   if (forbidden) {
-    steps.push({ title: 'Kết luận: không phối hợp được', tex: '', why: 'y<sub>d1</sub> nằm trong vùng cấm. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
+    steps.push({ title: 'Kết luận: không phối hợp được', tex: gTex, why: 'g<sub>1</sub> > g<sub>max</sub>: y<sub>d1</sub> nằm trong vùng cấm (tô đỏ), vòng g = g<sub>1</sub> không cắt vòng g = 1 xoay. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
     return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Nằm trong vùng cấm', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
   }
   const solutions = bps.map(bp => {
@@ -404,10 +395,11 @@ function solveDouble(p) {
       ],
       steps: [
         {
-          title: 'Tính chiều dài dây chêm 1',
-          tex: T`\[y_{t1} = ${tex(y1p)},\qquad y_{s1} = y_{t1} - y_{d1} = ${tex(new Complex(0, b1))}\]\[${stubTex(b1, open1, l1, 'l_1', 'b_{s1}')}\]`,
-          why: `Nghiệm này dùng giao điểm ${P}. Dây chêm 1 ${stubName(open1)}.`,
-          at: [P],
+          title: 'Xác định y<sub>t1</sub> = y<sub>d1</sub> + y<sub>s1</sub> và tính l<sub>1</sub>',
+          tex: gTex + T`\[y_{t1} = y_{d1} + y_{s1} = g_1 + j(b_{d1} + b_{s1}),\qquad y_{t1} = ${tex(y1p)}\]` +
+            T`\[y_{s1} = y_{t1} - y_{d1} = ${tex(new Complex(0, b1))} \Rightarrow b_{s1} = ${f4(b1)}\]\[${stubTex(b1, open1, l1, 'l_1', 'b_{s1}')}\]`,
+          why: `Dây chêm 1 mắc song song giữ nguyên g<sub>1</sub>, chỉ đổi phần ảo nên y<sub>t1</sub> chạy dọc vòng g = g<sub>1</sub> (nét đứt xám qua ${Y1}). y<sub>t1</sub> phải nằm trên vòng g = 1 xoay lùi d<sub>2</sub> về phía tải, tức ngược chiều kim đồng hồ ${f3(720 * p.dsp)}° (vòng đỏ nét đứt). Hai vòng cắt nhau tại 2 điểm: nghiệm này dùng giao điểm ${P}. Dây chêm 1 ${stubName(open1)}.`,
+          at: [Y1, P],
         },
         {
           title: 'Chuyển đến dây chêm 2 và tính l<sub>2</sub>',
