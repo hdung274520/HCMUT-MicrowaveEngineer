@@ -1,6 +1,6 @@
 // Chatbot: calls Gemma through a Cloudflare Worker proxy (worker/gemma-proxy.js) that holds the API key, so no key lives in the browser.
 (() => {
-  const PROXY = ''; // dán URL Worker vào đây sau khi deploy (xem worker/README.md)
+  const PROXY = 'https://gemma-proxy.hdung274520.workers.dev'; // dán URL Worker vào đây sau khi deploy (xem worker/README.md)
   const $ = id => document.getElementById(id), log = $('chat-log'), msgs = [];
   const add = (cls, text) => { const d = document.createElement('div'); d.className = 'msg ' + cls; d.textContent = text; log.append(d); log.scrollTop = log.scrollHeight; return d; };
   // Current problem + answers + steps (LaTeX source, not the typeset SVG) so the bot explains exactly what is on screen.
