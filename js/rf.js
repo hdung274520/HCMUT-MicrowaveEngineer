@@ -271,7 +271,7 @@ function solveSingle(p) {
   // Shunt stubs work on admittance: flip z_L through the centre and read the chart as a Y chart.
   const m = L.m, G0 = shunt ? L.G.neg() : L.G;
   const [V, Im, Re] = shunt ? ['y', 'b', 'g'] : ['z', 'x', 'r'];
-  const [B0, C, D, E] = shunt ? ['B', 'C', 'D', 'E'] : ['A', 'B', 'C', 'D'];
+  const B0 = shunt ? 'B' : 'A';
   const start = new Complex(tanForm ? -1 : 1); // tan-form stubs start from zero immittance (left end)
   const steps = [stepNorm(p, L), stepGamma(L)], draw = [
     { t: 'circle', c: new Complex(0.5), r: 0.5, color: 'target' },
@@ -283,11 +283,11 @@ function solveSingle(p) {
     steps.push(stepFlip(G0, L.yL, 'A', 'B', 'z_L', 'y_L'));
     draw.push(...flipTo(L.G, 'B', 'y<sub>L</sub>', L.yL));
   }
-  const solutions = [1, -1].map(k => {
+  const solutions = [1, -1].map((k, i) => {
+    const C = String.fromCharCode(B0.charCodeAt(0) + 1 + i); // bộ 1 tại C, bộ 2 tại D (shunt)
     const Gt = new Complex(m * m, k * m * Math.sqrt(1 - m * m)); // on the r = 1 circle: Re Γ = |Γ|²
     const d = mod((G0.arg() - Gt.arg()) / (4 * Math.PI), 0.5);
     const Gd = RF.rotate(G0, d), v = RF.zOf(Gd), s = -v.im, sOwn = (s * Rs) / p.Z0, l = RF.stubLength(sOwn, tanForm);
-    const Gs = RF.rotate(start, l);
     // Lumped replacement (slides Example 9): shunt → susceptance −b; series → reactance −x.
     const el = w ? lumped(shunt ? -1 / s : s, p.Z0, w) : null;
     return {
@@ -299,7 +299,7 @@ function solveSingle(p) {
       ],
       steps: [
         {
-          title: `Đi về phía nguồn trên vòng S tới vòng ${Re} = 1`,
+          title: `Giao điểm với vòng ${Re} = 1: ${V}<sub>d</sub> tại ${C}`,
           tex: T`\[\text{WTG}_{${C}} = ${f4(RF.wtg(Gd))}\lambda,\qquad d = \text{WTG}_{${C}} - \text{WTG}_{${B0}} = ${f4(d)}\lambda\]` +
             T`\[${V}_d = ${tex(v)}\ \ (\text{Re}\{${V}_d\} = 1)\]`,
           why: `Dây chêm ${shunt ? 'song song chỉ cộng điện nạp' : 'nối tiếp chỉ cộng điện kháng'}, nên trước hết phải dịch đoạn d để điểm rơi vào vòng ${Re} = 1 (vòng đỏ${shunt ? ', chính là vòng r = 1 khi đọc giản đồ như Y' : ''}).`,
@@ -309,23 +309,21 @@ function solveSingle(p) {
           title: `Dây chêm ${open ? 'hở mạch' : 'ngắn mạch'}: triệt tiêu phần ảo`,
           tex: T`\[${V}_s = -j\,\text{Im}\{${V}_d\} = ${s < 0 ? '-' : ''}j${f4(Math.abs(s))}` + (Rs !== p.Z0 ? T`\ \Rightarrow\ ${Im}_s(R_S) = ${f4(s)}\cdot\frac{${Rs}}{${p.Z0}} = ${f4(sOwn)}` : '') + T`\]` +
             T`\[${V}_{s} = ${tanForm ? T`j\tan\beta l` : T`-j\cot\beta l`} \Rightarrow ${stubTex(sOwn, tanForm, l, 'l', shunt ? 'b_s' : 'x_s')}\]` + (el ? T`\[\text{Hoặc thay dây chêm bằng: } ${el.tex}\]` : ''),
-          why: `Trên giản đồ: xuất phát từ điểm ${V} = ${tanForm ? '0 (đầu trái)' : '∞ (đầu phải)'} quay theo vòng ngoài về phía nguồn một đoạn l tới ${D}.` + (Rs !== p.Z0 ? ' Dây chêm có trở kháng R<sub>S</sub> riêng nên chuẩn hoá lại theo R<sub>S</sub>.' : ''),
-          at: [D],
+          why: `Trên giản đồ: xuất phát từ điểm ${V} = ${tanForm ? '0 (đầu trái)' : '∞ (đầu phải)'} quay theo vòng ngoài về phía nguồn một đoạn l.` + (Rs !== p.Z0 ? ' Dây chêm có trở kháng R<sub>S</sub> riêng nên chuẩn hoá lại theo R<sub>S</sub>.' : ''),
+          at: [C],
         },
         {
           title: 'Kiểm tra phối hợp',
           tex: T`\[${V}_t = ${V}_d + ${V}_s = ${tex(v)} ${s < 0 ? '-' : '+'} j${f4(Math.abs(s))} = 1\]`,
-          why: `Điểm ${C} đi dọc vòng ${Re} = 1 về tâm ${E}.`,
-          at: [E],
+          why: `Điểm ${C} đi dọc vòng ${Re} = 1 về tâm O.`,
+          at: [C],
         },
       ],
       draw: [
         { t: 'path', pts: RF.arcPath(G0, d), color: 'sol', to: C },
         { ...pt(Gd, C, `${V}<sub>d</sub>`, v), color: 'sol' },
-        { t: 'path', pts: RF.arcPath(start, l), color: 'sol', faint: true, to: D },
-        { ...pt(Gs, D, `${V}<sub>s</sub>`, J(sOwn)), color: 'sol' },
-        { t: 'path', pts: RF.imagPath(v, s), color: 'sol', to: E },
-        { ...pt(ZERO, E, `${V}<sub>t</sub>`, new Complex(1)), color: 'sol' },
+        { t: 'path', pts: RF.arcPath(start, l), color: 'sol', faint: true, to: C },
+        { t: 'path', pts: RF.imagPath(v, s), color: 'sol', to: C },
       ],
     };
   }).sort((a, b) => a.d - b.d);
@@ -342,7 +340,7 @@ function solveDouble(p) {
   // Everything happens on admittance: flip z_L to y_L, then rotate to stub 1.
   const Gy = L.G.neg(), G1 = RF.rotate(Gy, p.d0), y1 = RF.zOf(G1), g = y1.re, gmax = 1 / (s * s);
   const forbidden = g > gmax + 1e-12, has0 = p.d0 > 0;
-  const Y1 = has0 ? 'C' : 'B', [P, Q, R] = has0 ? ['D', 'E', 'F'] : ['C', 'D', 'E'];
+  const Y1 = has0 ? 'C' : 'B', [P0, Q0] = has0 ? ['D', 'E'] : ['C', 'D'];
   const draw = [
     { t: 'circle', c: new Complex(gmax / (1 + gmax)), r: 1 / (1 + gmax), color: 'zone', fill: true },
     reCircle(g),
@@ -384,7 +382,8 @@ function solveDouble(p) {
     steps.push({ title: 'Kết luận: không phối hợp được', tex: gTex, why: 'g<sub>1</sub> > g<sub>max</sub>: y<sub>d1</sub> nằm trong vùng cấm (tô đỏ), vòng g = g<sub>1</sub> không cắt vòng g = 1 xoay. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
     return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Nằm trong vùng cấm', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
   }
-  const solutions = bps.map(bp => {
+  const solutions = bps.map((bp, i) => {
+    const P = `${P0}${i + 1}`, Q = `${Q0}${i + 1}`; // bộ 1: D1, E1 — bộ 2: D2, E2
     const y1p = new Complex(g, bp), G1p = RF.gamma(y1p), G2 = RF.rotate(G1p, p.dsp), y2 = RF.zOf(G2);
     const b1 = bp - y1.im, b2 = -y2.im, l1 = RF.stubLength(b1, open1), l2 = RF.stubLength(b2, open2);
     return {
@@ -402,10 +401,16 @@ function solveDouble(p) {
           at: [Y1, P],
         },
         {
-          title: 'Chuyển đến dây chêm 2 và tính l<sub>2</sub>',
-          tex: T`\[y_{d2} = ${tex(y2)}\qquad (\text{trên vòng } g = 1)\]\[y_{s2} = 1 - y_{d2} = jb_{s2} \Rightarrow b_{s2} = ${f4(b2)}\]\[y_{t2} = y_{d2} + y_{s2} = 1 + j0\]\[${stubTex(b2, open2, l2, 'l_2', 'b_{s2}')}\]`,
-          why: `Vẽ vòng S qua ${P} (nét đứt xám), quay theo chiều kim đồng hồ một đoạn d<sub>2</sub> (${f3(720 * p.dsp)}°) được ${Q}, nằm đúng trên vòng g = 1. Dây chêm 2 (${stubName(open2)}) triệt tiêu phần ảo, đưa về tâm ${R}: y<sub>t2</sub> = 1 + j0.`,
-          at: [Q, R],
+          title: 'Xác định y<sub>d2</sub>',
+          tex: T`\[y_{d2} = ${tex(y2)}\qquad (\text{trên vòng } g = 1)\]`,
+          why: `Vẽ vòng VSWR (S) từ tâm O qua ${P} (nét đứt xám). Giao điểm của vòng này với g = 1 là ${Q} (chỉ có 1 giao điểm do trùng với việc dời y<sub>t1</sub> đi một khoảng d<sub>2</sub> = ${f3(720 * p.dsp)}° theo chiều kim đồng hồ).`,
+          at: [P, Q],
+        },
+        {
+          title: 'Xác định y<sub>t2</sub> = y<sub>d2</sub> + y<sub>s2</sub> và tính l<sub>2</sub>',
+          tex: T`\[y_{s2} = -j\,\text{Im}\{y_{d2}\} = jb_{s2} \Rightarrow b_{s2} = ${f4(b2)}\]\[y_{t2} = y_{d2} + y_{s2} = 1 + j0\]\[${stubTex(b2, open2, l2, 'l_2', 'b_{s2}')}\]`,
+          why: `Đưa ${Q} về tâm O: dây chêm 2 (${stubName(open2)}) triệt tiêu phần ảo của y<sub>d2</sub>.`,
+          at: [Q],
         },
       ],
       draw: [
@@ -414,8 +419,7 @@ function solveDouble(p) {
         { ...pt(G1p, P, 'y<sub>t1</sub>', y1p), color: 'sol' },
         { t: 'path', pts: RF.arcPath(G1p, p.dsp), color: 'sol', to: Q },
         { ...pt(G2, Q, 'y<sub>d2</sub>', y2), color: 'sol' },
-        { t: 'path', pts: RF.imagPath(y2, b2), color: 'sol', to: R },
-        { ...pt(ZERO, R, 'y<sub>in</sub>', new Complex(1)), color: 'sol' },
+        { t: 'path', pts: RF.imagPath(y2, b2), color: 'sol', to: Q },
       ],
     };
   }).sort((a, b) => a.l1 - b.l1);
