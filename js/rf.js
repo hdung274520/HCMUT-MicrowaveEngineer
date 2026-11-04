@@ -283,7 +283,8 @@ function solveSingle(p) {
     steps.push(stepFlip(G0, L.yL, 'A', 'B', 'z_L', 'y_L'));
     draw.push(...flipTo(L.G, 'B', 'y<sub>L</sub>', L.yL));
   }
-  const solutions = [1, -1].map((k, i) => {
+  const dOf = k => mod((G0.arg() - Math.atan2(k * m * Math.sqrt(1 - m * m), m * m)) / (4 * Math.PI), 0.5);
+  const solutions = [1, -1].sort((a, b) => dOf(a) - dOf(b)).map((k, i) => {
     const C = String.fromCharCode(B0.charCodeAt(0) + 1 + i); // bộ 1 tại C, bộ 2 tại D (shunt)
     const Gt = new Complex(m * m, k * m * Math.sqrt(1 - m * m)); // on the r = 1 circle: Re Γ = |Γ|²
     const d = mod((G0.arg() - Gt.arg()) / (4 * Math.PI), 0.5);
@@ -326,7 +327,7 @@ function solveSingle(p) {
         { t: 'path', pts: RF.imagPath(v, s), color: 'sol', to: C },
       ],
     };
-  }).sort((a, b) => a.d - b.d);
+  });
   return { sols: solutions, answers: [], steps, draw, solutions };
 }
 
@@ -382,7 +383,8 @@ function solveDouble(p) {
     steps.push({ title: 'Kết luận: không phối hợp được', tex: gTex, why: 'g<sub>1</sub> > g<sub>max</sub>: y<sub>d1</sub> nằm trong vùng cấm (tô đỏ), vòng g = g<sub>1</sub> không cắt vòng g = 1 xoay. Hãy tăng d<sub>1</sub> thêm khoảng λ/8 – λ/4 để đưa điểm ra khỏi vùng cấm, hoặc đổi khoảng cách d<sub>2</sub> giữa 2 dây chêm.', at: [Y1] });
     return { forbidden, sols: [], answers: [{ k: 'Kết luận', v: 'Nằm trong vùng cấm', big: true, note: 'không phối hợp được với d<sub>1</sub> này' }], steps, draw, solutions: [] };
   }
-  const solutions = bps.map((bp, i) => {
+  const l1Of = bp => RF.stubLength(bp - y1.im, open1);
+  const solutions = bps.sort((a, b) => l1Of(a) - l1Of(b)).map((bp, i) => {
     const P = `${P0}${i + 1}`, Q = `${Q0}${i + 1}`; // bộ 1: D1, E1 — bộ 2: D2, E2
     const y1p = new Complex(g, bp), G1p = RF.gamma(y1p), G2 = RF.rotate(G1p, p.dsp), y2 = RF.zOf(G2);
     const b1 = bp - y1.im, b2 = -y2.im, l1 = RF.stubLength(b1, open1), l2 = RF.stubLength(b2, open2);
@@ -422,7 +424,7 @@ function solveDouble(p) {
         { t: 'path', pts: RF.imagPath(y2, b2), color: 'sol', to: Q },
       ],
     };
-  }).sort((a, b) => a.l1 - b.l1);
+  });
   solutions[0].tag = 'l₁ ngắn nhất';
   const row = (k, f) => `<tr><th>${k}</th>${solutions.map(x => `<td>${f(x)}</td>`).join('')}</tr>`;
   const after = [{
