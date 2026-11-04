@@ -12,7 +12,7 @@ Web app giải và vẽ từng bước các bài tập giản đồ Smith (chư�
 | Biến đổi λ/4 | Tải thuần trở, hoặc tải phức chèn tại d<sub>max</sub>/d<sub>min</sub> |
 | Mạch Γ / ┐ | Phối hợp bằng L, C (hai sơ đồ, mỗi sơ đồ hai nghiệm) |
 | Dây chêm đơn | Song song / nối tiếp, ngắn mạch / hở mạch, R<sub>S</sub> riêng, L/C thay thế |
-| Dây chêm đôi | Hai dây chêm khác loại, vùng cấm, bảng tổng hợp nghiệm |
+| Dây chêm đôi | Hai dây chêm khác loại, bảng tổng hợp nghiệm |
 
 Mỗi lời giải gồm:
 - Đáp số.
@@ -28,4 +28,4 @@ Thao tác với giản đồ:
 
 - Không cần cài đặt: mở `index.html` trong trình duyệt. Công thức hiển thị bằng MathJax nên cần mạng.
 - Kiểm tra bộ giải bằng các ví dụ trong slide: `node test/rf.test.js`.
-- Mỗi lần `git push` lên nhánh `main`, GitHub Pages tự cập nhật link sau khoảng 1 phút.
+- Mỗi lần `git push` lên nhánh `Tool`, GitHub Pages tự cập nhật link sau khoảng 1 phút.
