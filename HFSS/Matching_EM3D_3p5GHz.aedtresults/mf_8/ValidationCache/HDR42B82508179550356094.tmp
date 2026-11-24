@@ -1,0 +1,7 @@
+$begin 'ValidationCache'
+	$begin 'OneValidationResult'
+		Variation=''
+		Status=true
+		FileName='VI42B82508179550356095.tmp'
+	$end 'OneValidationResult'
+$end 'ValidationCache'

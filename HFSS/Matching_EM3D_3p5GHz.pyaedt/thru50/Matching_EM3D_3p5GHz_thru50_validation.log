@@ -1,0 +1,11 @@
+Desktop messages:
+(Modal Network), [warning]  Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:49:24 PM  Nov 24, 2026)
+(Modal Network), [warning]  Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:49:24 PM  Nov 24, 2026)
+Design validation check PASSED.
+Design validation messages:
+** End of design validation messages. **
+Excitations check:
+Analysis setup messages:
+Detected setup and sweep: 
+Setup1
+ |__ Sweep1
