@@ -263,7 +263,7 @@ Từ $t$, khoảng cách $d$ tính theo bước sóng $\lambda_g$ là:
 \begin{itemize}
   \item Với stub ngắn mạch (Short-circuited stub), $y_{stub}=-j\cot(\beta l_s)$:
   \begin{equation}
-    \frac{l_s}{\lambda_g}=\frac{1}{2\pi}\arctan\!\left(\frac{1}{b_{stub}}\right)=\frac{1}{2\pi}\arctan\!\left(-\frac{1}{b_d}\right)
+    \frac{l_s}{\lambda_g}=\frac{1}{2\pi}\arctan\!\left(-\frac{1}{b_{stub}}\right)=\frac{1}{2\pi}\arctan\!\left(\frac{1}{b_d}\right)
   \end{equation}
   \item Với stub hở mạch (Open-circuited stub), $y_{stub}=j\tan(\beta l_o)$:
   \begin{equation}
@@ -442,7 +442,7 @@ Theo công thức Hammerstad (trường hợp $W/h<2$):
 \end{equation}
 suy ra $W\approx1{,}912\times1{,}6\approx3{,}06$ mm. Kiểm tra bằng công thức $W/h>2$ ($B=\dfrac{377\pi}{2Z_0\sqrt{\varepsilon_r}}=5{,}646$) cho cùng $W/h\approx1{,}913$. Công cụ tính đường truyền của phần mềm cho $W=3{,}083$ mm (lệch khoảng $0{,}8\%$) kèm $\varepsilon_{eff}=3{,}3323$; giá trị $3{,}083$ mm được dùng cho toàn bộ thiết kế để đồng nhất với mô phỏng. Bước sóng dẫn:
 \begin{equation}
-  \lambda_g=\frac{c}{f_0\sqrt{\varepsilon_{eff}}}=\frac{3\times10^{8}}{3{,}5\times10^{9}\sqrt{3{,}3323}}\approx46{,}922\ \text{mm}
+  \lambda_g=\frac{c}{f_0\sqrt{\varepsilon_{eff}}}=\frac{2{,}9979\times10^{8}}{3{,}5\times10^{9}\sqrt{3{,}3323}}\approx46{,}922\ \text{mm}
 \end{equation}
 
 \subsection{Điều kiện phối hợp và hai bộ nghiệm}
@@ -1044,7 +1044,7 @@ Mạng LC nhạy nhất với $L$ (dịch $350$ MHz khi $\pm10\%$), ít nhạy v
   \item Mạng $\lambda/4$ kết hợp dây đệm hoàn toàn bằng vi dải, băng thông $35{,}5\%$ đủ phủ dải $3{,}3$--$3{,}7\GHz$, chịu dung sai tốt (Yield $100\%$). Cần hiệu chỉnh chiều dài sau mô phỏng ($-7{,}1\%$ $L_t$) để bù hiệu ứng vi dải.
   \item Mạng Single-Stub chỉ dùng đường dẫn vi dải, có hai bộ nghiệm đều phủ dải $3{,}3$--$3{,}7\GHz$. Nghiệm 2 là phương án tốt hơn: phối hợp sâu ($-32{,}81\dB$ tại $3{,}5\GHz$), tổn hao thấp ($0{,}211\dB$), đường dẫn ngắn ($14{,}65$ mm) và băng thông $780$ MHz ($22{,}3\%$). Băng thông hẹp hơn LC và $\lambda/4$, đồng thời nhạy với chiều dài stub.
 \end{itemize}
-Với ứng dụng 5G băng n78, mạng $\lambda/4$ là lựa chọn hiện thực bằng vi dải thuận tiện, còn LC phù hợp khi ưu tiên băng thông và kích thước. Hướng phát triển: mô phỏng EM 3D để kiểm chứng hiệu ứng ghép và bước nhảy độ rộng, và đo thực nghiệm trên PCB FR-4.
+Với ứng dụng 5G băng n78, mạng $\lambda/4$ là lựa chọn hiện thực bằng vi dải thuận tiện, còn LC phù hợp khi ưu tiên băng thông và kích thước. Hướng phát triển: mô phỏng EM 3D cho mạng Single-Stub và đo thực nghiệm trên PCB FR-4.
 
 \phansau
 \begin{thebibliography}{9}
