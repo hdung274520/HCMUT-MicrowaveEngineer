@@ -5,7 +5,5 @@
 .impeccable/hook.cache.json
 
 # Excluded local folders
-Ca/
-Phoi/
 TEMP/
 .vscode/
