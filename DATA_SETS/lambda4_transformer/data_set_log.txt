@@ -1,0 +1,3 @@
+[24960]  Error log for : EM_lambda4.DS8.dsf
+	[24960]	Read lock timed out : Lock being acquired for 'header load' {GetISimDataSetsForProject}
+	[24960]	Unable to acquire file lock for the data set

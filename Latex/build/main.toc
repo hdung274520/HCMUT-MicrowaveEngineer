@@ -1,0 +1,74 @@
+\babel@toc {vietnamese}{}\relax 
+\noindent Đề mục\hfill Trang\par 
+\contentsline {chapter}{\numberline {1}\MakeUppercase []{Giới thiệu tổng quan và cơ sở lý thuyết}}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}GIỚI THIỆU ĐỀ TÀI}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Bối cảnh ứng dụng dải tần 5G Sub-6\,GHz}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Đặt vấn đề bài toán phối hợp trở kháng}{1}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Mục tiêu và yêu cầu của đề tài}{2}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}BIỂU ĐỒ SMITH VÀ ỨNG DỤNG TRONG KỸ THUẬT SIÊU CAO TẦN}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Nguồn gốc và nguyên lý biến đổi Conformal}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Biểu đồ Smith dẫn kháng và biểu đồ hỗn hợp}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Các ứng dụng cơ bản trên Biểu đồ Smith}{4}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}CƠ SỞ LÝ THUYẾT CỦA BA PHƯƠNG PHÁP PHỐI HỢP TRỞ KHÁNG}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Phương pháp 1: Mạng linh kiện tập trung LC (L-section)}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Phương pháp 2: Mạng dây chêm đơn (Single-Stub Tuning)}{6}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Phương pháp 3: Biến áp một phần tư bước sóng ($\lambda /4$) kết hợp dây đệm}{7}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}TIÊU CHÍ ĐÁNH GIÁ VÀ PHƯƠNG PHÁP SO SÁNH}{9}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Băng thông hệ số phản xạ ngõ vào ($S_{11}\le -10\,\mathrm {dB}$)}{9}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Suy hao chèn ($S_{21}$ / Insertion Loss)}{9}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Độ nhạy sai số dung sai chế tạo}{9}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Kích thước vật lý và khả năng đóng gói}{9}{subsection.1.4.4}%
+\contentsline {chapter}{\numberline {2}\MakeUppercase []{Tính toán thiết kế ba phương pháp phối hợp trở kháng}}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}THÔNG SỐ BÀI TOÁN VÀ PHÂN TÍCH TẢI}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}PHƯƠNG PHÁP 1: MẠNG LC (L-SECTION)}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Chọn cấu hình}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Tính toán}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Nghiệm thứ hai}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Đường đi trên Biểu đồ Smith}{12}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}PHƯƠNG PHÁP 2: SINGLE-STUB}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Chọn cấu hình}{13}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Tính độ rộng đường truyền $W$}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Điều kiện phối hợp và hai bộ nghiệm}{14}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Bộ nghiệm 1}{14}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Bộ nghiệm 2}{15}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Tổng hợp và so sánh hai bộ nghiệm}{15}{subsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.3.7}Đường đi trên Biểu đồ Smith}{15}{subsection.2.3.7}%
+\contentsline {section}{\numberline {2.4}PHƯƠNG PHÁP 3: BIẾN ÁP $\lambda /4$ KẾT HỢP DÂY ĐỆM}{16}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Chọn cấu hình}{16}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Tính đoạn dây đệm $d_0$}{16}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Tính biến áp $\lambda /4$}{16}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Kích thước vi dải}{17}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Đường đi trên Biểu đồ Smith}{17}{subsection.2.4.5}%
+\contentsline {section}{\numberline {2.5}TỔNG HỢP KẾT QUẢ TÍNH TOÁN LÝ THUYẾT}{18}{section.2.5}%
+\contentsline {chapter}{\numberline {3}\MakeUppercase []{Mô phỏng và khảo sát tham số ba phương pháp}}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}PHƯƠNG PHÁP 1: MẠNG LC}{20}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Mô phỏng Schematic}{20}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Kết quả mô phỏng tham số S}{20}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Khảo sát tham số (Parametric Sweep)}{21}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}PHƯƠNG PHÁP 2: SINGLE-STUB}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Mô hình và schematic}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Kết quả mô phỏng tham số S}{24}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Suy hao (stub loss) và kích thước}{27}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Khảo sát tham số (Parametric Sweep)}{29}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}PHƯƠNG PHÁP 3: BIẾN ÁP $\lambda /4$}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Mô phỏng Schematic mạng lý tưởng}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Thông số nền và kích thước layout vi dải}{33}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Hiệu chỉnh chiều dài sau mô phỏng}{35}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Khảo sát tham số (Parametric Sweep)}{38}{subsection.3.3.4}%
+\contentsline {paragraph}{\numberline {i}Chiều dài đoạn transformer $L_t$}{38}{paragraph.3.3.4.0.1}%
+\contentsline {paragraph}{\numberline {ii}Chiều dài dây đệm $L_{50}$}{39}{paragraph.3.3.4.0.2}%
+\contentsline {paragraph}{\numberline {iii}Chiều rộng đoạn transformer $W_t$}{40}{paragraph.3.3.4.0.3}%
+\contentsline {paragraph}{\numberline {iv}Hằng số điện môi $\varepsilon _r$}{41}{paragraph.3.3.4.0.4}%
+\contentsline {paragraph}{\numberline {v}Độ dày nền $h$}{42}{paragraph.3.3.4.0.5}%
+\contentsline {subsection}{\numberline {3.3.5}Nhận xét độ nhạy và phân tích Monte Carlo (Yield)}{43}{subsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {a}Độ nhạy của tần số đáy $S_{11}$}{43}{subsubsection.3.3.5.1}%
+\contentsline {subsubsection}{\numberline {b}Phân tích Monte Carlo (Yield Analysis)}{44}{subsubsection.3.3.5.2}%
+\contentsline {subsection}{\numberline {3.3.6}Kết quả mô phỏng EM 3D}{45}{subsection.3.3.6}%
+\contentsline {chapter}{\numberline {4}\MakeUppercase []{Tổng hợp, so sánh và kết luận}}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}BẢNG SO SÁNH LÝ THUYẾT VÀ MÔ PHỎNG}{47}{section.4.1}%
+\contentsline {section}{\numberline {4.2}ĐÁNH GIÁ ƯU NHƯỢC ĐIỂM THEO TIÊU CHÍ}{49}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Băng thông}{49}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Kích thước}{50}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Suy hao chèn}{50}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Độ nhạy sai số chế tạo}{50}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}KẾT LUẬN}{50}{section.4.3}%

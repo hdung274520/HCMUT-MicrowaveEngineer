@@ -1,0 +1,41 @@
+\babel@toc {vietnamese}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Biểu đồ Smith}}{4}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Sơ đồ mạng phối hợp L-section: phần tử song song ở ngõ vào, phần tử nối tiếp ghép với tải}}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Sơ đồ mạng Single-Stub: stub hở mạch mắc song song, cách tải một đoạn $d$, chiều dài stub $l$}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Sơ đồ mạng biến áp $\lambda /4$ kết hợp dây đệm: $Z_{in}=Z_t^2/R_{in}'$ với $Z_t=\sqrt {Z_0R_{in}'}$}}{8}{figure.caption.9}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Kết quả phối hợp trở kháng mạng LC trên phần mềm Smith V4.1 tại $3{,}5\,\mathrm {GHz}$}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Đường đi phối hợp bằng Single-Stub trên Smith V4.1}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Quỹ đạo $DP_1(30-j40)\to TP_2(16{,}667+j0)\to TP_3(50+j0)$ trên công cụ Smith Chart Solver (A $=DP_1$, B $=TP_2$, C $=TP_3$)}}{18}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sơ đồ nguyên lý mạng LC trên AWR}}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Đáp ứng $S_{11}$, $S_{21}$ của mạng LC}}{21}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Parametric Sweep của mạng LC (thay đổi $L$ và $C$)}}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sơ đồ nguyên lý mạng Single-Stub, nghiệm 1 ($d_1=0{,}04167\lambda _g$)}}{24}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sơ đồ nguyên lý mạng Single-Stub, nghiệm 2 ($d_2=0{,}20833\lambda _g$)}}{24}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 1}}{25}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 2}}{26}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Biểu đồ Smith của nghiệm 1 sau tinh chỉnh}}{26}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Biểu đồ Smith của nghiệm 2 sau tinh chỉnh}}{27}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Mạch và đồ thị suy hao của Single-Stub, nghiệm 1}}{28}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Mạch và đồ thị suy hao của Single-Stub, nghiệm 2}}{28}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces $S_{11}$ khi chiều dài stub $l$ thay đổi $\pm 5\%$, $\pm 10\%$ (nghiệm 1)}}{30}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces $S_{11}$ khi chiều rộng $W$ thay đổi $\pm 5\%$, $\pm 10\%$ (nghiệm 1)}}{31}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces $S_{11}$ khi chiều dài stub $l$ thay đổi $\pm 5\%$, $\pm 10\%$ (nghiệm 2)}}{31}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces $S_{11}$ khi chiều rộng $W$ thay đổi $\pm 5\%$, $\pm 10\%$ (nghiệm 2)}}{32}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Sơ đồ nguyên lý mạng biến áp $\lambda /4$ lý tưởng trên AWR}}{33}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces $S_{11}$, $S_{21}$ của mạng biến áp $\lambda /4$ lý tưởng (đáy $-126{,}6$ dB tại $3{,}5\,\mathrm {GHz}$; $-10\,\mathrm {dB}$ tại $2{,}884$ và $4{,}116\,\mathrm {GHz}$)}}{33}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Layout vi dải của mạng phối hợp trên nền FR-4 ($\varepsilon _r=4{,}4$; $h=1{,}6$ mm)}}{35}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Sơ đồ nguyên lý mạng vi dải (MLIN, MSTEP, MSUB) với kích thước lý thuyết $L_t=11{,}323$ mm}}{36}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Cửa sổ Tuner của AWR: tham số $L_{t0}$ được tinh chỉnh về $10{,}52$ mm}}{36}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces $S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip trước tune}}{37}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces $S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip sau tune}}{37}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces $S_{11}$ khi $L_t$ thay đổi $\pm 5\%$, $\pm 10\%$}}{39}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces $S_{11}$ khi $L_{50}$ thay đổi $\pm 5\%$, $\pm 10\%$}}{40}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces $S_{11}$ khi $W_t$ thay đổi $\pm 2{,}5\%$, $\pm 5\%$}}{41}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces $S_{11}$ khi $\varepsilon _r$ thay đổi từ $4{,}2$ đến $4{,}6$}}{42}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces $S_{11}$ khi $h$ thay đổi $\pm 2{,}5\%$, $\pm 5\%$}}{43}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Kết quả Yield (Monte Carlo, 300 mẫu): trục tung là tỉ lệ mẫu đạt tiêu chí (\%), marker m1 cho Yield $=100\%$}}{45}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces $S_{11}$ của mạng $\lambda /4$: microstrip và mô phỏng EM (AXIEM)}}{46}{figure.caption.63}%
+\addvspace {10\p@ }

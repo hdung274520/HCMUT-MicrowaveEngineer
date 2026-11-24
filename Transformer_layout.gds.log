@@ -1,0 +1,51 @@
+$AWR Design Environment
+$Version 19.08 19512 Rev1 (56c4ac6fb3919ab1ecbfc9441ef7b81dcd197d2a)
+$Export time : Wed Nov 18 22:30:10 2026
+$Export Format: GDSII
+$Export File Name: C:/Users/hdung/OneDrive/Documents/AWR_Projects/Transformer_layout.gds
+
+
+
+Statistics Of Layers
+
+Drawing Layer    File Layer    Layer DataType Rects Polygons  Paths Ellipses Texts Pins Drillholes
+--------------------------------------------------------------------------------------------------
+Annotation       144            144        0     0         0     0        0     0    0         0
+Thick Metal      12              12        0     0         3     0        0     0    0         0
+
+
+Summary Of Objects
+------------------
+         0 Rects     
+         3 Polygons  
+         0 Paths     
+         0 Texts     
+         0 Ellipses  
+         0 Instances 
+         0 Arrays    
+         0 Pins      
+         0 Drillholes
+
+
+Export Options
+--------------
+Cell library name: Microstrip
+Database unit per GDSII unit(nm): 1000
+Database unit size (nm):: 10
+Draw path as polygon: 0
+Export pcell instances as cells: 0
+Export subcircuits as cells: 1
+Flatten cell hierarchy: 0
+Limit cell names to 32 characters: 0
+Limit number of vertices per polygon to: 8191
+Merge polygons on the +/- layers: 1
+Replace illegal characters in cell names: 0
+Skip faces and draw pins as polygons: 1
+Top cell name: Microstrip
+Union polygons on the same layer: 0
+Write Cell using cached geometry: 0
+Write out pcell parameter maps: 0
+
+
+*** There were 0 warning and 0 error messages ***
+
