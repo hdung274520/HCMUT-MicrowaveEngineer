@@ -40,7 +40,6 @@ import sys
 
 # ======================================================================= thong so chung (mm)
 ER, TAND, H, T_CU = 4.4, 0.02, 1.6, 0.035
-SIGMA_CU = 5.8e7                       # S/m
 THICK_METAL = True                     # True: dong day 0.035 mm (co ton hao dan); False: tam PEC (nhanh)
 F0, F_START, F_STOP, N_PTS = 3.5, 2.0, 5.0, 301      # GHz
 Z0 = 50.0

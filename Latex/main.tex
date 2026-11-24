@@ -142,7 +142,7 @@ Khi phân tích các phần tử mắc song song (shunt), việc dùng trở kh�
 
 Một phép quay góc $180^\circ$ (tương ứng đoạn dây $\lambda/4$) trên Biểu đồ Smith chuyển điểm trở kháng $z$ thành điểm dẫn nạp $y$ tương ứng. Biểu đồ Smith hỗn hợp (ZY-Smith Chart) tích hợp đồng thời cả họ đường tròn $(r,x)$ và $(g,b)$, giúp kỹ sư dễ dàng chuyển đổi qua lại giữa các phần tử nối tiếp và song song mà không cần tính toán đại số phức.
 
-\hinhcho[0.6]{smith_chart.png}{Biểu đồ Smith}
+\hinhcho[0.6]{01_smith_chart.png}{Biểu đồ Smith}
 
 \subsection{Các ứng dụng cơ bản trên Biểu đồ Smith}
 Trong lý thuyết siêu cao tần và thực hành thiết kế, đồ thị Smith cung cấp các chức năng trực quan chính:
@@ -427,7 +427,7 @@ Chọn dấu âm của căn thức cho $X=-24{,}495-X_L=+15{,}505\,\Omega$ và $
 \end{enumerate}
 Hệ số phẩm chất của mạng $Q=\sqrt{\Zo/R_L-1}=\sqrt{2/3}=0{,}816$ rất thấp, báo hiệu băng thông tương đối rộng.
 
-\hinhcho[0.8]{smith_LC.png}{Kết quả phối hợp trở kháng mạng LC trên phần mềm Smith V4.1 tại $3{,}5\GHz$}
+\hinhcho[0.8]{02_smith_LC.png}{Kết quả phối hợp trở kháng mạng LC trên phần mềm Smith V4.1 tại $3{,}5\GHz$}
 
 \section{PHƯƠNG PHÁP 2: SINGLE-STUB}
 
@@ -506,7 +506,7 @@ Hai bộ nghiệm dùng chung $W=3{,}083$ mm, chỉ khác $d$ và $l$. Tổng ch
   \item Thêm stub song song có $\Delta b=\mp1{,}1547$: di chuyển trên đường tròn $g=1$ về tâm ($y=1$).
 \end{enumerate}
 
-\hinhcho[0.7]{smith_stub.png}{Đường đi phối hợp bằng Single-Stub trên Smith V4.1}
+\hinhcho[0.7]{03_smith_stub.png}{Đường đi phối hợp bằng Single-Stub trên Smith V4.1}
 
 \section{PHƯƠNG PHÁP 3: BIẾN ÁP $\lambda/4$ KẾT HỢP DÂY ĐỆM}
 
@@ -563,7 +563,7 @@ Tổng chiều dài hai đoạn là $d_0+L_t=17{,}188$ mm.
   \item Biến áp $\lambda/4$ có $Z_t=28{,}868\,\Omega$ đưa $TP_2$ về $TP_3$: $50+j0\,\Omega$ (tâm biểu đồ).
 \end{enumerate}
 
-\hinhcho[0.8]{smith_trans.png}{Quỹ đạo $DP_1(30-j40)\to TP_2(16{,}667+j0)\to TP_3(50+j0)$ trên công cụ Smith Chart Solver (A $=DP_1$, B $=TP_2$, C $=TP_3$)}
+\hinhcho[0.8]{04_smith_trans.png}{Quỹ đạo $DP_1(30-j40)\to TP_2(16{,}667+j0)\to TP_3(50+j0)$ trên công cụ Smith Chart Solver (A $=DP_1$, B $=TP_2$, C $=TP_3$)}
 
 \section{TỔNG HỢP KẾT QUẢ TÍNH TOÁN LÝ THUYẾT}
 \begin{table}[H]
@@ -590,7 +590,7 @@ Chương này trình bày kết quả mô phỏng trên Cadence AWR Microwave Of
 \subsection{Mô phỏng Schematic}
 Sơ đồ nguyên lý theo đúng nghiệm ở mục~2.2: từ cổng vào Port~1 ($50\,\Omega$), tụ điện $C_p=0{,}743$ pF mắc song song xuống đất (GND), tiếp theo là cuộn cảm $L_s=2{,}933$ nH mắc nối tiếp, rồi đến tải $\ZL=30-j40\,\Omega$. Tải được mô hình hóa bằng điện trở $R=30\,\Omega$ nối tiếp tụ $C_L=1{,}137$ pF tại $3{,}5\GHz$. Các phần tử là phần tử tập trung lý tưởng (không tổn hao, không ký sinh).
 
-\hinhcho{schematic_LC.png}{Sơ đồ nguyên lý mạng LC trên AWR}
+\hinhcho{05_schematic_LC.png}{Sơ đồ nguyên lý mạng LC trên AWR}
 
 \subsection{Kết quả mô phỏng tham số S}
 \begin{itemize}
@@ -600,7 +600,7 @@ Sơ đồ nguyên lý theo đúng nghiệm ở mục~2.2: từ cổng vào Port~
   \item Suy hao chèn $S_{21}$ tại $3{,}5\GHz$: $0{,}00\dB$ (mạch lý thuyết không tổn hao).
 \end{itemize}
 
-\hinhcho{S11_S21_LC.png}{Đáp ứng $S_{11}$, $S_{21}$ của mạng LC}
+\hinhcho{06_S11_S21_LC.png}{Đáp ứng $S_{11}$, $S_{21}$ của mạng LC}
 
 \subsection{Khảo sát tham số (Parametric Sweep)}
 Sai số được định nghĩa bằng $(k-1)\times100\%$ với hệ số $k$ cho ở Bảng~\ref{tab:k}. Điều kiện chung: $L_0=2{,}933\ \mathrm{nH}$, $C_0=0{,}743\ \mathrm{pF}$; mỗi lần chỉ thay đổi một phần tử.
@@ -647,7 +647,7 @@ $+10\%$ & 0,8173 & $-28{,}00$ & 3,470 & $-30$ & 2,187 & 4,353 & 2166\\ \hline
 \end{tabular}}
 \end{table}
 
-\hinhcho{sweep_LC.png}{Parametric Sweep của mạng LC (thay đổi $L$ và $C$)}
+\hinhcho{07_sweep_LC.png}{Parametric Sweep của mạng LC (thay đổi $L$ và $C$)}
 
 \textbf{Nhận xét.}
 \begin{itemize}
@@ -676,8 +676,8 @@ Chiều rộng đường truyền/stub $W$ (mm) & 3,083 & 3,034 & $-1{,}6\%$ \\ 
 \end{tabular}}
 \end{table}
 
-\hinhcho{schematic_stub1.png}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 1 ($d_1=0{,}04167\lambda_g$)}
-\hinhcho{schematic_stub2.png}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 2 ($d_2=0{,}20833\lambda_g$)}
+\hinhcho{08_schematic_stub1.pdf}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 1 ($d_1=0{,}04167\lambda_g$)}
+\hinhcho{09_schematic_stub2.pdf}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 2 ($d_2=0{,}20833\lambda_g$)}
 
 \subsection{Kết quả mô phỏng tham số S}
 Đáp ứng $S_{11}$, $S_{21}$ và đường đi trên Biểu đồ Smith sau tinh chỉnh của hai nghiệm:
@@ -687,16 +687,16 @@ Chiều rộng đường truyền/stub $W$ (mm) & 3,083 & 3,034 & $-1{,}6\%$ \\ 
 \end{itemize}
 Các số liệu trên lấy từ mô hình có tổn hao ($\tan\delta=0{,}02$). Cả hai nghiệm đều phủ trọn dải n78 ($3{,}3$--$3{,}7\GHz$) với $S_{11}$ tốt hơn $-10\dB$, trong đó nghiệm 2 phối hợp sâu hơn hẳn tại $3{,}5\GHz$ (khoảng $17$ dB) và băng thông nhỉnh hơn. Ở nghiệm 1, đáy $S_{11}$ chỉ đạt $-15{,}4\dB$ và lệch nhẹ lên $3520$ MHz.
 
-\hinhcho{S11_S21_stub1.png}{Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 1}
-\hinhcho{S11_S21_stub2.png}{Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 2}
-\hinhcho[0.7]{smith_stub_sau_tune1.png}{Biểu đồ Smith của nghiệm 1 sau tinh chỉnh}
-\hinhcho[0.7]{smith_stub_sau_tune2.png}{Biểu đồ Smith của nghiệm 2 sau tinh chỉnh}
+\hinhcho{10_S11_S21_stub1.pdf}{Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 1}
+\hinhcho{11_S11_S21_stub2.pdf}{Đáp ứng $S_{11}$, $S_{21}$ của Single-Stub, nghiệm 2}
+\hinhcho[0.7]{12_smith_stub_sau_tune1.pdf}{Biểu đồ Smith của nghiệm 1 sau tinh chỉnh}
+\hinhcho[0.7]{13_smith_stub_sau_tune2.pdf}{Biểu đồ Smith của nghiệm 2 sau tinh chỉnh}
 
 \subsection{Suy hao (stub loss) và kích thước}
 Mô hình có tổn hao ($\tan\delta=0{,}02$) được dùng để đánh giá suy hao chèn của từng nghiệm. Tải được mô hình bằng cổng $30\,\Omega$ nối tiếp tụ $1{,}137$ pF (điện kháng $-j40\,\Omega$ tại $3{,}5\GHz$). Tại $3{,}5\GHz$, suy hao chèn $|S_{21}|$ là $0{,}321\dB$ (nghiệm 1) và $0{,}211\dB$ (nghiệm 2). Nghiệm 2 ít tổn hao hơn do đường dẫn ngắn hơn. Tổng chiều dài phần phối hợp ($d+l$) là $1{,}5+15{,}75=17{,}25$ mm (nghiệm 1) và $8{,}65+6{,}00=14{,}65$ mm (nghiệm 2); với $W=3{,}034$ mm, diện tích đồng xấp xỉ $52{,}3\ \mathrm{mm}^2$ và $44{,}4\ \mathrm{mm}^2$ (chưa tính vùng nối chữ T).
 
-\hinhcho{loss_stub1.png}{Mạch và đồ thị suy hao của Single-Stub, nghiệm 1}
-\hinhcho{loss_stub2.png}{Mạch và đồ thị suy hao của Single-Stub, nghiệm 2}
+\hinhcho{14_loss_stub1.pdf}{Mạch và đồ thị suy hao của Single-Stub, nghiệm 1}
+\hinhcho{15_loss_stub2.pdf}{Mạch và đồ thị suy hao của Single-Stub, nghiệm 2}
 
 \subsection{Khảo sát tham số (Parametric Sweep)}
 Mỗi lần chỉ thay đổi chiều dài $l$ hoặc chiều rộng $W$ của stub quanh giá trị đã tinh chỉnh. Các giá trị khảo sát cho ở Bảng~\ref{tab:stubsweep}.
@@ -739,18 +739,18 @@ Nhận xét độ nhạy:
   \item Nhìn chung, nghiệm 2 có stub ngắn hơn, tổn hao thấp hơn, phối hợp sâu hơn và ít dịch tần hơn nghiệm 1 khi sai số $l$ như nhau, nên là phương án ưu tiên.
 \end{itemize}
 
-\hinhcho{Tol_stub1_L.png}{$S_{11}$ khi chiều dài stub $l$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 1)}
-\hinhcho{Tol_stub1_W.png}{$S_{11}$ khi chiều rộng $W$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 1)}
-\hinhcho{Tol_stub2_L.png}{$S_{11}$ khi chiều dài stub $l$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 2)}
-\hinhcho{Tol_stub2_W.png}{$S_{11}$ khi chiều rộng $W$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 2)}
+\hinhcho{16_Tol_stub1_L.pdf}{$S_{11}$ khi chiều dài stub $l$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 1)}
+\hinhcho{17_Tol_stub1_W.pdf}{$S_{11}$ khi chiều rộng $W$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 1)}
+\hinhcho{18_Tol_stub2_L.pdf}{$S_{11}$ khi chiều dài stub $l$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 2)}
+\hinhcho{19_Tol_stub2_W.pdf}{$S_{11}$ khi chiều rộng $W$ thay đổi $\pm5\%$, $\pm10\%$ (nghiệm 2)}
 
 \section{PHƯƠNG PHÁP 3: BIẾN ÁP $\lambda/4$}
 
 \subsection{Mô phỏng Schematic mạng lý tưởng}
 Mạng lý tưởng gồm đoạn dây đệm $50\,\Omega$ dài $\lambda_g/8$ và đoạn biến áp $Z_t=28{,}8675\,\Omega$ dài $\lambda_g/4$ ở dạng đường truyền lý tưởng, nối với tải $30-j40\,\Omega$. Kết quả (xem Bảng~\ref{tab:tune}, cột "Mạng lý tưởng"): đáy $S_{11}$ nằm đúng $3{,}50\GHz$ với $-126{,}6\dB$ (phối hợp hoàn hảo, giá trị phụ thuộc độ chính xác số), băng thông $-10\dB$ từ $2{,}884\GHz$ đến $4{,}116\GHz$, $\mathrm{BW}=1232\ \mathrm{MHz}$ ($\approx35{,}2\%$ so với $f_0$), $S_{21}=0\dB$ do không tổn hao.
 
-\hinhcho{schematic_trans.png}{Sơ đồ nguyên lý mạng biến áp $\lambda/4$ lý tưởng trên AWR}
-\hinhcho{S11S21_ideal.png}{$S_{11}$, $S_{21}$ của mạng biến áp $\lambda/4$ lý tưởng (đáy $-126{,}6$ dB tại $3{,}5\GHz$; $-10\dB$ tại $2{,}884$ và $4{,}116\GHz$)}
+\hinhcho{20_schematic_trans.pdf}{Sơ đồ nguyên lý mạng biến áp $\lambda/4$ lý tưởng trên AWR}
+\hinhcho{21_S11S21_ideal.pdf}{$S_{11}$, $S_{21}$ của mạng biến áp $\lambda/4$ lý tưởng (đáy $-126{,}6$ dB tại $3{,}5\GHz$; $-10\dB$ tại $2{,}884$ và $4{,}116\GHz$)}
 
 
 \subsection{Thông số nền và kích thước layout vi dải}
@@ -768,7 +768,7 @@ Hằng số điện môi $\varepsilon_r$ & 4,4 \\ \hline
 Độ dày nền $h$ & 1,6 mm \\ \hline
 Độ dày đồng $t$ & 0,035 mm \\ \hline
 Tang tổn hao $\tan\delta$ & 0,02 \\ \hline
-Điện trở suất đồng (Rho, chuẩn hóa) & 1 \\ \hline
+Điện trở suất đồng (Rho, chuẩn hóa theo vàng) & 0,689 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -799,7 +799,7 @@ Diện tích đồng của phần phối hợp & $\approx91{,}2\ \mathrm{mm}^2$ 
 \end{tabular}
 \end{table}
 
-\hinhcho{layout_vidai.png}{Layout vi dải của mạng phối hợp trên nền FR-4 ($\varepsilon_r=4{,}4$; $h=1{,}6$ mm)}
+\hinhcho{22_layout_vidai.pdf}{Layout vi dải của mạng phối hợp trên nền FR-4 ($\varepsilon_r=4{,}4$; $h=1{,}6$ mm)}
 
 Trong layout, ba đoạn được nối liền theo hàng ngang bằng chức năng Snap Together của AWR. Chiều rộng đoạn transformer đo trên phần mềm bằng ruler cho kết quả $6{,}947$ mm, khớp với giá trị thiết kế.
 
@@ -813,17 +813,17 @@ Với kích thước lý thuyết ($L_t=11{,}323$ mm), đáy $S_{11}$ của mạ
 \hline
 \textbf{Chỉ tiêu} & \textbf{Mạng lý tưởng} & \textbf{Microstrip trước tune ($L_t=11{,}323$)} & \textbf{Microstrip sau tune ($L_t=10{,}52$)} \\ \hline
 Tần số đáy $S_{11}$ (GHz) & 3,50 & 3,39 & 3,50 \\ \hline
-$S_{11}$ tại đáy (dB) & $-126{,}6$ & $-39{,}77$ & $-39{,}64$ \\ \hline
+$S_{11}$ tại đáy (dB) & $-126{,}6$ & $-39{,}96$ & $-39{,}81$ \\ \hline
 Cận dưới $-10\dB$ (GHz) & 2,884 & 2,793 & 2,881 \\ \hline
 Cận trên $-10\dB$ (GHz) & 4,116 & 3,997 & 4,123 \\ \hline
 Băng thông $-10\dB$ (MHz) & 1232 & 1204 & 1242 \\ \hline
 \end{tabular}}
 \end{table}
 
-\hinhcho{schematic_micro_truoc.png}{Sơ đồ nguyên lý mạng vi dải (MLIN, MSTEP, MSUB) với kích thước lý thuyết $L_t=11{,}323$ mm}
-\hinhcho[0.95]{tuner.png}{Cửa sổ Tuner của AWR: tham số $L_{t0}$ được tinh chỉnh về $10{,}52$ mm}
-\hinhcho{S11S21_truoc_tune.png}{$S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip trước tune}
-\hinhcho{S11S21_sau_tune.png}{$S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip sau tune}
+\hinhcho{23_schematic_micro_truoc.pdf}{Sơ đồ nguyên lý mạng vi dải (MLIN, MSTEP, MSUB) với kích thước lý thuyết $L_t=11{,}323$ mm}
+\hinhcho[0.95]{24_tuner.png}{Cửa sổ Tuner của AWR: tham số $L_{t0}$ được tinh chỉnh về $10{,}52$ mm}
+\hinhcho{25_S11S21_truoc_tune.pdf}{$S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip trước tune}
+\hinhcho{26_S11S21_sau_tune.pdf}{$S_{11}$, $S_{21}$ của mạng lý tưởng và microstrip sau tune}
 
 Độ lệch trước hiệu chỉnh đến từ ba nguyên nhân: (i) tán sắc của FR-4 làm $\varepsilon_{eff}$ tăng theo tần số so với mô hình quasi-static; (ii) điện kháng ký sinh tại các bước nhảy độ rộng (MSTEP) làm tăng chiều dài điện hiệu dụng; (iii) tổn hao $\tan\delta=0{,}02$ làm đáy nông hơn mạng lý tưởng. Sau hiệu chỉnh, băng thông $-10\dB$ của microstrip ($1242\ \mathrm{MHz}$, $\approx35{,}5\%$ so với $f_0$) gần như trùng với mạng lý tưởng ($1232\ \mathrm{MHz}$).
 
@@ -845,12 +845,12 @@ Mỗi lần khảo sát chỉ thay đổi một tham số quanh giá trị đã 
 \textbf{Sai số} & $L_t$ (mm) & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$ (GHz) & $f_H$ (GHz) & BW (MHz)\\ \hline
 $-10\%$ & 9,468  & $-21{,}73$ & 3,650 & $+150$ & 3,005 & 4,301 & 1297\\ \hline
 $-5\%$  & 9,994  & $-27{,}68$ & 3,570 & $+70$  & 2,942 & 4,210 & 1268\\ \hline
-$0\%$   & 10,520 & $-39{,}64$ & 3,500 & 0      & 2,881 & 4,123 & 1242\\ \hline
+$0\%$   & 10,520 & $-39{,}81$ & 3,500 & 0      & 2,881 & 4,123 & 1242\\ \hline
 $+5\%$  & 11,050 & $-27{,}04$ & 3,420 & $-80$  & 2,822 & 4,040 & 1217\\ \hline
 $+10\%$ & 11,570 & $-21{,}42$ & 3,350 & $-150$ & 2,766 & 3,960 & 1194\\ \hline
 \end{tabular}}
 \end{table}
-\hinhcho{Tol_Lt.png}{$S_{11}$ khi $L_t$ thay đổi $\pm5\%$, $\pm10\%$}
+\hinhcho{27_Tol_Lt.pdf}{$S_{11}$ khi $L_t$ thay đổi $\pm5\%$, $\pm10\%$}
 
 \paragraph{Chiều dài dây đệm $L_{50}$}
 \begin{table}[H]
@@ -861,12 +861,12 @@ $+10\%$ & 11,570 & $-21{,}42$ & 3,350 & $-150$ & 2,766 & 3,960 & 1194\\ \hline
 \textbf{Sai số} & $L_{50}$ (mm) & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$ (GHz) & $f_H$ (GHz) & BW (MHz)\\ \hline
 $-10\%$ & 5,279 & $-20{,}01$ & 3,690 & $+190$ & 3,045 & 4,361 & 1316\\ \hline
 $-5\%$  & 5,572 & $-26{,}00$ & 3,590 & $+90$  & 2,961 & 4,238 & 1278\\ \hline
-$0\%$   & 5,865 & $-39{,}64$ & 3,500 & 0      & 2,881 & 4,123 & 1242\\ \hline
+$0\%$   & 5,865 & $-39{,}81$ & 3,500 & 0      & 2,881 & 4,123 & 1242\\ \hline
 $+5\%$  & 6,158 & $-25{,}48$ & 3,410 & $-90$  & 2,805 & 4,014 & 1209\\ \hline
 $+10\%$ & 6,452 & $-19{,}76$ & 3,320 & $-180$ & 2,733 & 3,911 & 1178\\ \hline
 \end{tabular}}
 \end{table}
-\hinhcho{Tol_L50.png}{$S_{11}$ khi $L_{50}$ thay đổi $\pm5\%$, $\pm10\%$}
+\hinhcho{28_Tol_L50.pdf}{$S_{11}$ khi $L_{50}$ thay đổi $\pm5\%$, $\pm10\%$}
 
 \paragraph{Chiều rộng đoạn transformer $W_t$}
 \begin{table}[H]
@@ -877,12 +877,12 @@ $+10\%$ & 6,452 & $-19{,}76$ & 3,320 & $-180$ & 2,733 & 3,911 & 1178\\ \hline
 \textbf{Sai số} & $W_t$ (mm) & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$ (GHz) & $f_H$ (GHz) & BW (MHz)\\ \hline
 $-5\%$   & 6,600 & $-31{,}49$ & 3,510 & $+10$ & 2,871 & 4,159 & 1288\\ \hline
 $-2{,}5\%$ & 6,773 & $-41{,}99$ & 3,500 & 0     & 2,875 & 4,142 & 1266\\ \hline
-$0\%$    & 6,947 & $-39{,}64$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
+$0\%$    & 6,947 & $-39{,}81$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
 $+2{,}5\%$ & 7,121 & $-30{,}92$ & 3,490 & $-10$ & 2,888 & 4,103 & 1216\\ \hline
 $+5\%$   & 7,294 & $-26{,}71$ & 3,490 & $-10$ & 2,895 & 4,083 & 1187\\ \hline
 \end{tabular}}
 \end{table}
-\hinhcho{Tol_Wt.png}{$S_{11}$ khi $W_t$ thay đổi $\pm2{,}5\%$, $\pm5\%$}
+\hinhcho{29_Tol_Wt.pdf}{$S_{11}$ khi $W_t$ thay đổi $\pm2{,}5\%$, $\pm5\%$}
 
 \paragraph{Hằng số điện môi $\varepsilon_r$}
 \begin{table}[H]
@@ -893,12 +893,12 @@ $+5\%$   & 7,294 & $-26{,}71$ & 3,490 & $-10$ & 2,895 & 4,083 & 1187\\ \hline
 $\varepsilon_r$ & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$ (GHz) & $f_H$ (GHz) & BW (MHz)\\ \hline
 4,2 & $-29{,}53$ & 3,560 & $+60$ & 2,921 & 4,199 & 1277\\ \hline
 4,3 & $-35{,}01$ & 3,530 & $+30$ & 2,901 & 4,160 & 1260\\ \hline
-4,4 & $-39{,}64$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
+4,4 & $-39{,}81$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
 4,5 & $-33{,}16$ & 3,470 & $-30$ & 2,862 & 4,087 & 1225\\ \hline
 4,6 & $-28{,}45$ & 3,440 & $-60$ & 2,843 & 4,051 & 1208\\ \hline
 \end{tabular}}
 \end{table}
-\hinhcho{Tol_Er.png}{$S_{11}$ khi $\varepsilon_r$ thay đổi từ $4{,}2$ đến $4{,}6$}
+\hinhcho{30_Tol_Er.pdf}{$S_{11}$ khi $\varepsilon_r$ thay đổi từ $4{,}2$ đến $4{,}6$}
 
 \paragraph{Độ dày nền $h$}
 \begin{table}[H]
@@ -909,12 +909,12 @@ $\varepsilon_r$ & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$
 \textbf{Sai số} & $h$ (mm) & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$ (GHz) & $f_H$ (GHz) & BW (MHz)\\ \hline
 $-5\%$   & 1,52 & $-33{,}29$ & 3,510 & $+10$ & 2,914 & 4,134 & 1220\\ \hline
 $-2{,}5\%$ & 1,56 & $-36{,}13$ & 3,500 & 0     & 2,897 & 4,128 & 1232\\ \hline
-$0\%$    & 1,60 & $-39{,}64$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
+$0\%$    & 1,60 & $-39{,}81$ & 3,500 & 0     & 2,881 & 4,123 & 1242\\ \hline
 $+2{,}5\%$ & 1,64 & $-42{,}72$ & 3,490 & $-10$ & 2,866 & 4,118 & 1252\\ \hline
 $+5\%$   & 1,68 & $-41{,}66$ & 3,480 & $-20$ & 2,852 & 4,112 & 1260\\ \hline
 \end{tabular}}
 \end{table}
-\hinhcho{Tol_H.png}{$S_{11}$ khi $h$ thay đổi $\pm2{,}5\%$, $\pm5\%$}
+\hinhcho{31_Tol_H.pdf}{$S_{11}$ khi $h$ thay đổi $\pm2{,}5\%$, $\pm5\%$}
 
 \subsection{Nhận xét độ nhạy và phân tích Monte Carlo (Yield)}
 
@@ -936,7 +936,7 @@ $W_t$ & $\pm5\%$ & $+10/-10$ MHz & 2 MHz/1\% & $-26{,}71$ & 1187\\ \hline
 \begin{itemize}
   \item \textbf{Chiều dài quyết định tần số.} $L_{50}$ và $L_t$ nhạy nhất: sai số chiều dài tăng thì đáy $S_{11}$ dịch xuống tần số thấp (đúng với quan hệ $\lambda/4$ tỉ lệ nghịch với $f$). Với $\pm10\%$ $L_{50}$, đáy lệch tới $180$--$190\ \mathrm{MHz}$ ($\approx5\%$ so với $f_0$).
   \item \textbf{Hằng số điện môi.} $\varepsilon_r$ tác động tương tự chiều dài do $\lambda_g$ tỉ lệ $1/\sqrt{\varepsilon_{eff}}$: $\varepsilon_r$ tăng thì đáy dịch xuống. FR-4 thực tế có dung sai $\varepsilon_r$ lớn nên đây là yếu tố cần lưu ý khi chế tạo.
-  \item \textbf{Độ rộng và độ dày nền.} $W_t$ và $h$ ít ảnh hưởng tới tần số ($\le20\ \mathrm{MHz}$) nhưng làm thay đổi $Z_t$ nên độ sâu đáy $S_{11}$ thay đổi rõ: $W_t$ tăng $5\%$ đưa $S_{11}$ tại $3{,}5\GHz$ từ $-39{,}64\dB$ về $-26{,}71\dB$.
+  \item \textbf{Độ rộng và độ dày nền.} $W_t$ và $h$ ít ảnh hưởng tới tần số ($\le20\ \mathrm{MHz}$) nhưng làm thay đổi $Z_t$ nên độ sâu đáy $S_{11}$ thay đổi rõ: $W_t$ tăng $5\%$ đưa $S_{11}$ tại $3{,}5\GHz$ từ $-39{,}81\dB$ về $-26{,}71\dB$.
   \item \textbf{Băng thông ít thay đổi.} Trong toàn bộ các kịch bản, $\mathrm{BW}_{-10\dB}$ nằm trong khoảng $1178$--$1316\ \mathrm{MHz}$, và dải $3{,}3$--$3{,}7\GHz$ luôn nằm trong băng thông ($f_L$ lớn nhất là $3{,}045\GHz$, $f_H$ nhỏ nhất là $3{,}911\GHz$). $S_{11}$ tại $3{,}5\GHz$ không xấu hơn $-19{,}76\dB$, đạt yêu cầu $S_{11}<-10\dB$ với biên lớn.
 \end{itemize}
 
@@ -959,28 +959,36 @@ Kết quả Yield & 100\% \\ \hline
 
 Không có mẫu nào trong 300 mẫu vi phạm tiêu chí, phù hợp với kết quả sweep ở trên: ngay cả trường hợp $L_{50}$ lệch $10\%$ vẫn còn đạt $S_{11}$ tại $3{,}5\GHz$ tốt hơn $-19\dB$. Do đó thiết kế chịu được dung sai chế tạo PCB thông thường.
 
-\hinhcho{Yield.png}{Kết quả Yield (Monte Carlo, 300 mẫu): trục tung là tỉ lệ mẫu đạt tiêu chí (\%), marker m1 cho Yield $=100\%$}
+\hinhcho{32_Yield.pdf}{Kết quả Yield (Monte Carlo, 300 mẫu): trục tung là tỉ lệ mẫu đạt tiêu chí (\%), marker m1 cho Yield $=100\%$}
 
-\subsection{Kết quả mô phỏng EM 3D}
-Để kiểm chứng kết quả microstrip, mạng $\lambda/4$ được mô phỏng điện từ bằng bộ giải AXIEM (phương pháp moment) trong AWR. Cấu hình: nền FR-4 dày $1{,}6$ mm ($\varepsilon_r=4{,}4$, $\tan\delta=0{,}02$) trên mặt đất PEC; lớp không khí phía trên dày $10$ mm với biên Approx.\ Open; đồng dày $0{,}035$ mm, độ dẫn $5{,}8\cdot10^{7}$ S/m. Hình học là ba đoạn vi dải sau hiệu chỉnh ở Bảng~\ref{tab:tune} ($W_t=6{,}947$ mm, $L_t=10{,}52$ mm, dây đệm $5{,}865$ mm, dây cổng $5{,}000$ mm), hai cổng cạnh (Edge Port) $50\,\Omega$ ở hai đầu, quét $2$--$5\GHz$ với bước $0{,}01\GHz$. Mạng hai cổng thu được được nối với cổng tải $30-j40\,\Omega$ trong schematic để so sánh với kết quả microstrip.
+\subsection{Kết quả mô phỏng EM 3D (Ansys HFSS)}
+Để kiểm chứng toàn diện cả ba phương pháp phối hợp trở kháng bằng bộ giải trường điện từ toàn sóng (Full-Wave 3D FEM), các cấu trúc mạch thực tế trên nền FR-4 được xây dựng và mô phỏng trên phần mềm Ansys HFSS (thông qua PyAEDT). Cấu hình mô phỏng chung: nền FR-4 dày $h=1{,}6$ mm ($\varepsilon_r=4{,}4$, $\tan\delta=0{,}02$) trên mặt đất PEC; dải dẫn đồng dày $t=0{,}035$ mm ($\sigma=5{,}8\cdot10^{7}$ S/m); hộp không khí cao $15$ mm (lề hai bên $15$ mm) với biên bức xạ (Radiation Boundary).
+
+Mỗi cấu trúc được mô phỏng như một mạng hai cổng với hai cổng sóng (Wave Port $50\,\Omega$, kích thước $18\times12$ mm) nối qua đoạn dây $50\,\Omega$ dài $5$ mm và de-embed về đúng mặt phẳng tham chiếu của mạng phối hợp, quét tần số $2$--$5\GHz$ (301 điểm, bước $0{,}01\GHz$). Từ ma trận tán xạ $[S]$ thu được, tải anten $Z_L(f)=30+\dfrac{1}{j\omega C_L}$ ($C_L=1{,}137$ pF, tức $30-j40\,\Omega$ tại $3{,}5\GHz$) được nối vào cổng 2 để tính hệ số phản xạ ngõ vào $\Gamma_{in}=S_{11}+\dfrac{S_{12}S_{21}\Gamma_L}{1-S_{22}\Gamma_L}$ và độ lợi truyền đạt $G_T=\dfrac{|S_{21}|^2(1-|\Gamma_L|^2)}{|1-S_{22}\Gamma_L|^2}$.
 
 \begin{table}[H]
-\caption{So sánh kết quả microstrip và mô phỏng EM (AXIEM) của mạng $\lambda/4$}\label{tab:em}
-\centering\footnotesize\setlength\tabcolsep{4pt}
-\adjustbox{max width=\linewidth}{\begin{tabular}{|p{45mm}|c|c|}
+\caption{Tổng hợp kết quả mô phỏng EM 3D (Ansys HFSS) của ba phương pháp tại $f_0=3{,}5\GHz$}\label{tab:em}
+\centering\footnotesize\setlength\tabcolsep{2.5pt}
+\adjustbox{max width=\linewidth}{\begin{tabular}{|p{34mm}|c|c|c|c|c|}
 \hline
-\textbf{Chỉ tiêu} & \textbf{Microstrip (sau tune)} & \textbf{EM (AXIEM)} \\ \hline
-Tần số đáy $S_{11}$ (GHz) & 3,50 & 3,49 \\ \hline
-$S_{11}$ tại $3{,}5\GHz$ (dB) & $-39{,}64$ & $-37{,}31$ \\ \hline
-Cận dưới $-10\dB$ (GHz) & 2,881 & 2,852 \\ \hline
-Cận trên $-10\dB$ (GHz) & 4,123 & 4,129 \\ \hline
-Băng thông $-10\dB$ (MHz) & 1242 & 1277 \\ \hline
+\textbf{Cấu trúc (HFSS)} & $f_{min}$ (GHz) & $S_{11}@3{,}5\GHz$ (dB) & $\mathrm{BW}_{-10\dB}$ tải $R+C$ (MHz) & $\mathrm{BW}_{-10\dB}$ tải hằng (MHz) & $G_T@3{,}5\GHz$ (dB) \\ \hline
+LC (chưa bù ký sinh) & 2,960 & $-7{,}90$ & Không đạt & Không đạt & $-0{,}831$ \\ \hline
+LC bù ký sinh ($L_s=2{,}115$ nH, $C_p=0{,}581$ pF) & 3,500 & $-52{,}98$ & 1210 (34,6\%) & 2030 (58,0\%) & $-0{,}029$ \\ \hline
+Single-Stub (nghiệm 1) & 3,510 & $-14{,}59$ & 700 (20,0\%) & 700 (20,0\%) & $-0{,}444$ \\ \hline
+Single-Stub (nghiệm 2) & 3,510 & $-28{,}11$ & 850 (24,3\%) & 1130 (32,3\%) & $-0{,}303$ \\ \hline
+Biến áp $\lambda/4$ + dây đệm & 3,460 & $-31{,}58$ & 1010 (28,9\%) & 1330 (38,0\%) & $-0{,}349$ \\ \hline
 \end{tabular}}
 \end{table}
 
-\hinhcho{EM_S11.png}{$S_{11}$ của mạng $\lambda/4$: microstrip và mô phỏng EM (AXIEM)}
+\hinhcho[0.98]{33_EM_HFSS_compare.png}{Kết quả mô phỏng EM 3D (Ansys HFSS) của ba phương pháp phối hợp: đáp ứng $S_{11}$ (trái) và quỹ đạo $\Gamma_{in}$ trên Biểu đồ Smith (phải), dải $2$--$5\GHz$}
 
-Nhận xét sai khác giữa EM và microstrip: kết quả EM khớp tốt với mô hình microstrip. Đáy $S_{11}$ của EM nằm tại $3{,}49\GHz$ ($-38{,}58\dB$), lệch $10$ MHz ($0{,}3\%$) so với $3{,}50\GHz$; $S_{11}$ tại đúng $3{,}5\GHz$ là $-37{,}31\dB$, kém hơn microstrip $2{,}33$ dB nhưng vẫn rất tốt (tốt hơn $-10\dB$ hơn $27$ dB). Băng thông $-10\dB$ của EM là $1277$ MHz ($\approx36{,}5\%$ so với $f_0$), lớn hơn $35$ MHz ($2{,}8\%$) so với microstrip ($1242$ MHz); cận dưới thấp hơn $29$ MHz và cận trên cao hơn $6$ MHz. Sai khác nhỏ này do mô hình microstrip dùng công thức giải tích cho MSTEP, còn EM tính trực tiếp trường tản và ghép ở chỗ đổi độ rộng, nên phản ánh sát cấu trúc thực hơn. Kết quả cho thấy mạng $\lambda/4$ sau hiệu chỉnh vẫn phối hợp tốt khi kiểm chứng bằng EM, không cần hiệu chỉnh thêm.
+Nhận xét đối chiếu kết quả EM 3D (HFSS) và mô phỏng mạch (AWR):
+\begin{itemize}
+  \item \textbf{Mạng LC:} Khi đặt trực tiếp linh kiện tập trung lý thuyết ($L_s=2{,}933$ nH, $C_p=0{,}743$ pF) lên đường vi dải thực tế trong HFSS, điện cảm ký sinh của lỗ xuyên (via) xuyên nền $1{,}6$ mm ($\approx0{,}78$ nH) và đoạn vi dải quanh khe $L_s$ ($\approx0{,}82$ nH) kéo đáy $S_{11}$ lệch mạnh xuống $2{,}96\GHz$, khiến tại $3{,}5\GHz$ chỉ còn $-7{,}90\dB$. Sau khi bù ký sinh ($L_s'=2{,}115$ nH, $C_p'=0{,}581$ pF), mạch phối hợp rất sâu tại đúng $3{,}50\GHz$ ($-52{,}98\dB$), suy hao cực thấp ($G_T=-0{,}029\dB$) và băng thông rộng nhất ($1210$ MHz với tải $R+C$; $2030$ MHz với tải hằng). Điều này khẳng định nhận xét ở Chương 2 về ảnh hưởng mạnh của thành phần ký sinh lên mạng LC ở dải GHz.
+  \item \textbf{Mạng Single-Stub:} Kết quả HFSS khớp rất sát với mô phỏng vi dải trên AWR. Nghiệm 1 đạt $S_{11}=-14{,}59\dB$ (AWR: $-15{,}33\dB$), đáy tại $3{,}51\GHz$, $\mathrm{BW}=700$ MHz (AWR: $738$ MHz), $G_T=-0{,}444\dB$. Nghiệm 2 đạt $S_{11}=-28{,}11\dB$ (AWR: $-32{,}81\dB$), đáy tại $3{,}51\GHz$, $\mathrm{BW}=850$ MHz (AWR: $780$ MHz), $G_T=-0{,}303\dB$. Nghiệm 2 tiếp tục vượt trội hơn nghiệm 1 cả về độ sâu phối hợp, băng thông lẫn tổn hao.
+  \item \textbf{Mạng biến áp $\lambda/4$:} Kết quả HFSS đạt đáy $-40{,}71\dB$ tại $3{,}46\GHz$ (lệch $-40$ MHz hay $-1{,}1\%$ so với $3{,}50\GHz$ do trường tản 3D và hiệu ứng ghép tại hai bước nhảy độ rộng), $S_{11}$ tại đúng $3{,}50\GHz$ vẫn rất tốt ($-31{,}58\dB$), $G_T=-0{,}349\dB$, và băng thông $-10\dB$ đạt $1010$ MHz (tải $R+C$) / $1330$ MHz (tải hằng, sát với $1242$ MHz của AWR).
+  \item \textbf{Đánh giá chung:} Cả ba phương pháp (LC sau bù ký sinh, Single-Stub nghiệm 1 \& 2, biến áp $\lambda/4$) đều phủ trọn băng tần 5G n78 ($3{,}3$--$3{,}7\GHz$) dưới ngưỡng $-10\dB$ khi kiểm chứng bằng mô phỏng EM 3D toàn sóng, xác nhận độ tin cậy của quá trình tính toán và thiết kế.
+\end{itemize}
 
 % =====================================================================
 \chuong{Tổng hợp, so sánh và kết luận}
@@ -996,10 +1004,10 @@ Bảng~\ref{tab:lt-mp} đối chiếu kết quả tính toán ở Chương~2 v�
 Thông số lý thuyết & $L_s=2{,}933$ nH, $C_p=0{,}743$ pF & $W=3{,}083$ mm; nghiệm 1: $d=0{,}04167\lambda_g$, $l=0{,}36359\lambda_g$; nghiệm 2: $d=0{,}20833\lambda_g$, $l=0{,}13641\lambda_g$ & $d_0=\lambda_g/8$, $Z_t=28{,}868\,\Omega$ \\ \hline
 Thông số sau mô phỏng & không đổi (phần tử lý tưởng) & $W=3{,}034$ mm; nghiệm 1: $d=1{,}50$ mm, $l=15{,}75$ mm; nghiệm 2: $d=8{,}65$ mm, $l=6{,}00$ mm & $L_t=10{,}52$ mm (lý thuyết $11{,}323$ mm) \\ \hline
 $S_{11}$ lý thuyết & $-\infty$ ($\Gamma_{in}=0$) & $-\infty$ & $-\infty$ \\ \hline
-$S_{11}$ tại $3{,}5\GHz$ (mô phỏng) & $-72{,}55\dB$ & $-15{,}33\dB$ (nghiệm 1); $-32{,}81\dB$ (nghiệm 2) & $-39{,}64\dB$ (vi dải); $-126{,}6\dB$ (lý tưởng) \\ \hline
+$S_{11}$ tại $3{,}5\GHz$ (mô phỏng) & $-72{,}55\dB$ & $-15{,}33\dB$ (nghiệm 1); $-32{,}81\dB$ (nghiệm 2) & $-39{,}81\dB$ (vi dải); $-126{,}6\dB$ (lý tưởng) \\ \hline
 Tần số đáy $S_{11}$ & $3{,}50\GHz$ & $3{,}52\GHz$ (nghiệm 1); $3{,}50\GHz$ (nghiệm 2) & $3{,}39\GHz$ trước tune, $3{,}50\GHz$ sau tune \\ \hline
 Băng thông $-10\dB$ & $2323$ MHz ($66{,}4\%$) & $738$ MHz ($21{,}1\%$) (nghiệm 1); $780$ MHz ($22{,}3\%$) (nghiệm 2) & $1242$ MHz ($35{,}5\%$) \\ \hline
-$S_{21}$ tại $3{,}5\GHz$ & $0{,}00\dB$ (không tổn hao) & $-0{,}321\dB$ (nghiệm 1); $-0{,}211\dB$ (nghiệm 2), mô hình $\tan\delta=0{,}02$ & $0\dB$ (lý tưởng); $-0{,}267\dB$ (vi dải) \\ \hline
+$S_{21}$ tại $3{,}5\GHz$ & $0{,}00\dB$ (không tổn hao) & $-0{,}321\dB$ (nghiệm 1); $-0{,}211\dB$ (nghiệm 2), mô hình $\tan\delta=0{,}02$ & $0\dB$ (lý tưởng); $-0{,}261\dB$ (vi dải) \\ \hline
 \end{tabular}}
 \end{table}
 
@@ -1007,7 +1015,7 @@ Nhận xét đối chiếu:
 \begin{itemize}
   \item Mạng LC: mô phỏng khớp lý thuyết vì dùng phần tử lý tưởng; đáy $S_{11}$ đúng $3{,}5\GHz$, giá trị $-72{,}55\dB$ chỉ phản ánh độ chính xác số.
   \item Mạng $\lambda/4$: mạng lý tưởng khớp lý thuyết, nhưng mạng vi dải lệch đáy xuống $3{,}39\GHz$ ($-3{,}1\%$) do tán sắc FR-4, điện kháng ký sinh tại MSTEP và tổn hao; phải rút ngắn $L_t$ $7{,}1\%$ mới trở về $3{,}5\GHz$. Đây là sai khác chính giữa lý thuyết và mô phỏng.
-  \item Mạng Single-Stub: stub sau tinh chỉnh ngắn hơn lý thuyết khoảng $6$--$8\%$ (Bảng~\ref{tab:stubtune}), cùng xu hướng với mạng $\lambda/4$; khoảng cách $d$ cũng rút ngắn ($-23{,}3\%$ ở nghiệm 1, $-11{,}5\%$ ở nghiệm 2) và $W$ giảm $1{,}6\%$. Nghiệm 2 khớp lý thuyết hơn: đáy $S_{11}$ đúng $3{,}50\GHz$ với $-32{,}81\dB$, còn nghiệm 1 chỉ đạt $-15{,}33\dB$ tại $3{,}5\GHz$ và đáy lệch lên $3{,}52\GHz$. Cả hai nghiệm đều phủ trọn dải $3{,}3$--$3{,}7\GHz$ với $S_{11}$ tốt hơn $-10\dB$. Số liệu Single-Stub và $\lambda/4$ vi dải lấy từ mô hình có tổn hao nên $S_{21}<0\dB$ ($-0{,}267\dB$ ở $\lambda/4$ vi dải, so với $-0{,}211$ đến $-0{,}321\dB$ ở Single-Stub), khác với LC và $\lambda/4$ lý tưởng.
+  \item Mạng Single-Stub: stub sau tinh chỉnh ngắn hơn lý thuyết khoảng $6$--$8\%$ (Bảng~\ref{tab:stubtune}), cùng xu hướng với mạng $\lambda/4$; khoảng cách $d$ cũng rút ngắn ($-23{,}3\%$ ở nghiệm 1, $-11{,}5\%$ ở nghiệm 2) và $W$ giảm $1{,}6\%$. Nghiệm 2 khớp lý thuyết hơn: đáy $S_{11}$ đúng $3{,}50\GHz$ với $-32{,}81\dB$, còn nghiệm 1 chỉ đạt $-15{,}33\dB$ tại $3{,}5\GHz$ và đáy lệch lên $3{,}52\GHz$. Cả hai nghiệm đều phủ trọn dải $3{,}3$--$3{,}7\GHz$ với $S_{11}$ tốt hơn $-10\dB$. Số liệu Single-Stub và $\lambda/4$ vi dải lấy từ mô hình có tổn hao nên $S_{21}<0\dB$ ($-0{,}261\dB$ ở $\lambda/4$ vi dải, so với $-0{,}211$ đến $-0{,}321\dB$ ở Single-Stub), khác với LC và $\lambda/4$ lý tưởng.
 \end{itemize}
 
 \section{ĐÁNH GIÁ ƯU NHƯỢC ĐIỂM THEO TIÊU CHÍ}
@@ -1020,7 +1028,7 @@ Nhận xét đối chiếu:
 \textbf{Tiêu chí} & \textbf{LC} & \textbf{Single-Stub} & \textbf{Biến áp $\lambda/4$} \\ \hline
 Băng thông $-10\dB$ & Rộng nhất: $2323$ MHz ($66{,}4\%$) & $738$ MHz ($21{,}1\%$) (nghiệm 1); $780$ MHz ($22{,}3\%$) (nghiệm 2) & $1242$ MHz ($35{,}5\%$) \\ \hline
 Kích thước & Nhỏ nhất (2 phần tử); cần linh kiện rời & Hai đoạn: $19{,}0$ mm (nghiệm 1), $16{,}2$ mm (nghiệm 2) theo lý thuyết & $16{,}385$ mm, rộng $6{,}947$ mm, diện tích đồng $\approx91{,}2\ \mathrm{mm}^2$ \\ \hline
-Suy hao $S_{21}$ & $0\dB$ khi lý tưởng; thực tế còn tổn hao và ký sinh của $L$, $C$ & $-0{,}321\dB$ (nghiệm 1); $-0{,}211\dB$ (nghiệm 2), mô hình $\tan\delta=0{,}02$ & Vi dải có tổn hao điện môi: $-0{,}267\dB$ \\ \hline
+Suy hao $S_{21}$ & $0\dB$ khi lý tưởng; thực tế còn tổn hao và ký sinh của $L$, $C$ & $-0{,}321\dB$ (nghiệm 1); $-0{,}211\dB$ (nghiệm 2), mô hình $\tan\delta=0{,}02$ & Vi dải có tổn hao điện môi: $-0{,}261\dB$ \\ \hline
 Độ nhạy sai số & $L\pm10\%$: đáy dịch $350$ MHz, $S_{11}$ xấu nhất $-19{,}42\dB$; $C\pm10\%$: $30$ MHz, $-27{,}88\dB$ & $l\pm10\%$: đáy dịch $-262/+353$ MHz (nghiệm 1), $-90/+83$ MHz (nghiệm 2); $W\pm10\%$: dưới $10$ MHz (nghiệm 1), cỡ $\pm58$ MHz (nghiệm 2) & $L_{50}\pm10\%$: $190$ MHz, $-19{,}76\dB$; Yield $100\%$ (300 mẫu) \\ \hline
 \end{tabular}}
 \end{table}
@@ -1044,7 +1052,7 @@ Mạng LC nhạy nhất với $L$ (dịch $350$ MHz khi $\pm10\%$), ít nhạy v
   \item Mạng $\lambda/4$ kết hợp dây đệm hoàn toàn bằng vi dải, băng thông $35{,}5\%$ đủ phủ dải $3{,}3$--$3{,}7\GHz$, chịu dung sai tốt (Yield $100\%$). Cần hiệu chỉnh chiều dài sau mô phỏng ($-7{,}1\%$ $L_t$) để bù hiệu ứng vi dải.
   \item Mạng Single-Stub chỉ dùng đường dẫn vi dải, có hai bộ nghiệm đều phủ dải $3{,}3$--$3{,}7\GHz$. Nghiệm 2 là phương án tốt hơn: phối hợp sâu ($-32{,}81\dB$ tại $3{,}5\GHz$), tổn hao thấp ($0{,}211\dB$), đường dẫn ngắn ($14{,}65$ mm) và băng thông $780$ MHz ($22{,}3\%$). Băng thông hẹp hơn LC và $\lambda/4$, đồng thời nhạy với chiều dài stub.
 \end{itemize}
-Với ứng dụng 5G băng n78, mạng $\lambda/4$ là lựa chọn hiện thực bằng vi dải thuận tiện, còn LC phù hợp khi ưu tiên băng thông và kích thước. Hướng phát triển: mô phỏng EM 3D cho mạng Single-Stub và đo thực nghiệm trên PCB FR-4.
+Với ứng dụng 5G băng n78, mạng $\lambda/4$ là lựa chọn hiện thực bằng vi dải thuận tiện, còn LC phù hợp khi ưu tiên băng thông và kích thước (nhưng cần bù ký sinh khi đưa lên PCB). Hướng phát triển: chế tạo mạch thực tế trên PCB FR-4 và đo kiểm nghiệm bằng máy phân tích mạng vector (VNA).
 
 \phansau
 \begin{thebibliography}{9}

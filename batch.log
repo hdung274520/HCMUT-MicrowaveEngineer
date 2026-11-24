@@ -1,0 +1,123 @@
+ 
+Ansys Electronics Desktop Student Version 2025.2.4, Build: 2025-11-06 17:01:32
+Location: C:\Program Files\ANSYS Inc\ANSYS Student\v252\AnsysEM\ansysedtsv.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:48:58 PM  Nov 24, 2026
+Running as user : DLE\hdung
+Temp directory: C:\temp
+Project directory: C:\Users\hdung\OneDrive\Documents\Ansoft
+[info] gRPC server started on port 60301 of local host. Only connections from the local host initiated by the same user are permitted.
+
+[warning] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:49:24 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:49:24 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:50:01 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), Interpolating frequency sweep complete. Converged. (01:50:01 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), Normal completion of simulation on server: Local Machine. (01:50:01 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:50:01 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:50:02 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/thru50.s2p" (01:50:02 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:thru50 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:50:02 PM  Nov 24, 2026)
+Stopping Batch Run: 1:50:14 PM  Nov 24, 2026
+ 
+Ansys Electronics Desktop Student Version 2025.2.4, Build: 2025-11-06 17:01:32
+Location: C:\Program Files\ANSYS Inc\ANSYS Student\v252\AnsysEM\ansysedtsv.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:50:37 PM  Nov 24, 2026
+Running as user : DLE\hdung
+Temp directory: C:\temp
+Project directory: C:\Users\hdung\OneDrive\Documents\Ansoft
+[info] gRPC server started on port 60851 of local host. Only connections from the local host initiated by the same user are permitted.
+
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:50:52 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:50:52 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:51:29 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Interpolating frequency sweep complete. Converged. (01:51:29 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Normal completion of simulation on server: Local Machine. (01:51:29 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:51:30 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:51:30 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/lc.s2p" (01:51:31 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:51:31 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:51:32 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:51:32 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:52:26 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Interpolating frequency sweep complete. Converged. (01:52:26 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Normal completion of simulation on server: Local Machine. (01:52:26 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:52:27 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:52:27 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/stub1.s2p" (01:52:27 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:52:28 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:52:29 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:52:29 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:53:20 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Interpolating frequency sweep complete. Converged. (01:53:20 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Normal completion of simulation on server: Local Machine. (01:53:20 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:53:21 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:53:21 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/stub2.s2p" (01:53:21 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:53:22 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:53:23 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:53:23 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:53:59 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Interpolating frequency sweep complete. Converged. (01:53:59 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Normal completion of simulation on server: Local Machine. (01:53:59 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:54:00 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:54:00 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/lambda4.s2p" (01:54:00 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:54:01 PM  Nov 24, 2026)
+Stopping Batch Run: 1:54:13 PM  Nov 24, 2026
+ 
+Ansys Electronics Desktop Student Version 2025.2.4, Build: 2025-11-06 17:01:32
+Location: C:\Program Files\ANSYS Inc\ANSYS Student\v252\AnsysEM\ansysedtsv.exe
+Non Graphical Mode: No Project??
+Starting Batch Run: 1:55:59 PM  Nov 24, 2026
+Running as user : DLE\hdung
+Temp directory: C:\temp
+Project directory: C:\Users\hdung\OneDrive\Documents\Ansoft
+[info] gRPC server started on port 54147 of local host. Only connections from the local host initiated by the same user are permitted.
+
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:56:14 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:56:14 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:56:51 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Interpolating frequency sweep complete. Converged. (01:56:51 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Normal completion of simulation on server: Local Machine. (01:56:51 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:56:52 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:56:52 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/lc.s2p" (01:56:52 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:56:53 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:56:54 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:56:54 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:57:28 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), Interpolating frequency sweep complete. Converged. (01:57:28 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), Normal completion of simulation on server: Local Machine. (01:57:28 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:57:29 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:57:29 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/lc_tuned.s2p" (01:57:29 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lc_tuned (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:57:29 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:57:31 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:57:31 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:58:22 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Interpolating frequency sweep complete. Converged. (01:58:22 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Normal completion of simulation on server: Local Machine. (01:58:22 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:58:23 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:58:23 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/stub1.s2p" (01:58:23 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub1 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:58:23 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:58:25 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:58:25 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:59:17 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Interpolating frequency sweep complete. Converged. (01:59:17 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Normal completion of simulation on server: Local Machine. (01:59:17 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:17 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:17 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/stub2.s2p" (01:59:17 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:stub2 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:18 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:59:19 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (01:59:19 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), An interpolating frequency sweep with 301 points has been started using HFSS - Solving Distributed. (01:59:56 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Interpolating frequency sweep complete. Converged. (01:59:56 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Normal completion of simulation on server: Local Machine. (01:59:56 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:57 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:58 PM  Nov 24, 2026)
+[info] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), Touchstone export: Writing to "C:/Users/hdung/OneDrive/Documents/AWR_Projects/HFSS/results/lambda4.s2p" (01:59:58 PM  Nov 24, 2026)
+[warning] Project:Matching_EM3D_3p5GHz, Design:lambda4 (Modal Network), The variable  'Phase' doesn't have an associated sweep and is excluded from the definition of trace. (01:59:58 PM  Nov 24, 2026)
+Stopping Batch Run: 2:00:10 PM  Nov 24, 2026
