@@ -12,10 +12,10 @@
     NumTets 9200
     BasisOrder 1
     TREECOTREE 0
-    MemoryMasterMB 222.000000
-    MemoryTotalMB 484.371094
+    MemoryMasterMB 221.000000
+    MemoryTotalMB 485.480469
     NumMeshStatisticsTets 9200
-    MemoryForSMatrixOnlyMB 314.028748
+    MemoryForSMatrixOnlyMB 317.880310
     LowFrequencyCutoff 6342531.956756
     MemoryDistributedTotalMB -1.000000
     MemoryDistributedSMatrixOnlyMB -1.000000

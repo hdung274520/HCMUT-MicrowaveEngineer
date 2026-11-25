@@ -50,10 +50,10 @@
 \begin{tabular}{|c|c|p{42mm}|p{40mm}|c|}
 \hline
 \textbf{STT} & \textbf{MSSV} & \textbf{Họ và tên} & \textbf{Nhiệm vụ} & \textbf{Phần trăm} \\ \hline
-1 & 2310575 & Trịnh Hoàng Dũng & & \\ \hline
-2 & 2312639 & Huỳnh Nguyên Diễm Phôi & & \\ \hline
-3 & 2310321 & Nguyễn Thanh Ca & & \\ \hline
-4 & 2311337 & Nguyễn Huỳnh Hưng & & \\ \hline
+1 & 2310575 & Trịnh Hoàng Dũng & Thiết kế và mô phỏng phương pháp biến áp $\lambda/4$ kết hợp dây đệm & 100\% \\ \hline
+2 & 2312639 & Huỳnh Nguyên Diễm Phôi & Thiết kế và mô phỏng phương pháp Single-Stub & 100\% \\ \hline
+3 & 2310321 & Nguyễn Thanh Ca & Thiết kế và mô phỏng phương pháp mạng LC & 100\% \\ \hline
+4 & 2311337 & Nguyễn Huỳnh Hưng & Tổng hợp cơ sở lý thuyết và mô phỏng EM 3D trên Ansys HFSS & 100\% \\ \hline
 \end{tabular}
 \end{center}
 
@@ -427,7 +427,7 @@ Chọn dấu âm của căn thức cho $X=-24{,}495-X_L=+15{,}505\,\Omega$ và $
 \end{enumerate}
 Hệ số phẩm chất của mạng $Q=\sqrt{\Zo/R_L-1}=\sqrt{2/3}=0{,}816$ rất thấp, báo hiệu băng thông tương đối rộng.
 
-\hinhcho[0.8]{02_smith_LC.png}{Kết quả phối hợp trở kháng mạng LC trên phần mềm Smith V4.1 tại $3{,}5\GHz$}
+\hinhcho[0.65]{02_smith_LC.png}{Biểu đồ Smith đáp ứng $S_{11}$ của mạng LC trên AWR tại $3{,}5\GHz$}
 
 \section{PHƯƠNG PHÁP 2: SINGLE-STUB}
 
@@ -506,7 +506,7 @@ Hai bộ nghiệm dùng chung $W=3{,}083$ mm, chỉ khác $d$ và $l$. Tổng ch
   \item Thêm stub song song có $\Delta b=\mp1{,}1547$: di chuyển trên đường tròn $g=1$ về tâm ($y=1$).
 \end{enumerate}
 
-\hinhcho[0.7]{03_smith_stub.png}{Đường đi phối hợp bằng Single-Stub trên Smith V4.1}
+\hinhcho[0.65]{03_smith_stub.png}{Biểu đồ Smith hai bộ nghiệm mạng Single-Stub lý tưởng trên AWR (tâm phối hợp tại $3{,}5\GHz$)}
 
 \section{PHƯƠNG PHÁP 3: BIẾN ÁP $\lambda/4$ KẾT HỢP DÂY ĐỆM}
 
@@ -563,7 +563,7 @@ Tổng chiều dài hai đoạn là $d_0+L_t=17{,}188$ mm.
   \item Biến áp $\lambda/4$ có $Z_t=28{,}868\,\Omega$ đưa $TP_2$ về $TP_3$: $50+j0\,\Omega$ (tâm biểu đồ).
 \end{enumerate}
 
-\hinhcho[0.75]{04_smith_trans.png}{Quỹ đạo phối hợp $DP_1(30-j40\,\Omega)\to TP_2(16{,}667+j0\,\Omega)\to TP_3(50+j0\,\Omega)$ trên Biểu đồ Smith tại $f_0=3{,}5\GHz$}
+\hinhcho[0.65]{04_smith_trans.png}{Biểu đồ Smith đáp ứng $S_{11}$ của mạng biến áp $\lambda/4$ kết hợp dây đệm trên AWR tại $f_0=3{,}5\GHz$}
 
 \section{TỔNG HỢP KẾT QUẢ TÍNH TOÁN LÝ THUYẾT}
 \begin{table}[H]
@@ -591,6 +591,10 @@ Chương này trình bày kết quả mô phỏng trên Cadence AWR Microwave Of
 Sơ đồ nguyên lý theo đúng nghiệm ở mục~2.2: từ cổng vào Port~1 ($50\,\Omega$), tụ điện $C_p=0{,}743$ pF mắc song song xuống đất (GND), tiếp theo là cuộn cảm $L_s=2{,}933$ nH mắc nối tiếp, rồi đến tải $\ZL=30-j40\,\Omega$. Tải được mô hình hóa bằng điện trở $R=30\,\Omega$ nối tiếp tụ $C_L=1{,}137$ pF tại $3{,}5\GHz$. Các phần tử là phần tử tập trung lý tưởng (không tổn hao, không ký sinh).
 
 \hinhcho{05_schematic_LC.png}{Sơ đồ nguyên lý mạng LC trên AWR}
+
+Để hiện thực mạng LC trên mạch in PCB nền FR-4 ($\varepsilon_r=4{,}4$, $h=1{,}6$ mm), hai đường dẫn $50\,\Omega$ ($W=3{,}083$ mm) được bố trí kèm khe hở $1{,}0$ mm cho cuộn cảm nối tiếp $L_s$ và nhánh rẽ pad + lỗ xuyên (via) xuống mặt đất cho tụ song song $C_p$, xuất trực tiếp từ cửa sổ 2D Layout của AWR.
+
+\hinhcho[0.75]{05b_layout_LC.png}{Layout vi dải PCB cho mạng LC trên AWR (nền FR-4: đường dẫn $50\,\Omega$, nhánh rẽ pad + via cho $C_p$ và khe đặt $L_s$)}
 
 \subsection{Kết quả mô phỏng tham số S}
 \begin{itemize}
@@ -647,7 +651,17 @@ $+10\%$ & 0,8173 & $-28{,}00$ & 3,470 & $-30$ & 2,187 & 4,353 & 2166\\ \hline
 \end{tabular}}
 \end{table}
 
-\hinhcho{07_sweep_LC.png}{Parametric Sweep của mạng LC (thay đổi $L$ và $C$)}
+\begin{figure}[H]\centering
+  \begin{minipage}[b]{0.49\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/07a_sweep_LC_L.png}\\
+    {\footnotesize (a) Quét cuộn cảm $L_s$ ($\pm5\%$, $\pm10\%$)}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.49\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/07b_sweep_LC_C.png}\\
+    {\footnotesize (b) Quét tụ điện $C_p$ ($\pm5\%$, $\pm10\%$)}
+  \end{minipage}
+  \caption{Parametric Sweep của mạng LC trên AWR khi thay đổi $L_s$ và $C_p$}
+\end{figure}
 
 \textbf{Nhận xét.}
 \begin{itemize}
@@ -678,6 +692,18 @@ Chiều rộng đường truyền/stub $W$ (mm) & 3,083 & 3,034 & $-1{,}6\%$ \\ 
 
 \hinhcho{08_schematic_stub1.pdf}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 1 ($d_1=0{,}04167\lambda_g$)}
 \hinhcho{09_schematic_stub2.pdf}{Sơ đồ nguyên lý mạng Single-Stub, nghiệm 2 ($d_2=0{,}20833\lambda_g$)}
+
+\begin{figure}[H]\centering
+  \begin{minipage}[b]{0.40\linewidth}\centering
+    \includegraphics[height=52mm,keepaspectratio]{hinh/09b_layout_stub1.png}\\
+    {\footnotesize (a) Nghiệm 1 ($d=1{,}50$ mm, $l=15{,}75$ mm)}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.56\linewidth}\centering
+    \includegraphics[height=52mm,keepaspectratio]{hinh/09c_layout_stub2.png}\\
+    {\footnotesize (b) Nghiệm 2 ($d=8{,}65$ mm, $l=6{,}00$ mm)}
+  \end{minipage}
+  \caption{Layout vi dải 2D của hai bộ nghiệm Single-Stub trên AWR (nền FR-4, $W=3{,}034$ mm)}
+\end{figure}
 
 \subsection{Kết quả mô phỏng tham số S}
 Đáp ứng $S_{11}$, $S_{21}$ và đường đi trên Biểu đồ Smith sau tinh chỉnh của hai nghiệm:
@@ -836,7 +862,7 @@ Mỗi lần khảo sát chỉ thay đổi một tham số quanh giá trị đã 
 \end{itemize}
 Ý nghĩa các cột: $S_{11}$@3,5 là giá trị $S_{11}$ tại đúng $3{,}5\GHz$; $f_{min}$ là tần số có $S_{11}$ thấp nhất (độ phân giải $10\ \mathrm{MHz}$ theo bước quét); $\Delta f$ là độ lệch của $f_{min}$ so với $3{,}5\GHz$; $f_L$, $f_H$ là hai tần số có $S_{11}=-10\dB$; $\mathrm{BW}=f_H-f_L$.
 
-\paragraph{Chiều dài đoạn transformer $L_t$}
+\subsubsection{Chiều dài đoạn transformer $L_t$}
 \begin{table}[H]
 \caption{$S_{11}$ khi thay đổi $L_t$}
 \centering\footnotesize\setlength\tabcolsep{2.5pt}
@@ -852,7 +878,7 @@ $+10\%$ & 11,570 & $-21{,}42$ & 3,350 & $-150$ & 2,766 & 3,960 & 1194\\ \hline
 \end{table}
 \hinhcho{27_Tol_Lt.pdf}{$S_{11}$ khi $L_t$ thay đổi $\pm5\%$, $\pm10\%$}
 
-\paragraph{Chiều dài dây đệm $L_{50}$}
+\subsubsection{Chiều dài dây đệm $L_{50}$}
 \begin{table}[H]
 \caption{$S_{11}$ khi thay đổi $L_{50}$}
 \centering\footnotesize\setlength\tabcolsep{2.5pt}
@@ -868,7 +894,7 @@ $+10\%$ & 6,452 & $-19{,}76$ & 3,320 & $-180$ & 2,733 & 3,911 & 1178\\ \hline
 \end{table}
 \hinhcho{28_Tol_L50.pdf}{$S_{11}$ khi $L_{50}$ thay đổi $\pm5\%$, $\pm10\%$}
 
-\paragraph{Chiều rộng đoạn transformer $W_t$}
+\subsubsection{Chiều rộng đoạn transformer $W_t$}
 \begin{table}[H]
 \caption{$S_{11}$ khi thay đổi $W_t$}
 \centering\footnotesize\setlength\tabcolsep{2.5pt}
@@ -884,7 +910,7 @@ $+5\%$   & 7,294 & $-26{,}71$ & 3,490 & $-10$ & 2,895 & 4,083 & 1187\\ \hline
 \end{table}
 \hinhcho{29_Tol_Wt.pdf}{$S_{11}$ khi $W_t$ thay đổi $\pm2{,}5\%$, $\pm5\%$}
 
-\paragraph{Hằng số điện môi $\varepsilon_r$}
+\subsubsection{Hằng số điện môi $\varepsilon_r$}
 \begin{table}[H]
 \caption{$S_{11}$ khi thay đổi $\varepsilon_r$}
 \centering\footnotesize\setlength\tabcolsep{2.5pt}
@@ -900,7 +926,7 @@ $\varepsilon_r$ & $S_{11}$@3,5 (dB) & $f_{min}$ (GHz) & $\Delta f$ (MHz) & $f_L$
 \end{table}
 \hinhcho{30_Tol_Er.pdf}{$S_{11}$ khi $\varepsilon_r$ thay đổi từ $4{,}2$ đến $4{,}6$}
 
-\paragraph{Độ dày nền $h$}
+\subsubsection{Độ dày nền $h$}
 \begin{table}[H]
 \caption{$S_{11}$ khi thay đổi $h$}
 \centering\footnotesize\setlength\tabcolsep{2.5pt}
@@ -964,29 +990,59 @@ Không có mẫu nào trong 300 mẫu vi phạm tiêu chí, phù hợp với k�
 \subsection{Kết quả mô phỏng EM 3D (Ansys HFSS)}
 Để kiểm chứng toàn diện cả ba phương pháp phối hợp trở kháng bằng bộ giải trường điện từ toàn sóng (Full-Wave 3D FEM), các cấu trúc mạch thực tế trên nền FR-4 được xây dựng và mô phỏng trên phần mềm Ansys HFSS (thông qua PyAEDT). Cấu hình mô phỏng chung: nền FR-4 dày $h=1{,}6$ mm ($\varepsilon_r=4{,}4$, $\tan\delta=0{,}02$) trên mặt đất PEC; dải dẫn đồng dày $t=0{,}035$ mm ($\sigma=5{,}8\cdot10^{7}$ S/m); hộp không khí cao $15$ mm (lề hai bên $15$ mm) với biên bức xạ (Radiation Boundary).
 
-Mỗi cấu trúc được mô phỏng như một mạng hai cổng với hai cổng sóng (Wave Port $50\,\Omega$, kích thước $18\times12$ mm) nối qua đoạn dây $50\,\Omega$ dài $5$ mm và de-embed về đúng mặt phẳng tham chiếu của mạng phối hợp, quét tần số $2$--$5\GHz$ (301 điểm, bước $0{,}01\GHz$). Từ ma trận tán xạ $[S]$ thu được, tải anten $Z_L(f)=30+\dfrac{1}{j\omega C_L}$ ($C_L=1{,}137$ pF, tức $30-j40\,\Omega$ tại $3{,}5\GHz$) được nối vào cổng 2 để tính hệ số phản xạ ngõ vào $\Gamma_{in}=S_{11}+\dfrac{S_{12}S_{21}\Gamma_L}{1-S_{22}\Gamma_L}$ và độ lợi truyền đạt $G_T=\dfrac{|S_{21}|^2(1-|\Gamma_L|^2)}{|1-S_{22}\Gamma_L|^2}$.
+Mỗi cấu trúc được mô phỏng với hai cổng sóng (Wave Port, kích thước $18\times12$ mm) nối qua đoạn dây $50\,\Omega$ dài $5$ mm và de-embed về đúng mặt phẳng tham chiếu của mạng phối hợp: cổng vào P1 chuẩn hóa $\Zo=50\,\Omega$ và cổng tải P2 chuẩn hóa trực tiếp về tải anten $\ZL=30-j40\,\Omega$ (\texttt{30ohm - 40i ohm}), quét tần số $2$--$5\GHz$ (301 điểm, bước $0{,}01\GHz$). Nhờ đó tham số $S_{11}$ thu được trực tiếp từ HFSS chính là hệ số phản xạ ngõ vào $\Gamma_{in}$ khi nối tải $30-j40\,\Omega$, và độ lợi truyền đạt được quy đổi theo $G_T=|S_{21}|^2\dfrac{\mathrm{Re}(\ZL)}{|\ZL|}$.
 
 \begin{table}[H]
-\caption{Tổng hợp kết quả mô phỏng EM 3D (Ansys HFSS) của ba phương pháp tại $f_0=3{,}5\GHz$}\label{tab:em}
-\centering\footnotesize\setlength\tabcolsep{2.5pt}
-\adjustbox{max width=\linewidth}{\begin{tabular}{|p{34mm}|c|c|c|c|c|}
+\caption{Tổng hợp kết quả mô phỏng EM 3D (Ansys HFSS, P2 $=30-j40\,\Omega$) tại $f_0=3{,}5\GHz$}\label{tab:em}
+\centering\footnotesize\setlength\tabcolsep{3pt}
+\adjustbox{max width=\linewidth}{\begin{tabular}{|p{44mm}|c|c|c|c|}
 \hline
-\textbf{Cấu trúc (HFSS)} & $f_{min}$ (GHz) & $S_{11}@3{,}5\GHz$ (dB) & $\mathrm{BW}_{-10\dB}$ tải $R+C$ (MHz) & $\mathrm{BW}_{-10\dB}$ tải hằng (MHz) & $G_T@3{,}5\GHz$ (dB) \\ \hline
-LC (chưa bù ký sinh) & 2,960 & $-7{,}90$ & Không đạt & Không đạt & $-0{,}831$ \\ \hline
-LC bù ký sinh ($L_s=2{,}115$ nH, $C_p=0{,}581$ pF) & 3,500 & $-52{,}98$ & 1210 (34,6\%) & 2030 (58,0\%) & $-0{,}029$ \\ \hline
-Single-Stub (nghiệm 1) & 3,510 & $-14{,}59$ & 700 (20,0\%) & 700 (20,0\%) & $-0{,}444$ \\ \hline
-Single-Stub (nghiệm 2) & 3,510 & $-28{,}11$ & 850 (24,3\%) & 1130 (32,3\%) & $-0{,}303$ \\ \hline
-Biến áp $\lambda/4$ + dây đệm & 3,460 & $-31{,}58$ & 1010 (28,9\%) & 1330 (38,0\%) & $-0{,}349$ \\ \hline
+\textbf{Cấu trúc (HFSS)} & $f_{min}$ (GHz) & $S_{11}@3{,}5\GHz$ (dB) & $\mathrm{BW}_{-10\dB}$ (MHz) & $G_T@3{,}5\GHz$ (dB) \\ \hline
+LC (chưa bù ký sinh) & 2,800 & $-8{,}71$ & Không đạt & $-0{,}684$ \\ \hline
+LC bù ký sinh ($L_s=2{,}115$ nH, $C_p=0{,}581$ pF) & 3,610 & $-25{,}55$ & 1950 (55,7\%) & $-0{,}041$ \\ \hline
+Single-Stub (nghiệm 1) & 3,560 & $-14{,}73$ & 700 (20,0\%) & $-0{,}442$ \\ \hline
+Single-Stub (nghiệm 2) & 3,510 & $-28{,}10$ & 1130 (32,3\%) & $-0{,}303$ \\ \hline
+Biến áp $\lambda/4$ + dây đệm & 3,500 & $-32{,}87$ & 1260 (36,0\%) & $-0{,}346$ \\ \hline
 \end{tabular}}
 \end{table}
 
-\hinhcho[0.98]{33_EM_HFSS_compare.png}{Kết quả mô phỏng EM 3D (Ansys HFSS) của ba phương pháp phối hợp: đáp ứng $S_{11}$ (trái) và quỹ đạo $\Gamma_{in}$ trên Biểu đồ Smith (phải), dải $2$--$5\GHz$}
+\begin{figure}[H]\centering
+  \begin{minipage}[b]{0.49\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/33b_HFSS_lc_tuned.jpg}\\
+    {\footnotesize (a) Mạng LC sau bù ký sinh}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.49\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/33d_HFSS_stub2.jpg}\\
+    {\footnotesize (b) Mạng Single-Stub (nghiệm 2)}
+  \end{minipage}\\[6pt]
+  \begin{minipage}[b]{0.55\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/33e_HFSS_lambda4.jpg}\\
+    {\footnotesize (c) Mạng biến áp $\lambda/4$ + dây đệm}
+  \end{minipage}
+  \caption{Đáp ứng tham số S xuất trực tiếp từ Ansys HFSS (P1 $=50\,\Omega$, P2 $=30-j40\,\Omega$, dải $2$--$5\GHz$)}
+\end{figure}
+
+\begin{figure}[H]\centering
+  \begin{minipage}[b]{0.32\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/34a_HFSS_smith_lc_tuned.jpg}\\
+    {\footnotesize (a) LC bù ký sinh}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.32\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/34b_HFSS_smith_stub2.jpg}\\
+    {\footnotesize (b) Single-Stub nghiệm 2}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.32\linewidth}\centering
+    \includegraphics[width=\linewidth]{hinh/34c_HFSS_smith_lambda4.jpg}\\
+    {\footnotesize (c) Biến áp $\lambda/4$ + dây đệm}
+  \end{minipage}
+  \caption{Biểu đồ Smith đáp ứng $S_{11}$ xuất trực tiếp từ Ansys HFSS (dải $2$--$5\GHz$)}
+\end{figure}
 
 Nhận xét đối chiếu kết quả EM 3D (HFSS) và mô phỏng mạch (AWR):
 \begin{itemize}
-  \item \textbf{Mạng LC:} Khi đặt trực tiếp linh kiện tập trung lý thuyết ($L_s=2{,}933$ nH, $C_p=0{,}743$ pF) lên đường vi dải thực tế trong HFSS, điện cảm ký sinh của lỗ xuyên (via) xuyên nền $1{,}6$ mm ($\approx0{,}78$ nH) và đoạn vi dải quanh khe $L_s$ ($\approx0{,}82$ nH) kéo đáy $S_{11}$ lệch mạnh xuống $2{,}96\GHz$, khiến tại $3{,}5\GHz$ chỉ còn $-7{,}90\dB$. Sau khi bù ký sinh ($L_s'=2{,}115$ nH, $C_p'=0{,}581$ pF), mạch phối hợp rất sâu tại đúng $3{,}50\GHz$ ($-52{,}98\dB$), suy hao cực thấp ($G_T=-0{,}029\dB$) và băng thông rộng nhất ($1210$ MHz với tải $R+C$; $2030$ MHz với tải hằng). Điều này khẳng định nhận xét ở Chương 2 về ảnh hưởng mạnh của thành phần ký sinh lên mạng LC ở dải GHz.
-  \item \textbf{Mạng Single-Stub:} Kết quả HFSS khớp rất sát với mô phỏng vi dải trên AWR. Nghiệm 1 đạt $S_{11}=-14{,}59\dB$ (AWR: $-15{,}33\dB$), đáy tại $3{,}51\GHz$, $\mathrm{BW}=700$ MHz (AWR: $738$ MHz), $G_T=-0{,}444\dB$. Nghiệm 2 đạt $S_{11}=-28{,}11\dB$ (AWR: $-32{,}81\dB$), đáy tại $3{,}51\GHz$, $\mathrm{BW}=850$ MHz (AWR: $780$ MHz), $G_T=-0{,}303\dB$. Nghiệm 2 tiếp tục vượt trội hơn nghiệm 1 cả về độ sâu phối hợp, băng thông lẫn tổn hao.
-  \item \textbf{Mạng biến áp $\lambda/4$:} Kết quả HFSS đạt đáy $-40{,}71\dB$ tại $3{,}46\GHz$ (lệch $-40$ MHz hay $-1{,}1\%$ so với $3{,}50\GHz$ do trường tản 3D và hiệu ứng ghép tại hai bước nhảy độ rộng), $S_{11}$ tại đúng $3{,}50\GHz$ vẫn rất tốt ($-31{,}58\dB$), $G_T=-0{,}349\dB$, và băng thông $-10\dB$ đạt $1010$ MHz (tải $R+C$) / $1330$ MHz (tải hằng, sát với $1242$ MHz của AWR).
+  \item \textbf{Mạng LC:} Khi đặt trực tiếp linh kiện tập trung lý thuyết ($L_s=2{,}933$ nH, $C_p=0{,}743$ pF) lên đường vi dải thực tế trong HFSS, điện cảm ký sinh của lỗ xuyên (via) xuyên nền $1{,}6$ mm ($\approx0{,}78$ nH) và đoạn vi dải quanh khe $L_s$ ($\approx0{,}82$ nH) kéo đáy $S_{11}$ lệch mạnh xuống $2{,}80\GHz$, khiến tại $3{,}5\GHz$ chỉ còn $-8{,}71\dB$. Sau khi bù ký sinh ($L_s'=2{,}115$ nH, $C_p'=0{,}581$ pF), mạch đạt $S_{11}=-25{,}55\dB$ tại $3{,}50\GHz$, suy hao cực thấp ($G_T=-0{,}041\dB$) và băng thông rộng nhất ($1950$ MHz hay $55{,}7\%$). Điều này khẳng định nhận xét ở Chương 2 về ảnh hưởng mạnh của thành phần ký sinh lên mạng LC ở dải GHz.
+  \item \textbf{Mạng Single-Stub:} Kết quả HFSS khớp rất sát với mô phỏng vi dải trên AWR. Nghiệm 1 đạt $S_{11}=-14{,}73\dB$ (AWR: $-15{,}33\dB$), đáy tại $3{,}56\GHz$, $\mathrm{BW}=700$ MHz (AWR: $738$ MHz), $G_T=-0{,}442\dB$. Nghiệm 2 đạt $S_{11}=-28{,}10\dB$ (AWR: $-32{,}81\dB$), đáy tại $3{,}51\GHz$, $\mathrm{BW}=1130$ MHz ($32{,}3\%$), $G_T=-0{,}303\dB$. Nghiệm 2 tiếp tục vượt trội hơn nghiệm 1 cả về độ sâu phối hợp, băng thông lẫn tổn hao.
+  \item \textbf{Mạng biến áp $\lambda/4$:} Kết quả HFSS đạt đáy $-32{,}87\dB$ tại đúng $3{,}50\GHz$, $G_T=-0{,}346\dB$, và băng thông $-10\dB$ đạt $1260$ MHz ($36{,}0\%$, rất sát với $1242$ MHz của AWR).
   \item \textbf{Đánh giá chung:} Cả ba phương pháp (LC sau bù ký sinh, Single-Stub nghiệm 1 \& 2, biến áp $\lambda/4$) đều phủ trọn băng tần 5G n78 ($3{,}3$--$3{,}7\GHz$) dưới ngưỡng $-10\dB$ khi kiểm chứng bằng mô phỏng EM 3D toàn sóng, xác nhận độ tin cậy của quá trình tính toán và thiết kế.
 \end{itemize}
 

@@ -13,9 +13,9 @@
     BasisOrder 1
     TREECOTREE 0
     MemoryMasterMB 177.000000
-    MemoryTotalMB 187.960938
+    MemoryTotalMB 188.242188
     NumMeshStatisticsTets 714
-    MemoryForSMatrixOnlyMB 183.452637
+    MemoryForSMatrixOnlyMB 184.601074
     LowFrequencyCutoff 6342531.956756
     MemoryDistributedTotalMB -1.000000
     MemoryDistributedSMatrixOnlyMB -1.000000

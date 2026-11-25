@@ -12,10 +12,10 @@
     NumTets 3340
     BasisOrder 1
     TREECOTREE 0
-    MemoryMasterMB 191.000000
-    MemoryTotalMB 272.910156
+    MemoryMasterMB 192.000000
+    MemoryTotalMB 272.785156
     NumMeshStatisticsTets 3340
-    MemoryForSMatrixOnlyMB 228.177132
+    MemoryForSMatrixOnlyMB 227.587288
     LowFrequencyCutoff 6342531.956756
     MemoryDistributedTotalMB -1.000000
     MemoryDistributedSMatrixOnlyMB -1.000000

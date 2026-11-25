@@ -15,7 +15,7 @@
     MemoryMasterMB 251.000000
     MemoryTotalMB 516.000000
     NumMeshStatisticsTets 9731
-    MemoryForSMatrixOnlyMB 346.027344
+    MemoryForSMatrixOnlyMB 346.332031
     LowFrequencyCutoff 7990843.031159
     MemoryDistributedTotalMB -1.000000
     MemoryDistributedSMatrixOnlyMB -1.000000

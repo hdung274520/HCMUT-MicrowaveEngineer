@@ -32,6 +32,9 @@
   Nguyễn Thanh Ca (2310321) \quad\textbar\quad Nguyễn Huỳnh Hưng (2311337)}
 \institute[KTSCT -- L04]{Tổ 8 -- Nhóm L04 \quad\textbar\quad GVHD: TS. Nguyễn Minh Tân}
 \date{\today}
+\titlegraphic{\vspace{-0.3cm}\includegraphics[height=1.6cm]{logo_bk.png}}
+\addtobeamertemplate{frametitle}{}{%
+  \nointerlineskip\vbox to 0pt{\vss\hbox to \textwidth{\hfill\tikz\node[fill=white,rounded corners=2pt,inner sep=1.2pt]{\includegraphics[height=0.56cm]{logo_bk.png}};\hspace*{-0.15cm}}\vskip 0.15cm}}
 
 \begin{document}
 
@@ -157,17 +160,19 @@
     \begin{column}{0.44\textwidth}
       \centering
       \includegraphics[width=\linewidth,height=6.1cm,keepaspectratio]{02_smith_LC.png}\\[2pt]
-      {\scriptsize Quỹ đạo phối hợp mạng LC trên Smith V4.1.}
+      {\scriptsize Biểu đồ Smith đáp ứng $S_{11}$ mạng LC trên AWR.}
     \end{column}
   \end{columns}
 \end{frame}
 
 % SLIDE 6
-\begin{frame}{PP1 (Mạng LC): Mô phỏng Schematic \& Tham số S (AWR)}
+\begin{frame}{PP1 (Mạng LC): Mô phỏng Schematic, Layout \& Tham số S (AWR)}
   \begin{columns}[c,onlytextwidth]
     \begin{column}{0.46\textwidth}
       \centering
-      \includegraphics[width=\linewidth,height=3.9cm,keepaspectratio]{05_schematic_LC.png}\\[4pt]
+      \includegraphics[width=0.49\linewidth,height=2.8cm,keepaspectratio]{05_schematic_LC.png}\hfill
+      \includegraphics[width=0.49\linewidth,height=2.8cm,keepaspectratio]{05b_layout_LC.png}\\[2pt]
+      {\scriptsize Schematic (trái) và Layout FR-4 trên AWR (phải).}\\[4pt]
       \begin{block}{Kết quả mô phỏng (mô hình lý tưởng)}
         \small
         \begin{itemize}
@@ -190,8 +195,9 @@
   \begin{columns}[c,onlytextwidth]
     \begin{column}{0.52\textwidth}
       \centering
-      \includegraphics[width=\linewidth,height=6.0cm,keepaspectratio]{07_sweep_LC.png}\\[2pt]
-      {\scriptsize Quét riêng lẻ $L$ và $C$ ở mức $\pm5\%$, $\pm10\%$.}
+      \includegraphics[width=\linewidth,height=2.95cm,keepaspectratio]{07a_sweep_LC_L.png}\\[2pt]
+      \includegraphics[width=\linewidth,height=2.95cm,keepaspectratio]{07b_sweep_LC_C.png}\\[1pt]
+      {\scriptsize Quét riêng lẻ $L_s$ (trên) và $C_p$ (dưới) trên AWR ($\pm5\%$, $\pm10\%$).}
     \end{column}
     \begin{column}{0.45\textwidth}
       \begin{block}{Tóm tắt độ nhạy ($\pm5\%$, $\pm10\%$)}
@@ -264,23 +270,25 @@
     \begin{column}{0.42\textwidth}
       \centering
       \includegraphics[width=\linewidth,height=6.1cm,keepaspectratio]{03_smith_stub.png}\\[2pt]
-      {\scriptsize Hai quỹ đạo phối hợp trên Smith V4.1.}
+      {\scriptsize Biểu đồ Smith hai bộ nghiệm trên AWR.}
     \end{column}
   \end{columns}
 \end{frame}
 
 % SLIDE 9
-\begin{frame}{PP2 (Single-Stub): Mô phỏng AWR \& Tinh chỉnh 2 nghiệm}
+\begin{frame}{PP2 (Single-Stub): Layout, Mô phỏng AWR \& Tinh chỉnh}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.49\textwidth}
       \centering
-      \includegraphics[width=\linewidth,height=3.7cm,keepaspectratio]{10_S11_S21_stub1.pdf}\\[2pt]
-      {\scriptsize Nghiệm 1 sau tune ($d=1{,}50\,$mm, $l=15{,}75\,$mm)}
+      \includegraphics[width=0.25\linewidth,height=3.55cm,keepaspectratio]{09b_layout_stub1.png}\hfill
+      \includegraphics[width=0.73\linewidth,height=3.55cm,keepaspectratio]{10_S11_S21_stub1.pdf}\\[2pt]
+      {\scriptsize Nghiệm 1: Layout AWR \& $S_{11}, S_{21}$ ($d=1{,}50\,$mm, $l=15{,}75\,$mm)}
     \end{column}
     \begin{column}{0.49\textwidth}
       \centering
-      \includegraphics[width=\linewidth,height=3.7cm,keepaspectratio]{11_S11_S21_stub2.pdf}\\[2pt]
-      {\scriptsize Nghiệm 2 sau tune ($d=8{,}65\,$mm, $l=6{,}00\,$mm)}
+      \includegraphics[width=0.35\linewidth,height=3.55cm,keepaspectratio]{09c_layout_stub2.png}\hfill
+      \includegraphics[width=0.63\linewidth,height=3.55cm,keepaspectratio]{11_S11_S21_stub2.pdf}\\[2pt]
+      {\scriptsize Nghiệm 2: Layout AWR \& $S_{11}, S_{21}$ ($d=8{,}65\,$mm, $l=6{,}00\,$mm)}
     \end{column}
   \end{columns}
   \vspace{4pt}
@@ -432,25 +440,27 @@
 % =====================================================================
 
 % SLIDE 14
-\begin{frame}{Kiểm chứng mô phỏng EM 3D toàn sóng (Ansys HFSS)}
+\begin{frame}{Mô phỏng EM 3D toàn sóng (Ansys HFSS, P2 $=30-j40\,\Omega$)}
   \centering
-  \includegraphics[width=0.92\linewidth,height=3.65cm,keepaspectratio]{33_EM_HFSS_compare.png}
+  \includegraphics[width=0.32\linewidth,height=3.2cm,keepaspectratio]{33b_HFSS_lc_tuned.jpg}\hfill
+  \includegraphics[width=0.32\linewidth,height=3.2cm,keepaspectratio]{33d_HFSS_stub2.jpg}\hfill
+  \includegraphics[width=0.32\linewidth,height=3.2cm,keepaspectratio]{33e_HFSS_lambda4.jpg}
   \vspace{2pt}
   \adjustbox{max width=\linewidth}{%
     \scriptsize
-    \begin{tabular}{@{}lccccc@{}}
+    \begin{tabular}{@{}lcccc@{}}
       \toprule
-      \textbf{Cấu trúc (HFSS trên FR-4)} & $f_{min}$ (GHz) & $S_{11}@3{,}5$ (dB) & $\mathrm{BW}_{-10\dB}$ tải $R+C$ & $\mathrm{BW}_{-10\dB}$ tải hằng & $G_T@3{,}5$ (dB) \\
+      \textbf{Cấu trúc (HFSS trên FR-4, P2 $=30-j40\,\Omega$)} & $f_{min}$ (GHz) & $S_{11}@3{,}5$ (dB) & $\mathrm{BW}_{-10\dB}$ & $G_T@3{,}5$ (dB) \\
       \midrule
-      LC (chưa bù ký sinh via/pad) & $2{,}96$ & $-7{,}90$ & Không đạt & Không đạt & $-0{,}831$ \\
-      \textbf{LC bù ký sinh} ($2{,}115\,$nH; $0{,}581\,$pF) & $\mathbf{3{,}50}$ & $\mathbf{-52{,}98}$ & $\mathbf{1210\MHz\,(34{,}6\%)}$ & $\mathbf{2030\MHz\,(58{,}0\%)}$ & $\mathbf{-0{,}029}$ \\
-      Single-Stub (Nghiệm 2) & $3{,}51$ & $-28{,}11$ & $850\MHz\,(24{,}3\%)$ & $1130\MHz\,(32{,}3\%)$ & $-0{,}303$ \\
-      Biến áp $\lambda/4$ + dây đệm & $3{,}46$ & $-31{,}58$ & $1010\MHz\,(28{,}9\%)$ & $1330\MHz\,(38{,}0\%)$ & $-0{,}349$ \\
+      LC (chưa bù ký sinh via/pad) & $2{,}80$ & $-8{,}71$ & Không đạt & $-0{,}684$ \\
+      \textbf{LC bù ký sinh} ($2{,}115\,$nH; $0{,}581\,$pF) & $3{,}61$ & $-25{,}55$ & $\mathbf{1950\MHz\,(55{,}7\%)}$ & $\mathbf{-0{,}041}$ \\
+      Single-Stub (Nghiệm 2) & $3{,}51$ & $-28{,}10$ & $1130\MHz\,(32{,}3\%)$ & $-0{,}303$ \\
+      \textbf{Biến áp $\lambda/4$ + dây đệm} & $\mathbf{3{,}50}$ & $\mathbf{-32{,}87}$ & $1260\MHz\,(36{,}0\%)$ & $-0{,}346$ \\
       \bottomrule
     \end{tabular}}
   \vspace{2pt}
   \begin{flushleft}
-    {\scriptsize \textbf{Điểm nhấn:} Ký sinh via ($\approx0{,}78\,$nH) và pad kéo mạng LC lệch mạnh về $2{,}96\GHz$; sau bù ký sinh, cả 3 phương pháp khớp sát AWR và phủ trọn băng 5G n78 ($3{,}3$--$3{,}7\GHz$).}
+    {\scriptsize \textbf{Điểm nhấn:} Ký sinh via ($\approx0{,}78\,$nH) và pad kéo mạng LC lệch mạnh về $2{,}80\GHz$; sau bù ký sinh, cả 3 phương pháp khớp sát AWR và phủ trọn băng 5G n78 ($3{,}3$--$3{,}7\GHz$).}
   \end{flushleft}
 \end{frame}
 

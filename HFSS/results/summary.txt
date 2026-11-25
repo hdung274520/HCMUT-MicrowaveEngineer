@@ -1,29 +1,24 @@
 [lc]
-  HFSS: day S11 = -45.60 dB tai 2.960 GHz; S11(3.50 GHz) = -7.90 dB; G_T(3.50 GHz) = -0.831 dB
-  HFSS, tai R+C: S11 tai 3.5 GHz chua dat -10 dB
-  HFSS, tai hang 30-j40: S11 tai 3.5 GHz chua dat -10 dB
+  HFSS: day S11 = -55.15 dB tai 2.800 GHz; S11(3.50 GHz) = -8.71 dB; G_T(3.50 GHz) = -0.684 dB
+  HFSS (P2=30-j40): S11 tai 3.5 GHz chua dat -10 dB
   AWR (LC ly tuong): S11(3.5) = -72.55 dB, BW -10 dB 2.121-4.444 GHz (2323 MHz)
 
 [lc_tuned]
-  HFSS: day S11 = -52.98 dB tai 3.500 GHz; S11(3.50 GHz) = -52.98 dB; G_T(3.50 GHz) = -0.029 dB
-  HFSS, tai R+C: BW(-10 dB) 2.850 .. 4.060 GHz = 1210 MHz (34.6 %)
-  HFSS, tai hang 30-j40: BW(-10 dB) 2.210 .. 4.240 GHz = 2030 MHz (58.0 %)
+  HFSS: day S11 = -29.46 dB tai 3.610 GHz; S11(3.50 GHz) = -25.55 dB; G_T(3.50 GHz) = -0.041 dB
+  HFSS (P2=30-j40): BW(-10 dB) 2.370 .. 4.320 GHz = 1950 MHz (55.7 %)
   AWR (LC ly tuong): S11(3.5) = -72.55 dB, BW -10 dB 2.121-4.444 GHz (2323 MHz); HFSS dung Ls = 2.115nH, Cp = 0.581pF (bu ky sinh)
 
 [stub1]
-  HFSS: day S11 = -14.61 dB tai 3.510 GHz; S11(3.50 GHz) = -14.59 dB; G_T(3.50 GHz) = -0.444 dB
-  HFSS, tai R+C: BW(-10 dB) 3.300 .. 4.000 GHz = 700 MHz (20.0 %)
-  HFSS, tai hang 30-j40: BW(-10 dB) 3.310 .. 4.010 GHz = 700 MHz (20.0 %)
+  HFSS: day S11 = -15.07 dB tai 3.560 GHz; S11(3.50 GHz) = -14.73 dB; G_T(3.50 GHz) = -0.442 dB
+  HFSS (P2=30-j40): BW(-10 dB) 3.310 .. 4.010 GHz = 700 MHz (20.0 %)
   AWR: S11(3.5) = -15.33 dB, day 3.52 GHz, BW 3.284-4.022 GHz (738 MHz), S21 = -0.321 dB
 
 [stub2]
-  HFSS: day S11 = -28.41 dB tai 3.510 GHz; S11(3.50 GHz) = -28.11 dB; G_T(3.50 GHz) = -0.303 dB
-  HFSS, tai R+C: BW(-10 dB) 3.070 .. 3.920 GHz = 850 MHz (24.3 %)
-  HFSS, tai hang 30-j40: BW(-10 dB) 2.850 .. 3.980 GHz = 1130 MHz (32.3 %)
+  HFSS: day S11 = -28.27 dB tai 3.510 GHz; S11(3.50 GHz) = -28.10 dB; G_T(3.50 GHz) = -0.303 dB
+  HFSS (P2=30-j40): BW(-10 dB) 2.850 .. 3.980 GHz = 1130 MHz (32.3 %)
   AWR: S11(3.5) = -32.81 dB, day 3.50 GHz, BW 3.086-3.866 GHz (780 MHz), S21 = -0.211 dB
 
 [lambda4]
-  HFSS: day S11 = -40.71 dB tai 3.460 GHz; S11(3.50 GHz) = -31.58 dB; G_T(3.50 GHz) = -0.349 dB
-  HFSS, tai R+C: BW(-10 dB) 3.000 .. 4.010 GHz = 1010 MHz (28.9 %)
-  HFSS, tai hang 30-j40: BW(-10 dB) 2.770 .. 4.100 GHz = 1330 MHz (38.0 %)
+  HFSS: day S11 = -32.87 dB tai 3.500 GHz; S11(3.50 GHz) = -32.87 dB; G_T(3.50 GHz) = -0.346 dB
+  HFSS (P2=30-j40): BW(-10 dB) 2.860 .. 4.120 GHz = 1260 MHz (36.0 %)
   AWR vi dai: S11(3.5) = -39.64 dB, BW 2.881-4.123 GHz (1242 MHz); AXIEM: -37.31 dB, day 3.49 GHz, BW 1277 MHz

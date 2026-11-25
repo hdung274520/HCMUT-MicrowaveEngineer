@@ -65,8 +65,8 @@ $begin 'DesignData'
 	$begin 'Point3DDefinitionInfo'
 	$end 'Point3DDefinitionInfo'
 	$begin 'Plane3DDefinitionInfo'
-		Plane(-4, 'Global:XY', 1, -1, true, 6422633, 0, 0, 0, 0, 0, 1)
-		Plane(-3, 'Global:YZ', 1, -1, true, 7864417, 0, 0, 0, 1, 0, 0)
+		Plane(-4, 'Global:XY', 1, -1, true, 0, 0, 0, 0, 0, 0, 1)
+		Plane(-3, 'Global:YZ', 1, -1, true, 7471171, 0, 0, 0, 1, 0, 0)
 		Plane(-2, 'Global:XZ', 1, -1, true, 6422633, 0, 0, 0, 0, 1, 0)
 	$end 'Plane3DDefinitionInfo'
 	$begin 'CoordinateSystemInfo'

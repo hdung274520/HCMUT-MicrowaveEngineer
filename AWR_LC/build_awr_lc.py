@@ -124,6 +124,54 @@ def main():
     s_swp_c.Equations.Add("k = 1.0", 0, 2000)
     add_lc_network(s_swp_c, L_expr="2.933", C_expr="C0*k", sweep_var="k")
 
+    # 4. LC_Microstrip schematic (FR-4 PCB layout: 50-ohm lines, shunt pad+gap+via for Cp, series gap for Ls)
+    s_lay = proj.Schematics.Add("LC_Microstrip")
+    msub = s_lay.Elements.Add("MSUB", 0, -2000)
+    for k, v in [("Er", "4.4"), ("H", "1.6"), ("T", "0.035"), ("Rho", "0.689"), ("Tand", "0.02"), ("ErNom", "4.4"), ("Name", "SUB1")]:
+        msub.Parameters(k).ValueAsString = v
+    p1 = s_lay.Elements.Add("PORT", 0, 0)
+    p1.Parameters("Z").ValueAsString = "50"
+    m1 = s_lay.Elements.Add("MLIN", 1000, 0)
+    m1.Parameters("W").ValueAsString = "3.083"; m1.Parameters("L").ValueAsString = "5.0"; m1.Parameters("MSUB").ValueAsString = "SUB1"
+    tee = s_lay.Elements.Add("MTEE", 2500, 0)
+    tee.Parameters("W1").ValueAsString = "3.083"; tee.Parameters("W2").ValueAsString = "3.083"; tee.Parameters("W3").ValueAsString = "1.0"; tee.Parameters("MSUB").ValueAsString = "SUB1"
+    pad1 = s_lay.Elements.Add("MLIN", tee.Nodes(3).x, tee.Nodes(3).y + 500, RotationAngle=270)
+    pad1.Parameters("W").ValueAsString = "1.0"; pad1.Parameters("L").ValueAsString = "0.8"; pad1.Parameters("MSUB").ValueAsString = "SUB1"
+    gap_c = s_lay.Elements.Add("MGAP", tee.Nodes(3).x, tee.Nodes(3).y + 1600, RotationAngle=270)
+    gap_c.Parameters("W").ValueAsString = "1.0"; gap_c.Parameters("S").ValueAsString = "1.0"; gap_c.Parameters("MSUB").ValueAsString = "SUB1"
+    cp = s_lay.Elements.Add("CAP", tee.Nodes(3).x + 900, tee.Nodes(3).y + 1600, RotationAngle=270)
+    cp.Parameters("C").ValueAsString = "0.743"
+    pad2 = s_lay.Elements.Add("MLIN", tee.Nodes(3).x, tee.Nodes(3).y + 2700, RotationAngle=270)
+    pad2.Parameters("W").ValueAsString = "1.0"; pad2.Parameters("L").ValueAsString = "1.0"; pad2.Parameters("MSUB").ValueAsString = "SUB1"
+    via = s_lay.Elements.Add("VIA", tee.Nodes(3).x, tee.Nodes(3).y + 3900, RotationAngle=270)
+    for k, v in [("D", "0.6"), ("H", "1.6"), ("T", "0.035"), ("Rho", "0.689")]:
+        if via.Parameters.Exists(k):
+            via.Parameters(k).ValueAsString = v
+    m2 = s_lay.Elements.Add("MLIN", 4000, 0)
+    m2.Parameters("W").ValueAsString = "3.083"; m2.Parameters("L").ValueAsString = "0.5"; m2.Parameters("MSUB").ValueAsString = "SUB1"
+    gap_l = s_lay.Elements.Add("MGAP", 5500, 0)
+    gap_l.Parameters("W").ValueAsString = "3.083"; gap_l.Parameters("S").ValueAsString = "1.0"; gap_l.Parameters("MSUB").ValueAsString = "SUB1"
+    ls = s_lay.Elements.Add("IND", 5500, -1000)
+    ls.Parameters("L").ValueAsString = "2.933"
+    m3 = s_lay.Elements.Add("MLIN", 7000, 0)
+    m3.Parameters("W").ValueAsString = "3.083"; m3.Parameters("L").ValueAsString = "5.0"; m3.Parameters("MSUB").ValueAsString = "SUB1"
+    p2 = s_lay.Elements.Add("PORT", 8600, 0, Flipped=True)
+    p2.Parameters("Z").ValueAsString = "30-j*40"
+    connect_nodes(s_lay, p1.Nodes(1), m1.Nodes(1))
+    connect_nodes(s_lay, m1.Nodes(2), tee.Nodes(1))
+    connect_nodes(s_lay, tee.Nodes(3), pad1.Nodes(1))
+    connect_nodes(s_lay, pad1.Nodes(2), gap_c.Nodes(1))
+    connect_nodes(s_lay, gap_c.Nodes(2), pad2.Nodes(1))
+    connect_nodes(s_lay, pad1.Nodes(2), cp.Nodes(1))
+    connect_nodes(s_lay, cp.Nodes(2), pad2.Nodes(1))
+    connect_nodes(s_lay, pad2.Nodes(2), via.Nodes(1))
+    connect_nodes(s_lay, tee.Nodes(2), m2.Nodes(1))
+    connect_nodes(s_lay, m2.Nodes(2), gap_l.Nodes(1))
+    connect_nodes(s_lay, gap_l.Nodes(2), m3.Nodes(1))
+    connect_nodes(s_lay, m2.Nodes(2), ls.Nodes(1))
+    connect_nodes(s_lay, ls.Nodes(2), m3.Nodes(1))
+    connect_nodes(s_lay, m3.Nodes(2), p2.Nodes(1))
+
     # Graphs
     g_s = proj.Graphs.Add("S11_S21_LC", mwoffice.mwGraphType.mwGT_Rectangular)
     g_s.Measurements.Add("LC_Ideal", "DB(|S(1,1)|)")

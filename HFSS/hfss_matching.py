@@ -12,12 +12,10 @@ Cac design (moi cai la mot design trong CUNG mot project .aedt):
     lambda4 : Bien ap lambda/4 + day dem: Wt = 6.947 mm, Lt = 10.52 mm, L50 = 5.865 mm (W = 3.083 mm)
     thru50  : (kiem tra) day 50 ohm tron - S11 phai < -25 dB, neu khong la loi wave port
 
-Cach lam (giong quy trinh AXIEM trong bao cao): moi mang duoc giai nhu mang HAI cong (2 wave port
-50 ohm, de-embed ve dung mat phang cua mang phoi hop), sau do noi tai Z_L(f) = 30 + 1/(j*w*1.137pF)
-vao cong 2 bang cong thuc:
-    Gamma_in = S11 + S12*S21*Gamma_L / (1 - S22*Gamma_L),   Gamma_L = (Z_L - 50)/(Z_L + 50)
-    G_T      = |S21|^2 (1 - |Gamma_L|^2) / |1 - S22*Gamma_L|^2   (cong suat toi tai / cong suat san co)
-Lam nhu vay tranh duoc loi cua tai lumped trong HFSS, va file .s2p xuat ra co the dua thang vao AWR.
+Cach lam: moi mang phoi hop duoc giai voi cong 1 chuan Z0 = 50 ohm va cong 2 chuan hoa truc tiep
+ve tai Z_L = 30 - j40 ohm ("30ohm - 40i ohm", tru thru50 giu 50 ohm). Nho do S(1,1) va S11_Smith
+trong HFSS la dap ung phoi hop truc tiep voi tai 30 - j40 ohm; do HFSS chuan hoa S(2,1) theo |Z_L|,
+do loi truyen dat G_T duoc quy doi bang G_T = |S(2,1)|^2 * Re(Z_L) / |Z_L|.
 
 Yeu cau : Ansys Electronics Desktop (ban Student cung duoc) + pip install pyaedt matplotlib
 Chay    : python HFSS/hfss_matching.py                 # tat ca: lc, lc_tuned, stub1, stub2, lambda4
@@ -26,8 +24,8 @@ Chay    : python HFSS/hfss_matching.py                 # tat ca: lc, lc_tuned, s
           python HFSS/hfss_matching.py --dry           # chi in kich thuoc hinh hoc, khong mo AEDT
 Ket qua (trong thu muc HFSS/):
     Matching_EM3D_3p5GHz.aedt         project HFSS, moi mang mot design (Results: S_dB, S11_Smith)
-    results/<ten>.s2p                 S-parameter 2 cong (de-embedded) - import vao AWR duoc
-    results/<ten>_S11_loaded.csv      f, S11 (dB), Re/Im Gamma_in, G_T (dB) khi da noi tai 30-j40
+    results/<ten>.s2p                 S-parameter 2 cong (de-embedded, P1=50, P2=30-j40)
+    results/<ten>_S11_loaded.csv      f, S11 (dB), Re/Im Gamma_in, G_T (dB) voi P2 = 30-j40 ohm
     results/compare_S11.png           S11 cua cac mang tren cung do thi + Smith chart
     results/summary.txt               bang so sanh HFSS voi AWR
 """
@@ -43,7 +41,8 @@ ER, TAND, H, T_CU = 4.4, 0.02, 1.6, 0.035
 THICK_METAL = True                     # True: dong day 0.035 mm (co ton hao dan); False: tam PEC (nhanh)
 F0, F_START, F_STOP, N_PTS = 3.5, 2.0, 5.0, 301      # GHz
 Z0 = 50.0
-R_LOAD, C_LOAD = 30.0, 1.137e-12       # tai 30 - j40 ohm tai 3.5 GHz (mo hinh R noi tiep C)
+Z_LOAD = 30.0 - 40.0j                  # tro khang chuan hoa cong P2 (tru thru50)
+Z2_IMP = "30ohm - 40i "                # PyAEDT noi them "ohm" -> "30ohm - 40i ohm"
 
 # Hop khong khi / cong. Bien buc xa nen cach mach >= lambda0/4 (~21 mm) - dung 15 mm la du cho
 # vi dai (it buc xa) va giu luoi nho (ban Student). Tang len neu muon chinh xac hon.
@@ -186,10 +185,11 @@ def build(hfss, name):
            if f.center[2] > 1e-6 and abs(f.center[0]) > 1e-6 and abs(f.center[0] - lx) > 1e-6]
     hfss.assign_radiation_boundary_to_faces(rad, name="Rad")
 
-    # --- 2 wave port 50 ohm, de-embed ve mat phang mang phoi hop
+    # --- 2 wave port (P1 = 50 ohm, P2 = 30 - j40 ohm tru thru50), de-embed ve mat phang mang phoi hop
     for i, (x, d) in enumerate(((0.0, g["deembed"][0]), (lx, g["deembed"][1])), start=1):
         sh = m.create_rectangle("YZ", [x, -PORT_W / 2, 0], [PORT_W, PORT_H], name=f"P{i}_sheet")
-        hfss.wave_port(sh.name, integration_line=[[x, 0, 0], [x, 0, H]], impedance=Z0,
+        imp = Z0 if (i == 1 or name == "thru50") else Z2_IMP
+        hfss.wave_port(sh.name, integration_line=[[x, 0, 0], [x, 0, H]], impedance=imp,
                        name=f"P{i}", renormalize=True, deembed=d)
 
     # --- setup + sweep
@@ -216,6 +216,8 @@ def solve_and_export(hfss, name):
                             plot_type="Smith Chart", plot_name=f"S11_Smith_{name}", show=False)
 
     os.makedirs(OUT, exist_ok=True)
+    hfss.post.export_report_to_jpg(os.path.join(OUT, f"S_dB_{name}.jpg"), f"S_dB_{name}", width=1000, height=620)
+    hfss.post.export_report_to_jpg(os.path.join(OUT, f"S11_Smith_{name}.jpg"), f"S11_Smith_{name}", width=760, height=700)
     hfss.export_touchstone(setup="Setup1", sweep="Sweep1", output_file=os.path.join(OUT, f"{name}.s2p"))
 
     exprs = ["S(1,1)", "S(1,2)", "S(2,1)", "S(2,2)"]
@@ -233,27 +235,7 @@ def solve_and_export(hfss, name):
     return f, s
 
 
-# ======================================================================= noi tai + tong ket
-def load_gamma(f_ghz, const=False):
-    """const=False: tai R + C (30 - j40 chi dung tai 3.5 GHz, giong so do LC/stub cua AWR).
-    const=True : tai hang 30 - j40 o moi tan so (giong cong tai trong so do lambda/4 + AXIEM)."""
-    w = 2 * math.pi * (F0 if const else f_ghz) * 1e9
-    zl = complex(R_LOAD, -1 / (w * C_LOAD))
-    return (zl - Z0) / (zl + Z0)
-
-
-def terminate(f, s, const=False):
-    """S 2 cong -> Gamma_in va G_T khi cong 2 noi tai Z_L(f)."""
-    gin, gt = [], []
-    for i, fi in enumerate(f):
-        s11, s12, s21, s22 = (s[k][i] for k in ("S(1,1)", "S(1,2)", "S(2,1)", "S(2,2)"))
-        gl = load_gamma(fi, const)
-        den = 1 - s22 * gl
-        gin.append(s11 + s12 * s21 * gl / den)
-        gt.append(abs(s21) ** 2 * (1 - abs(gl) ** 2) / abs(den) ** 2)
-    return gin, gt
-
-
+# ======================================================================= tong ket
 def db20(x):
     return 20 * math.log10(max(abs(x), 1e-12))
 
@@ -272,9 +254,10 @@ def band(f, s11):
 
 
 def summarize(name, f, s):
-    gin, gt = terminate(f, s)
+    gin = s["S(1,1)"]
     s11 = [db20(g) for g in gin]
-    gtdb = [10 * math.log10(max(v, 1e-12)) for v in gt]
+    gt_offset = 10 * math.log10(Z_LOAD.real / abs(Z_LOAD))  # HFSS chuan hoa S21 theo |Z2| thay vi Re(Z2)
+    gtdb = [db20(v) + gt_offset for v in s["S(2,1)"]]
     with open(os.path.join(OUT, f"{name}_S11_loaded.csv"), "w", encoding="utf-8") as fh:
         fh.write("f_GHz,S11_dB,Re_Gin,Im_Gin,GT_dB\n")
         for a, b, g, c in zip(f, s11, gin, gtdb):
@@ -285,14 +268,12 @@ def summarize(name, f, s):
     lines = [f"[{name}]",
              f"  HFSS: day S11 = {s11[imin]:.2f} dB tai {f[imin]:.3f} GHz; "
              f"S11({f[i0]:.2f} GHz) = {s11[i0]:.2f} dB; G_T({f[i0]:.2f} GHz) = {gtdb[i0]:.3f} dB"]
-    for label, ss in (("tai R+C", s11),
-                      ("tai hang 30-j40", [db20(g) for g in terminate(f, s, const=True)[0]])):
-        b = band(f, ss)
-        if b:
-            lines.append(f"  HFSS, {label}: BW(-10 dB) {b[0]:.3f} .. {b[1]:.3f} GHz = "
-                         f"{(b[1] - b[0]) * 1000:.0f} MHz ({(b[1] - b[0]) / F0 * 100:.1f} %)")
-        else:
-            lines.append(f"  HFSS, {label}: S11 tai 3.5 GHz chua dat -10 dB")
+    b = band(f, s11)
+    if b:
+        lines.append(f"  HFSS (P2=30-j40): BW(-10 dB) {b[0]:.3f} .. {b[1]:.3f} GHz = "
+                     f"{(b[1] - b[0]) * 1000:.0f} MHz ({(b[1] - b[0]) / F0 * 100:.1f} %)")
+    else:
+        lines.append("  HFSS (P2=30-j40): S11 tai 3.5 GHz chua dat -10 dB")
     lines.append(f"  {AWR[name]}")
     text = "\n".join(lines)
     print(text, flush=True)
@@ -340,13 +321,14 @@ def plot_all(results):
 def dry_run(names):
     for n in names:
         g = geometry(n)
+        p2 = f"{Z0:g} ohm" if n == "thru50" else f"{Z2_IMP}ohm"
         print(f"[{n}] lx = {g['lx']:.3f} mm, y = {g['ymin']:.3f}..{g['ymax']:.3f} mm, "
-              f"de-embed = {g['deembed']}")
+              f"de-embed = {g['deembed']}, P2 = {p2}")
         for s in g["strips"]:
             print(f"    {s[0]:<11} x={s[1]:7.3f} y={s[2]:7.3f} dx={s[3]:7.3f} dy={s[4]:7.3f}")
         for lp in g["lumped"]:
             print(f"    {lp[0]} ({lp[1]}) origin={lp[2]} sizes={lp[3]} {lp[5]}")
-    gl = load_gamma(F0)
+    gl = (Z_LOAD - Z0) / (Z_LOAD + Z0)
     print(f"Gamma_L(3.5 GHz) = {abs(gl):.4f} < {math.degrees(cmath.phase(gl)):.1f} deg (ly thuyet 0.5 < -90)")
 
 

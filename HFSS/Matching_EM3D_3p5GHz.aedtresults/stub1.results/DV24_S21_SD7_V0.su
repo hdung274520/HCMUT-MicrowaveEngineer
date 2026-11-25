@@ -12,10 +12,10 @@
     NumTets 2594
     BasisOrder 1
     TREECOTREE 0
-    MemoryMasterMB 187.000000
-    MemoryTotalMB 243.957031
+    MemoryMasterMB 188.000000
+    MemoryTotalMB 243.738281
     NumMeshStatisticsTets 2594
-    MemoryForSMatrixOnlyMB 213.425076
+    MemoryForSMatrixOnlyMB 214.616482
     LowFrequencyCutoff 6342531.956756
     MemoryDistributedTotalMB -1.000000
     MemoryDistributedSMatrixOnlyMB -1.000000

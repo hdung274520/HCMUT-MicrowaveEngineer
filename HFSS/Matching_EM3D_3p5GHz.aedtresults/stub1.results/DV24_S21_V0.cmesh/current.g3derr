@@ -3,7 +3,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #1, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503456 :TimeStamp
+   1795621453 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -61,7 +61,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #2, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503458 :TimeStamp
+   1795621456 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -111,7 +111,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #3, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503461 :TimeStamp
+   1795621459 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -165,7 +165,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #4, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503463 :TimeStamp
+   1795621461 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -215,7 +215,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #5, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503466 :TimeStamp
+   1795621464 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -265,7 +265,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #6, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503468 :TimeStamp
+   1795621466 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -319,7 +319,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #7, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503471 :TimeStamp
+   1795621469 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -369,7 +369,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #8, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503474 :TimeStamp
+   1795621471 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -419,7 +419,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #9, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503476 :TimeStamp
+   1795621474 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -473,7 +473,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #10, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503479 :TimeStamp
+   1795621477 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -519,7 +519,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #11, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503482 :TimeStamp
+   1795621480 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -569,7 +569,7 @@ FlagFileMetaData Begin
    Mesh Size - Setup1, Refinement, Pass #12, Freq. 3.500000e+09 :Title    
    Listing of mesh elements with poor quality. :ToolTip  
    hf3d :Author   
-   1795503485 :TimeStamp
+   1795621483 :TimeStamp
    mm :UnitName 
    1.0000000000000000e-03 :UnitConv
 FlagFileMetaData End
@@ -612,5 +612,150 @@ BEGIN_ERR
            9.6589999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 118 -1 #xyz tv2 fid bid
            9.6589999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz ev0
            9.6589999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 -1 62 #xyz ev1 fid bid
+   0   0.000000000000e+00   0.000000000000e+00   0.000000000000e+00 #flag location
+END_ERR 
+G3dErrFileVersion 2025R1
+FlagFileMetaData Begin
+   Mesh Size - Setup1, Refinement, Pass #13, Freq. 3.500000e+09 :Title    
+   Listing of mesh elements with poor quality. :ToolTip  
+   hf3d :Author   
+   1795621488 :TimeStamp
+   mm :UnitName 
+   1.0000000000000000e-03 :UnitConv
+FlagFileMetaData End
+BEGIN_ERR 
+26 Small mesh segment detected on body : Main
+ Small mesh segment detected on body : Main 
+ Segment Statistics - Number of Segments : 1 --- Segment length(s) : 0.035000mm. The cutoff frequency for S-Matrix Only Solve is 6.3425319567563MHz 
+3 -1  118  96  # nfids, fids[]
+2 62  -1  # nbids, bids[]
+      5 2 1 0 #ntets ntri ned npts
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv0
+           7.3155386171955188e+00   1.8459000420571390e+00   1.6000000000000001e+00 #xyz tv1
+           7.6571183966374647e+00   7.0721876992979271e-01   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           7.6571183966374647e+00   7.0721876992979271e-01   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv2
+           8.2371249999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv0
+           8.0339999999999989e+00   2.0180531132416606e+00   1.6350000000000000e+00 #xyz tv1
+           7.3155386171955188e+00   1.8459000420571390e+00   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.2371249999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.3031855992084971e+00   1.8300025279250760e+00   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   2.0180531132416606e+00   1.6350000000000000e+00 #xyz tv1
+           8.3031855992084971e+00   1.8300025279250760e+00   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 -1 62 #xyz tv3 fid bid
+           8.2371249999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 118 -1 #xyz tv2 fid bid
+           8.0339999999999989e+00   2.0180531132416606e+00   1.6350000000000000e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 96 -1 #xyz tv2 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz ev0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz ev1 fid bid
+   0   0.000000000000e+00   0.000000000000e+00   0.000000000000e+00 #flag location
+END_ERR 
+G3dErrFileVersion 2025R1
+FlagFileMetaData Begin
+   Mesh Size - Setup1, Refinement, Pass #14, Freq. 3.500000e+09 :Title    
+   Listing of mesh elements with poor quality. :ToolTip  
+   hf3d :Author   
+   1795621493 :TimeStamp
+   mm :UnitName 
+   1.0000000000000000e-03 :UnitConv
+FlagFileMetaData End
+BEGIN_ERR 
+26 Small mesh segment detected on body : Main
+ Small mesh segment detected on body : Main 
+ Segment Statistics - Number of Segments : 1 --- Segment length(s) : 0.035000mm. The cutoff frequency for S-Matrix Only Solve is 6.3425319567563MHz 
+3 -1  118  96  # nfids, fids[]
+2 62  -1  # nbids, bids[]
+      7 2 1 0 #ntets ntri ned npts
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv0
+           7.3405237815160067e+00   1.7689909035750948e+00   1.6350000000000000e+00 #xyz tv1
+           7.4592782939916606e+00   1.2566868314244017e+00   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv0
+           7.4592782939916606e+00   1.2566868314244017e+00   1.6000000000000001e+00 #xyz tv1
+           7.7393563780535466e+00   6.5367042044598422e-01   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           7.3405237815160067e+00   1.7689909035750948e+00   1.6350000000000000e+00 #xyz tv1
+           8.0339999999999989e+00   1.8142933752131845e+00   1.6350000000000000e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv1
+           8.4706355296439515e+00   9.9220366627266277e-01   1.6000000000000001e+00 #xyz tv2
+           7.7393563780535466e+00   6.5367042044598422e-01   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   1.8142933752131845e+00   1.6350000000000000e+00 #xyz tv1
+           8.1494739742663587e+00   1.6802685470269756e+00   1.6000000000000001e+00 #xyz tv2
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 -1 62 #xyz tv3 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.4706355296439515e+00   9.9220366627266277e-01   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv2
+           8.2621188964843739e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.1494739742663587e+00   1.6802685470269756e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv2
+           8.2621188964843739e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz tv3 fid bid
+           8.2621188964843739e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 118 -1 #xyz tv2 fid bid
+           8.0339999999999989e+00   1.8142933752131845e+00   1.6350000000000000e+00 #xyz tv0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 #xyz tv1
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 96 -1 #xyz tv2 fid bid
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6350000000000000e+00 #xyz ev0
+           8.0339999999999989e+00   1.5169999999999999e+00   1.6000000000000001e+00 -1 62 #xyz ev1 fid bid
+   0   0.000000000000e+00   0.000000000000e+00   0.000000000000e+00 #flag location
+END_ERR 
+BEGIN_ERR 
+26 Small mesh segment detected on body : Substrate
+ Small mesh segment detected on body : Substrate 
+ Segment Statistics - Number of Segments : 1 --- Segment length(s) : 5.779896mm. The cutoff frequency for S-Matrix Only Solve is 6.3425319567563MHz 
+4 -1  8  36  135  # nfids, fids[]
+2 6  -1  # nbids, bids[]
+      4 6 1 0 #ntets ntri ned npts
+           1.4534000000000010e+01   2.3736429382324221e+01   1.6000000000000001e+00 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           1.0220064286689725e+01   2.1536601450743706e+01   1.8394717996746303e-15 #xyz tv2
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 -1 6 #xyz tv3 fid bid
+           1.0220064286689725e+01   2.1536601450743706e+01   1.8394717996746303e-15 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           8.3782647370059671e+00   2.1844153063281585e+01  -3.3200000000000003e+00 #xyz tv2
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 -1 6 #xyz tv3 fid bid
+           1.4534000000000010e+01   3.2267000000000003e+01   0.0000000000000000e+00 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           1.4534000000000010e+01   2.3736429382324221e+01   1.6000000000000001e+00 #xyz tv2
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 -1 6 #xyz tv3 fid bid
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv0
+           1.4534000000000010e+01   3.2267000000000003e+01   0.0000000000000000e+00 #xyz tv1
+           8.3782647370059671e+00   2.1844153063281585e+01  -3.3200000000000003e+00 #xyz tv2
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 -1 6 #xyz tv3 fid bid
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv0
+           1.4534000000000010e+01   3.2267000000000003e+01   0.0000000000000000e+00 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 8 -1 #xyz tv2 fid bid
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv0
+           1.4534000000000010e+01   3.2267000000000003e+01   0.0000000000000000e+00 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 36 -1 #xyz tv2 fid bid
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv0
+           1.4534000000000010e+01   3.2267000000000003e+01   0.0000000000000000e+00 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 135 -1 #xyz tv2 fid bid
+           1.0220064286689725e+01   2.1536601450743706e+01   1.8394717996746303e-15 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 8 -1 #xyz tv2 fid bid
+           1.0220064286689725e+01   2.1536601450743706e+01   1.8394717996746303e-15 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 36 -1 #xyz tv2 fid bid
+           1.0220064286689725e+01   2.1536601450743706e+01   1.8394717996746303e-15 #xyz tv0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 #xyz tv1
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 135 -1 #xyz tv2 fid bid
+           1.4534000000000010e+01   2.2814781250000003e+01   1.6237011735142926e-15 #xyz ev0
+           9.5709648226140871e+00   2.5777124024432027e+01   1.1137142339487661e-15 -1 6 #xyz ev1 fid bid
    0   0.000000000000e+00   0.000000000000e+00   0.000000000000e+00 #flag location
 END_ERR 
